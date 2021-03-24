@@ -220,4 +220,5 @@ This project is licensed under the [MIT License](https://github.com/sagar7993/ga
 ## Features / To-Do
 - [Morph Buttons for contact form](https://github.com/agungsb/react-morph-button-modal)
 - [React Tag Cloud](https://www.npmjs.com/package/react-tag-cloud)
+- [Subscribe Form in Sidebar](https://tympanus.net/Development/ButtonComponentMorph/index4.html)
 

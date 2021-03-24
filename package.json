@@ -63,6 +63,7 @@
     "gatsby-transformer-sharp": "^2.0.0",
     "gatsby-transformer-yaml": "^2.0.0",
     "gatsby-wordpress-inline-images": "^1.0.0",
+    "moment": "^2.29.1",
     "path": "^0.12.7",
     "prismjs": "^1.23.0",
     "react": "^16.0.0",

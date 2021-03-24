@@ -37,12 +37,6 @@ export const IndexPage = (props: Props) => {
 										<Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />
 									)}
 								</Col>
-								<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
-									<div className="features-wrapper margin-top-36px">
-										<div className="features">											
-										</div>
-									</div>
-								</Col>
 							</Row>
 						</Card>
 						<section className="gray-bg align-center">
@@ -51,9 +45,7 @@ export const IndexPage = (props: Props) => {
 						</section>
 					</div>
 				</Col>
-				
 			</Row>
-			
 		</Layout>
 	);
 };
@@ -76,6 +68,5 @@ export const query = graphql`
 				}
       		}
 		}
-		
 	}
 `;

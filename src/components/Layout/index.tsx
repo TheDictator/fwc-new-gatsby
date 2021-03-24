@@ -29,14 +29,14 @@ export class Layout extends Component<Props> {
 					</div>
 					<Footer />
 					<CookieConsent
-						location="bottom"
-						buttonText="I Accept"
-						cookieName="fwcEuroCookie"
-						style={{ background: "#2B373B" }}
-						buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+						location='bottom'
+						buttonText='I Accept'
+						cookieName='fwcEuroCookie'
+						style={{ background: '#2B373B' }}
+						buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
 						expires={150}
 						>
-						This website uses cookies to enhance the user experience.{" "}
+						This website uses cookies to enhance the user experience.
 					</CookieConsent>
 				</AntLayout>
 			</Fragment>

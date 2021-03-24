@@ -46,7 +46,6 @@ export const BlogCategoryPostsPage = (props: Props) => {
 							const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 							const tags: CategoryTagInfo[] = (node.tags && node.tags.length > 0) ? node.tags : new Array<CategoryTagInfo>();
 							return (
-								
 								<Card bordered={false} className="post" key={node.slug} hoverable={true}>
 									<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
 									<h2 className="black-color">{decodeHtmlCharCodes(node.title)}</h2>
@@ -61,8 +60,6 @@ export const BlogCategoryPostsPage = (props: Props) => {
 												</Tag>
 											);
 										})}
-										
-										
 									</div>
 									<div className="author-container">
 									<span className="post-meta margin-left-2px">
@@ -77,7 +74,6 @@ export const BlogCategoryPostsPage = (props: Props) => {
 										</Link>
 									)}
 									<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
-									
 									<div className="post-footer">
 										<h4>Tagged With:</h4>
 									{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
@@ -97,10 +93,8 @@ export const BlogCategoryPostsPage = (props: Props) => {
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
 				<h3>Tag Cloud</h3>
-					
 				</Col>
 			</Row>
-		
 		</Layout>
 	);
 };

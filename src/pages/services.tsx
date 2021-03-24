@@ -88,10 +88,8 @@ export const ServicesPage = (props: Props) => {
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
 				<h3>Tag Cloud</h3>
-					
 				</Col>
 			</Row>
-			
 		</Layout>
 	);
 };
@@ -114,6 +112,5 @@ export const query = graphql`
 				}
       		}
 		}
-		
   	}
 `;

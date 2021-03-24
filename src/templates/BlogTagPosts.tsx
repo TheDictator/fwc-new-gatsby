@@ -8,7 +8,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const moment = require('moment');
-
 import { Post, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
@@ -60,8 +59,6 @@ export const BlogTagPostsPage = (props: Props) => {
 												</Tag>
 											);
 										})}
-										
-										
 									</div>
 									<div className="author-container">
 									<span className="post-meta margin-left-2px">
@@ -76,7 +73,6 @@ export const BlogTagPostsPage = (props: Props) => {
 										</Link>
 									)}
 									<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
-									
 									<div className="post-footer">
 										<h4>Tagged With:</h4>
 									{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
@@ -96,7 +92,6 @@ export const BlogTagPostsPage = (props: Props) => {
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
 				<h3>Tag Cloud</h3>
-				
 				</Col>
 			</Row>
 		</Layout>
