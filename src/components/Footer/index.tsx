@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import { Layout as AntLayout, Row, Col, Icon } from 'antd';
 
@@ -20,10 +20,55 @@ export const Footer = () => {
 			}
           }
         }
+		file(relativePath: { eq: "learnMore.svg" }) {
+			childImageSharp {
+			  fluid(maxWidth: 960, maxHeight: 600, quality: 100) {
+				  aspectRatio
+				  src
+				  srcSet
+				  sizes
+				  base64
+				  tracedSVG
+				  srcWebp
+				  srcSetWebp
+			  }
+			}
+	  }
       }
 	`);
 	return (
+		
 		<div className="footer-container">
+			<div className="pre-footer">
+				<div className="container container--l">
+					<h3>Our mission is to positively impact the lives of 50,000 agency owners by Dec 31, 2030.</h3>
+					<p>Want to know more? Check these links:</p>
+					<Row gutter={36}>
+						<Col xs={24} sm={24} md={8}>
+							<Link to={`/`} title="">
+								<div className="footer-card">
+									<h4>Learn More</h4>
+								</div>
+							</Link>
+						</Col>
+						<Col xs={24} sm={24} md={8}>
+							<Link to={`/`} title="">
+								<div className="footer-card">
+									<h4>The FourthWave Solution</h4>
+								</div>
+							</Link>
+						</Col>
+						<Col xs={24} sm={24} md={8}>
+							<Link to={`/`} title="">
+								<div className="footer-card">
+										<h4>Track Record</h4>
+								</div>
+							</Link>
+						</Col>
+					</Row>
+				</div>
+			</div>
+			
 			<AntLayout.Footer className="footer">
 				<Row type="flex" align="middle" className="footer-wrapper">
 					<Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8} className="copyright-container align-center">
@@ -61,8 +106,6 @@ export const Footer = () => {
 								</Fragment>
 							)}
 						</div>
-					</Col>
-					<Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8} className="author-container align-center">
 					</Col>
 				</Row>
 			</AntLayout.Footer>

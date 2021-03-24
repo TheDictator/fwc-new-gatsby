@@ -39,10 +39,10 @@ export const IndexPage = (props: Props) => {
 								</Col>
 							</Row>
 						</Card>
-						<section className="gray-bg align-center">
+						{/* <section className="gray-bg align-center">
 							<Button type="primary" htmlType="button">Contact us</Button>
 							<Button type="ghost" htmlType="button">View Work</Button>
-						</section>
+						</section> */}
 					</div>
 				</Col>
 			</Row>

@@ -392,3 +392,55 @@
 .margin-top-64px {
     margin-top: 64px;
 }
+.container {
+    margin: 0 auto;
+}
+.container--s {
+    max-width: 600px;
+  }
+  
+  .container--m {
+    max-width: 800px;
+  }
+  
+  .container--900 {
+    max-width: 900px;
+  }
+  
+  .container--1000 {
+    max-width: 1000px;
+  }
+  
+  .container--l {
+    max-width: 1224px;
+  }
+  
+  .container--xxl {
+    max-width: 1440px;
+  }
+  
+  .container--xxl {
+    &.mobile-full-bleed {
+      @media screen and (max-width: 440px) {
+        max-width: 100%;
+      }
+    }
+    max-width: calc(100vw - 2rem);
+  
+    @media only screen and (min-width: 992px) {
+      /* changed to vw so it scales up and down correctly incase components relay on available width to maintain aspect ratio (?) */
+      max-width: calc(100vw - 15.25vw);
+    }
+    @media only screen and (min-width: 1200px) {
+      max-width: 1800px;
+      padding: 0 1rem;
+    }
+  }
+  
+  .container--shop {
+    max-width: calc(100vw - 3rem);
+    @media only screen and (min-width: 992px) {
+      max-width: calc(100vw - 40px);
+    }
+  }
+  
