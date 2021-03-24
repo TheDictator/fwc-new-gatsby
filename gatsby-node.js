@@ -1,3 +1,4 @@
+const moment = require('moment');
 const path = require('path');
 
 const createPaginatedPages = require('gatsby-paginate');
@@ -95,8 +96,10 @@ exports.createPages = async ({
 	const BlogPosts = BlogPostsResult.data.allWordpressPost.edges;
 
 	BlogPosts.forEach((post, index) => {
+		const category = post.node.categories.slug;
+		const date = post.node.date;
 		createPage({
-			path: `/post/${post.node.slug}`,
+			path: `/${post.node.categories[0].slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}`,
 			component: BlogPostTemplate,
 			context: {
 				id: post.node.wordpress_id,

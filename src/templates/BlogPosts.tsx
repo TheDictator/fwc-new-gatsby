@@ -12,6 +12,7 @@ import Facebook from '../components/Facebook';
 
 import { Post, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
+const moment = require('moment');
 
 import '../styles/blog.scss';
 
@@ -49,7 +50,7 @@ export const BlogPostsPage = (props: Props) => {
 						const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
 						return (
 							<article className="post" key={node.slug}>
-								<Link to={`/post/${node.slug}`} title={node.slug}>
+								<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
 									<h1 className="black-color">{decodeHtmlCharCodes(node.title)}</h1>
 								</Link>
 								<div className="categories-container tags-container post-meta-container margin-bottom-24px">
@@ -78,13 +79,13 @@ export const BlogPostsPage = (props: Props) => {
 									</span>
 								</div>
 								{(fluid && fluid.src && fluid.src.length > 0) && (
-									<Link to={`/post/${node.slug}`} title={node.slug}>
+									<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
 										<Image fluid={fluid} alt={node.title} title={node.title} />
 									</Link>
 								)}
 								<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
 								<div className="read-more-container">
-									<Link to={`/post/${node.slug}`} title={node.slug}>
+									<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
 										<Button type="default" className="read-more">Read more</Button>
 									</Link>
 								</div>
