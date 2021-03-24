@@ -66,6 +66,7 @@
     "path": "^0.12.7",
     "prismjs": "^1.23.0",
     "react": "^16.0.0",
+    "react-cookie-consent": "^6.2.3",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.0.0"
   },

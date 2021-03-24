@@ -3,7 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Card, Row, Col, Icon } from 'antd';
+import { Button, Card, Row, Col, Icon } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -27,7 +27,7 @@ export const IndexPage = (props: Props) => {
 		<Layout location={props.location}>
 			<SEO title="Home" />
 			<Row gutter={36}>
-				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
+				<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} id="primary" className="content-area">
 					<div className="home">
 						<Card bordered={false}>
 							<Row gutter={24} type="flex" align="middle">
@@ -45,12 +45,13 @@ export const IndexPage = (props: Props) => {
 								</Col>
 							</Row>
 						</Card>
+						<section className="gray-bg align-center">
+							<Button type="primary" htmlType="button">Contact us</Button>
+							<Button type="ghost" htmlType="button">View Work</Button>
+						</section>
 					</div>
 				</Col>
-				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-				<h3>Tag Cloud</h3>
-					
-				</Col>
+				
 			</Row>
 			
 		</Layout>

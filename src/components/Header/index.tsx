@@ -1,16 +1,36 @@
 import React from 'react';
 
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
 import { Layout as AntLayout, Menu } from 'antd';
 
 import './Header.scss';
+import Image from 'gatsby-image';
 
 export interface Props {
 	location: Location;
 }
 
 export const Header = (props: Props) => {
+	const { logo } = useStaticQuery(graphql`
+	query {
+    	file(relativePath: { eq: "logo.png" }) {
+      		childImageSharp {
+        		fluid(maxWidth: 960, maxHeight: 600, quality: 100) {
+					aspectRatio
+					src
+					srcSet
+					sizes
+					base64
+					tracedSVG
+					srcWebp
+					srcSetWebp
+				}
+      		}
+		}
+		
+	}
+	`);
 	const isHomePage = (props.location.pathname === '' || props.location.pathname === '/');
 	const isAboutPage = (props.location.pathname === '/about' || props.location.pathname === '/about/');
 	const isServicesPage = (props.location.pathname === '/services' || props.location.pathname === '/about/');
@@ -18,7 +38,7 @@ export const Header = (props: Props) => {
 		<div className="header-container">
 			<AntLayout.Header className="header">
 				<Link to="/" title="Home">
-					<div className="logo" />
+					<Image fluid={logo} alt="FourthWave Consulting" title="FourthWave Consulting" />
 				</Link>
 				<Menu
 					theme="dark"

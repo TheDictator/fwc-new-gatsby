@@ -1,19 +1,12 @@
-# A starter Gatsby template for a Wordpress blog, built using Typescript and Ant Design
+# FourthWave Consulting Gatsby / Wordpress Headless Build
 
-[![Github version](https://img.shields.io/github/package-json/v/sagar7993/gatsby-wordpress-typescript-scss-blog)](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/releases)
-[![GitHub License](https://img.shields.io/github/license/sagar7993/gatsby-wordpress-typescript-scss-blog)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues-raw/sagar7993/gatsby-wordpress-typescript-scss-blog.svg)](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues)
-
-This is an opinionated starter project to help you create lightning fast PWA websites with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/), [SCSS](https://sass-lang.com/) and [Ant Design](https://github.com/ant-design/ant-design).
+This is an opinionated starter project created with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/), [SCSS](https://sass-lang.com/) and [Ant Design](https://github.com/ant-design/ant-design).
 
 - **[Gatsby](https://gatsbyjs.org)** static site generator
 - **[Wordpress](https://wordpress.com)** for content management
 - **[Typescript](https://typescriptlang.org)** for statically-typed clean JavaScript code
 - **[Ant Design](https://github.com/ant-design/ant-design)** for theming and UI
 
-## Demo
-
-https://gatsby-wordpress-typescript-scss-blog.netlify.com/
 
 ## Using the environment variables
 
@@ -223,3 +216,8 @@ Fork this repo and make a PR.
 ## License
 
 This project is licensed under the [MIT License](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/blob/master/LICENSE) - see the LICENCE.md file for details
+
+## Features / To-Do
+- [Morph Buttons for contact form](https://github.com/agungsb/react-morph-button-modal)
+- [React Tag Cloud](https://www.npmjs.com/package/react-tag-cloud)
+
