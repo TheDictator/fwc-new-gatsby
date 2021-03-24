@@ -39,7 +39,7 @@ export const BlogPostPage = (props: Props) => {
 	const categories: CategoryTagInfo[] = (props.data.wordpressPost.categories && props.data.wordpressPost.categories.length) > 0 ? props.data.wordpressPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 	const tags: CategoryTagInfo[] = (props.data.wordpressPost.tags && props.data.wordpressPost.tags.length) > 0 ? props.data.wordpressPost.tags : new Array<CategoryTagInfo>();
 	let disqusConfig = {
-		url: props.data.wordpressPost.path,
+		url: 'https://fwc-new.netlify.app/' + props.data.wordpressPost.path,
 		identifier: props.data.wordpressPost.id,
 		title: props.data.wordpressPost.title,
 	  }
