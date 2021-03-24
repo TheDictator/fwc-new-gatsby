@@ -164,6 +164,8 @@ module.exports = {
 			options: {
 				precachePages: ['/posts/*', '/post/*', '/tag/*', '/category/*', '/about']
 			}
-		}
+		},
+		
+		
 	]
 }

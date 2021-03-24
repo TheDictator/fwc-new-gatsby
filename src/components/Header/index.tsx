@@ -13,6 +13,7 @@ export interface Props {
 export const Header = (props: Props) => {
 	const isHomePage = (props.location.pathname === '' || props.location.pathname === '/');
 	const isAboutPage = (props.location.pathname === '/about' || props.location.pathname === '/about/');
+	const isServicesPage = (props.location.pathname === '/services' || props.location.pathname === '/about/');
 	return (
 		<div className="header-container">
 			<AntLayout.Header className="header">
@@ -22,7 +23,7 @@ export const Header = (props: Props) => {
 				<Menu
 					theme="dark"
 					mode="horizontal"
-					defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : ['posts'])}
+					defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : isServicesPage ? ['services'] :['posts'])}
 				>
 					<Menu.Item key="home"><Link to="/" title="Home">Home</Link></Menu.Item>
 					<Menu.Item key="posts"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>

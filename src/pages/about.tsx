@@ -30,7 +30,7 @@ export const AboutPage = (props: Props) => {
 			<Row gutter={36}>
 				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
 					<div className="about">
-						<Card>
+						<Card bordered={false}>
 							<Row gutter={24} type="flex" align="middle">
 								<Col xs={24} sm={24} md={24} lg={12} xl={14} xxl={16}>
 									{(fluid && fluid.src && fluid.src.length > 0) && (
@@ -87,10 +87,7 @@ export const AboutPage = (props: Props) => {
 					</div>
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-					<Twitter title={<h3 className="margin-bottom-36px">Twitter</h3>} />
-					<Facebook title={
-						<h3 className="margin-top-36px margin-bottom-36px">Facebook</h3>
-					} />
+				<h3>Tag Cloud</h3>
 					
 				</Col>
 			</Row>

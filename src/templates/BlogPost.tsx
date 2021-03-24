@@ -9,9 +9,6 @@ import SEO from '../components/SEO';
 
 import Comments from '../components/Comments';
 
-import Twitter from '../components/Twitter';
-import Facebook from '../components/Facebook';
-
 import { Post, CategoryTagInfo } from '../contracts/post';
 import { CommentEdges } from '../contracts/comment';
 
@@ -91,10 +88,7 @@ export const BlogPostPage = (props: Props) => {
 					{process.env && <Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />}
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-					<Twitter title={<h3 className="margin-bottom-36px">Twitter</h3>} />
-					<Facebook title={
-						<h3 className="margin-top-36px margin-bottom-36px">Facebook</h3>
-					} />
+				<h3>Tag Cloud</h3>
 					
 				</Col>
 			</Row>

@@ -8,9 +8,6 @@ import { Card, Row, Col, Icon } from 'antd';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-import Twitter from '../components/Twitter';
-import Facebook from '../components/Facebook';
-
 import { ChildImageSharp } from '../contracts/post';
 
 import '../styles/blog.scss';
@@ -32,7 +29,7 @@ export const IndexPage = (props: Props) => {
 			<Row gutter={36}>
 				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
 					<div className="home">
-						<Card>
+						<Card bordered={false}>
 							<Row gutter={24} type="flex" align="middle">
 								<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
 									<h1>FourthWave Consulting</h1>
@@ -42,9 +39,7 @@ export const IndexPage = (props: Props) => {
 								</Col>
 								<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
 									<div className="features-wrapper margin-top-36px">
-										<div className="features">
-											<h3>Welcome</h3>
-											
+										<div className="features">											
 										</div>
 									</div>
 								</Col>
@@ -53,10 +48,7 @@ export const IndexPage = (props: Props) => {
 					</div>
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-					<Twitter title={<h3 className="margin-bottom-36px">Twitter</h3>} />
-					<Facebook title={
-						<h3 className="margin-top-36px margin-bottom-36px">Facebook</h3>
-					} />
+				<h3>Tag Cloud</h3>
 					
 				</Col>
 			</Row>
@@ -69,9 +61,9 @@ export default IndexPage;
 
 export const query = graphql`
   	query {
-    	file(relativePath: { eq: "banner.jpg" }) {
+    	file(relativePath: { eq: "banner.png" }) {
       		childImageSharp {
-        		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+        		fluid(maxWidth: 960, maxHeight: 600, quality: 100) {
 					aspectRatio
 					src
 					srcSet
