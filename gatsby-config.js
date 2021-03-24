@@ -156,6 +156,12 @@ module.exports = {
 				}
 			}
 		},
+		{
+		resolve: `gatsby-plugin-disqus`,
+			options: {
+				shortname: `fourthwave`
+			}
+		},
 		'gatsby-plugin-robots-txt',
 		'gatsby-plugin-sass',
 		'gatsby-plugin-advanced-sitemap',

@@ -14,6 +14,7 @@ import { CommentEdges } from '../contracts/comment';
 
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 import '../styles/blog.scss';
 
@@ -37,6 +38,11 @@ export const BlogPostPage = (props: Props) => {
 	const fluid: FluidObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid : null;
 	const categories: CategoryTagInfo[] = (props.data.wordpressPost.categories && props.data.wordpressPost.categories.length) > 0 ? props.data.wordpressPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 	const tags: CategoryTagInfo[] = (props.data.wordpressPost.tags && props.data.wordpressPost.tags.length) > 0 ? props.data.wordpressPost.tags : new Array<CategoryTagInfo>();
+	let disqusConfig = {
+		url: props.data.wordpressPost.path,
+		identifier: props.data.wordpressPost.id,
+		title: props.data.wordpressPost.title,
+	  }
 	return (
 		<Layout location={props.location}>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
@@ -86,7 +92,8 @@ export const BlogPostPage = (props: Props) => {
 							)}
 						</div>
 					</article>
-					{process.env && <Comments slug={props.data.wordpressPost.slug} wordpress_id={props.data.wordpressPost.wordpress_id} comments={props.data.allCommentsYaml} />}
+					<Disqus config={disqusConfig}
+				/>
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
 				<h3>Tag Cloud</h3>
