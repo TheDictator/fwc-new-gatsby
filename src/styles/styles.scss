@@ -45,6 +45,8 @@ section {
         font-weight: 600;
         transition: all 0.2s;
         border-radius: 0px;
+        box-shadow: none;
+        text-shadow: none;
         &.ant-btn-primary {
             border: 2px solid #fff;
             border-radius: 0px;

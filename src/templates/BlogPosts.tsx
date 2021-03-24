@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Card, Button, Tag, Row, Col, Icon } from 'antd';
+import { Card, Button, Tag, Row, Col, Icon , List} from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -57,8 +57,12 @@ export const BlogPostsPage = (props: Props) => {
 						const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 						const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
 						return (
+							<List
+							grid={{ gutter: 16, column: 1 }}
+							>
+							  <List.Item>
 								<Card bordered={false} className="post" key={node.slug} hoverable={true}>
-									<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
+								<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
 										<h2 className="black-color">{decodeHtmlCharCodes(node.title)}</h2>
 									</Link>
 									<div className="categories-container tags-container post-meta-container margin-bottom-24px">
@@ -98,6 +102,8 @@ export const BlogPostsPage = (props: Props) => {
 										})}
 									</div>
 								</Card>
+							  </List.Item>
+						  </List>
 						);
 					})}
 					<div className="navigation-links">
