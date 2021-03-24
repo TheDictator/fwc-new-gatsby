@@ -46,6 +46,7 @@ export const BlogPostPage = (props: Props) => {
 	return (
 		<Layout location={props.location}>
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
+			<div className="container container--l">
 			<Row gutter={36}>
 				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
 					<article className="post">
@@ -99,6 +100,7 @@ export const BlogPostPage = (props: Props) => {
 				<h3>Tag Cloud</h3>
 				</Col>
 			</Row>
+			</div>
 		</Layout>
 	);
 };

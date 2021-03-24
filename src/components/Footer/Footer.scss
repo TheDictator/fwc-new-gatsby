@@ -60,24 +60,11 @@
     transition-property: transform;
     transition-duration: 0.2s;
     &:hover {
-        transform: translateY(-30px);
+        transform: translateY(-15px);
         cursor: pointer;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .footer-container {
-        padding: 1.0875rem 1.45rem;
-
-        .footer {
-            &.ant-layout-footer {
-                .footer-wrapper {
-                    .social-icons-container,
-                    .author-container {
-                        margin-top: 1.45rem;
-                    }
-                }
-            }
-        }
-    }
+   
 }
