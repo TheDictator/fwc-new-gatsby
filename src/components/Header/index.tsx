@@ -32,7 +32,9 @@ export const Header = (props: Props) => {
 	`);
 	const isHomePage = (props.location.pathname === '' || props.location.pathname === '/');
 	const isAboutPage = (props.location.pathname === '/about' || props.location.pathname === '/about/');
-	const isServicesPage = (props.location.pathname === '/services' || props.location.pathname === '/about/');
+	const isServicesPage = (props.location.pathname === '/services' || props.location.pathname === '/services/');
+	const isContactPage = (props.location.pathname === '/contact-fourth-wave-consulting' || props.location.pathname === '/contact-fourth-wave-consulting/');
+
 	return (
 		<div className="header-container">
 			<AntLayout.Header className="header">
@@ -42,11 +44,13 @@ export const Header = (props: Props) => {
 				<Menu
 					theme="dark"
 					mode="horizontal"
-					defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : isServicesPage ? ['services'] :['posts'])}>
+					defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : isServicesPage ? ['services'] : isContactPage ? ['contact'] : ['posts'])}>
 					<Menu.Item key="home"><Link to="/" title="Home">Home</Link></Menu.Item>
 					<Menu.Item key="posts"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>
 					<Menu.Item key="about"><Link to="/about" title="About">About</Link></Menu.Item>
 					<Menu.Item key="services"><Link to="/services" title="Services">Services</Link></Menu.Item>
+					<Menu.Item key="contact"><Link to="/contact-fourth-wave-consulting" title="Contact">Contact</Link></Menu.Item>
+
 				</Menu>
 			</AntLayout.Header>
 		</div>
