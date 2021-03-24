@@ -12,6 +12,8 @@ import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 
 import '../styles/blog.scss';
+import TagCloud from 'react-tag-cloud';
+
 
 export interface Props {
 	pathContext: {
@@ -34,8 +36,17 @@ export const BlogPostsPage = (props: Props) => {
             description
           }
         }
+		allWordpressTag {
+			edges {
+				node {
+					count
+					name
+				}
+			}
+		}
       }
 	`);
+
 	return (
 		<Layout location={props.location}>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
@@ -107,7 +118,11 @@ export const BlogPostsPage = (props: Props) => {
 					</div>
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-					<h3>Tag Cloud</h3>
+				{/* {site.allWordpressTag.edges.map( edge  => (
+					<div key={edge.node.name}>
+						<h3>{edge.node.name}</h3> - <span>{edge.node.count}</span>
+					</div>
+					))} */}
 				</Col>
 			</Row>
 		</Layout>
