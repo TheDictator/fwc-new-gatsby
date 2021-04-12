@@ -41,9 +41,9 @@ export const Footer = () => {
 		<div className="footer-container">
 			<div className="pre-footer">
 				<div className="container container--l">
-					<h3>Our mission is to positively impact the lives of 50,000 agency owners by Dec 31, 2030.</h3>
-					<p>Want to know more? Check these links:</p>
-					<Row gutter={36}>
+					{/* <h3>Our mission is to ...</h3>
+					<p>Want to know more? Check these links:</p> */}
+					{/* <Row gutter={36}>
 						<Col xs={24} sm={24} md={8}>
 							<Link to={`/`} title="">
 								<div className="footer-card">
@@ -65,7 +65,7 @@ export const Footer = () => {
 								</div>
 							</Link>
 						</Col>
-					</Row>
+					</Row> */}
 				</div>
 			</div>
 			

@@ -33,9 +33,9 @@ export const IndexPage = (props: Props) => {
 							<Row gutter={24} type="flex" align="middle">
 								<Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
 									<h1>FourthWave Consulting</h1>
-									{(fluid && fluid.src && fluid.src.length > 0) && (
+									{/* {(fluid && fluid.src && fluid.src.length > 0) && (
 										<Image fluid={fluid} alt="Home screen banner" title="Home screen banner" />
-									)}
+									)} */}
 								</Col>
 							</Row>
 						</Card>

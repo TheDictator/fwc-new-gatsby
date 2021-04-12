@@ -1,6 +1,6 @@
 import React, { Component, Fragment, RefObject, createRef } from 'react';
 
-import { Layout as AntLayout } from 'antd';
+import { Layout as AntLayout, Drawer } from 'antd';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -19,6 +19,7 @@ export class Layout extends Component<Props> {
 	target: RefObject<HTMLDivElement> = createRef();
 
 	render() {
+
 		return (
 			<Fragment>
 				<ReadingProgressBar target={this.target} />
@@ -28,6 +29,13 @@ export class Layout extends Component<Props> {
 						<main>{this.props.children}</main>
 					</div>
 					<Footer />
+					<Drawer
+					width={500}
+					placement="right"
+					closable={true}
+					>
+						
+					</Drawer>
 					<CookieConsent
 						location='bottom'
 						buttonText='I Accept'

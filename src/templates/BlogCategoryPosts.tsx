@@ -7,6 +7,7 @@ import { Card, Tag, Row, Col, Icon, Button } from 'antd';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
+import TagCloud from '../components/TagCloud';
 
 import { Post, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
@@ -92,7 +93,7 @@ export const BlogCategoryPostsPage = (props: Props) => {
 					</div>
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-				<h3>Tag Cloud</h3>
+				<TagCloud />
 				</Col>
 			</Row>
 		</Layout>

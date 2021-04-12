@@ -45,7 +45,6 @@ export const Header = (props: Props) => {
 					theme="dark"
 					mode="horizontal"
 					defaultSelectedKeys={isHomePage ? ['home'] : (isAboutPage ? ['about'] : isServicesPage ? ['services'] : isContactPage ? ['contact'] : ['posts'])}>
-					<Menu.Item key="home"><Link to="/" title="Home">Home</Link></Menu.Item>
 					<Menu.Item key="posts"><Link to="/posts" title="Blog">Blog</Link></Menu.Item>
 					<Menu.Item key="about"><Link to="/about" title="About">About</Link></Menu.Item>
 					<Menu.Item key="services"><Link to="/services" title="Services">Services</Link></Menu.Item>

@@ -1,13 +1,13 @@
 @import '../../styles/colors.scss';
 
 .header-container {
-    background: $primaryAccentColor;
+    background: transparent;
     min-height: 64px;
     padding: 0px 1.45rem;
 
     .header {
         &.ant-layout-header {
-            background: $primaryAccentColor;
+            background: transparent;
             padding: 0px;
             min-height: 64px;
             max-width: 960px;
@@ -24,7 +24,7 @@
             }
 
             .ant-menu {
-                background: $primaryAccentColor;
+                background: transparent;
                 line-height: 64px;
 
                 .ant-menu-item {
@@ -32,7 +32,7 @@
                     padding: 0px 12px;
 
                     a {
-                        color: $whiteColor;
+                        color: $lightBlackText;
                         font-size: 1.45rem;
                     }
 
