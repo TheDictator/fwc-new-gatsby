@@ -8,8 +8,6 @@ export interface Props {
 }
 const callbacks = {
     onWordClick: console.log,
-    onWordMouseOver: console.log,
-    getWordTooltip: word => `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`,
   }
 const options = {
     rotations: 2,
