@@ -222,3 +222,4 @@ This project is licensed under the [MIT License](https://github.com/sagar7993/ga
 - [React Tag Cloud](https://www.npmjs.com/package/react-tag-cloud)
 - [Subscribe Form in Sidebar](https://tympanus.net/Development/ButtonComponentMorph/index4.html)
 - [Featured Section, cards with categories/date](https://www.wpelevation.com/)
+- [Incorporate shape-outside text wrap](https://www.youtube.com/watch?v=sifXs4XVK7g)

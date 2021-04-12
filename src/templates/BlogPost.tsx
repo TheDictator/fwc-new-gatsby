@@ -6,6 +6,7 @@ import { Button, Tag, Row, Col, Icon } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import TagCloud from '../components/TagCloud';
 
 import Comments from '../components/Comments';
 
@@ -97,7 +98,7 @@ export const BlogPostPage = (props: Props) => {
 				/>
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-				<h3>Tag Cloud</h3>
+					<TagCloud/>
 				</Col>
 			</Row>
 			</div>
