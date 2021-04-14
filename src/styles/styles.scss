@@ -24,7 +24,14 @@ a {
         color: $primaryAccentColor;
     }
 }
-
+img {
+    max-width: 100%;
+}
+.post-content {
+    div {
+        max-width: 100%;
+    }
+}
 .gatsby-image-wrapper {
     margin-bottom: 1.45rem;
 }
