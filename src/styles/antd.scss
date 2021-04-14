@@ -115,6 +115,16 @@ textarea:focus,
         color: $whiteColor;
     }
 }
+.ant-btn-primary {
+    &:hover, &:focus, &:active {
+        background: $primaryAccentColor;
+        border: 1px solid $primaryAccentColor;
+
+    span {
+        color: $primaryAccentColor;
+    }
+    }
+}
 
 .ant-btn-default,
 .ant-btn-default:hover,

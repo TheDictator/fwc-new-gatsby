@@ -53,7 +53,7 @@ section {
             &:hover, &:active, &:focus {
                 background-color: transparent;
                 color: $primaryAccentColor;
-                border: 2px solid #fff;
+                border: 2px solid $primaryAccentColor;
             
             }
         }

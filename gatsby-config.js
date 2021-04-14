@@ -128,22 +128,6 @@ module.exports = {
 					tall: true,
 					round: false
 				},
-				twitter: {
-					enable: false,
-					containerSelector: '.twitter-container',
-					handle: process.env.GATSBY_TWITTER_SOURCE,
-					showFollowButton: true,
-					showTimeline: true,
-					showFollowerCount: true,
-					timelineTweetCount: 1,
-					width: null,
-					height: null,
-					noHeader: true,
-					noFooter: true,
-					noBorders: true,
-					noScrollbar: true,
-					transparent: true
-				},
 				facebook: {
 					enable: false,
 					containerSelector: '.facebook-container',
