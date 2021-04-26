@@ -5,7 +5,6 @@ import { Layout as AntLayout, Drawer } from 'antd';
 import Header from '../Header';
 import Footer from '../Footer';
 
-import ReadingProgressBar from '../ReadingProgressBar';
 import CookieConsent from "react-cookie-consent";
 import './Layout.scss';
 
@@ -22,7 +21,6 @@ export class Layout extends Component<Props> {
 
 		return (
 			<Fragment>
-				<ReadingProgressBar target={this.target} />
 				<AntLayout className="layout-container">
 					<Header location={this.props.location} />
 					<div className="layout" ref={this.target}>
