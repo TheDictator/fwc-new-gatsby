@@ -117,7 +117,7 @@ const { GATSBY_MY_ENVIRONMENT_VARIABLE } = process.env;
 
 If you're planning to use an already existing Wordpress blog as your CMS instead of setting everything up on your local machine, then simply ignore the instructions given in the section above. You might still want to consider installing the Wordpress plugins recommended above if you haven't already.
 
-## Ant Design
+## Ant Design / Tailwind
 
 This Gatsby starter template uses [Ant Design](https://github.com/ant-design/ant-design) for theming and UI. Although, it's not mandatory to use it for any new visual components that you might create. Feel free to build everything from scratch or use any other UI framework of your choice.
 
@@ -218,6 +218,9 @@ Fork this repo and make a PR.
 This project is licensed under the [MIT License](https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/blob/master/LICENSE) - see the LICENCE.md file for details
 
 ## Features / To-Do
+- [Algolia Search](https://github.com/janosh)
+- [SVG Icons](https://heroicons.com/)
+
 - [Morph Buttons for contact form](https://github.com/agungsb/react-morph-button-modal)
 - [React Tag Cloud](https://www.npmjs.com/package/react-tag-cloud)
 - [Subscribe Form in Sidebar](https://tympanus.net/Development/ButtonComponentMorph/index4.html)

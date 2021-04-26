@@ -159,8 +159,10 @@ module.exports = {
 				shortname: `fourthwave`
 			}
 		},
+	
+		`gatsby-plugin-sass`,
+		`gatsby-plugin-postcss`,
 		'gatsby-plugin-robots-txt',
-		'gatsby-plugin-sass',
 		'gatsby-plugin-advanced-sitemap',
 		{
 			resolve: 'gatsby-plugin-offline',

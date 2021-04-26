@@ -71,17 +71,6 @@ export const ContactPage = (props: Props) => {
 			>
 			<Input type={`hidden`} />
 			</Form.Item>
-			<Row justify="space-around">
-			<Col xs={24}>
-				<Form.Item label="Regarding..." name="subject">
-				<Radio.Group value={subject}>
-					<Radio.Button value="quote">Quote</Radio.Button>
-					<Radio.Button value="services">Services</Radio.Button>
-					<Radio.Button value="contact">Contact</Radio.Button>
-				</Radio.Group>
-				</Form.Item>
-			</Col>
-			</Row>
 			<Row justify="space-between">
 			
 			<Col xs={24} lg={24}>
