@@ -29,37 +29,37 @@ import {
   } from '@heroicons/react/outline'
   const features = [
 	{
-	  name: 'Unlimited Inboxes',
+	  name: 'SiteBuilder',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: InboxIcon,
 	},
 	{
-	  name: 'Manage Team Members',
+	  name: 'SuiteCommerce',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: UsersIcon,
 	},
 	{
-	  name: 'Spam Report',
+	  name: 'SuiteCommerce Advanced',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: TrashIcon,
 	},
 	{
-	  name: 'Compose in Markdown',
+	  name: 'Internet Marketing',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: PencilAltIcon,
 	},
 	{
-	  name: 'Team Reporting',
+	  name: 'Migrations',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: DocumentReportIcon,
 	},
 	{
-	  name: 'Saved Replies',
+	  name: 'Shopify Development',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: ReplyIcon,
 	},
 	{
-	  name: 'Email Commenting',
+	  name: 'Custom Web Applications',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: ChatAltIcon,
 	},
@@ -100,32 +100,31 @@ export const IndexPage = (props: Props) => {
                   alt="People working on laptops"
                 />
                 <div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-700"
                   style={{ mixBlendMode: 'multiply' }}
                 />
               </div>
               <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                 <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                  <span className="block text-white">Take control of your</span>
-                  <span className="block text-indigo-200">customer support</span>
+                  <span className="block text-white">Netsuite can be tricky</span>
+                  <span className="block text-blue-200">We're here to help</span>
                 </h1>
-                <p className="mt-6 max-w-lg mx-auto text-center text-xl text-indigo-200 sm:max-w-3xl">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
-                  amet fugiat veniam occaecat fugiat aliqua.
+                <p className="mt-6 max-w-lg mx-auto text-center text-xl text-blue-200 sm:max-w-3xl">
+                  With over 35 years of combined Netsuite consulting experience, FourthWave Consulting can assist you in solving your technical debt woes when it comes to Netsuite and SuiteCommerce products.
                 </p>
                 <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                   <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                     <a
                       href="#"
-                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-indigo-50 sm:px-8"
+                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 sm:px-8"
                     >
                       Get started
                     </a>
                     <a
                       href="#"
-                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
+                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
                     >
-                      Live demo
+                      Live demos
                     </a>
                   </div>
                 </div>
@@ -138,7 +137,7 @@ export const IndexPage = (props: Props) => {
         <div className="bg-gray-100">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
             <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-              Trusted by over 5 very average small businesses
+              Trusted by over 100+ small to enterprise-level businesses
             </p>
             <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
               <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -180,13 +179,13 @@ export const IndexPage = (props: Props) => {
               <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
                 <div>
                   <div>
-                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-purple-600 to-indigo-600">
+                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-600">
                       <InboxIcon className="h-6 w-6 text-white" aria-hidden="true" />
                     </span>
                   </div>
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                      Stay on top of customer support
+                      Stay on top of what matters most
                     </h2>
                     <p className="mt-4 text-lg text-gray-500">
                       Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
@@ -196,7 +195,7 @@ export const IndexPage = (props: Props) => {
                     <div className="mt-6">
                       <a
                         href="#"
-                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
                       >
                         Get started
                       </a>
@@ -244,7 +243,7 @@ export const IndexPage = (props: Props) => {
               <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
                 <div>
                   <div>
-                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-purple-600 to-indigo-600">
+                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-600">
                       <SparklesIcon className="h-6 w-6 text-white" aria-hidden="true" />
                     </span>
                   </div>
@@ -260,7 +259,7 @@ export const IndexPage = (props: Props) => {
                     <div className="mt-6">
                       <a
                         href="#"
-                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
                       >
                         Get started
                       </a>
@@ -282,10 +281,10 @@ export const IndexPage = (props: Props) => {
         </div>
 
         {/* Gradient Feature Section */}
-        <div className="bg-gradient-to-r from-purple-800 to-indigo-700">
+        <div className="bg-gradient-to-r from-blue-800 to-blue-700">
           <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">Inbox support built for efficiency</h2>
-            <p className="mt-4 max-w-3xl text-lg text-purple-200">
+            <h2 className="text-3xl font-extrabold text-white tracking-tight">Technical solutions crafted from expertise</h2>
+            <p className="mt-4 max-w-3xl text-lg text-blue-200">
               Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit
               aliquam sit nisl euismod mattis in.
             </p>
@@ -299,7 +298,7 @@ export const IndexPage = (props: Props) => {
                   </div>
                   <div className="mt-6">
                     <h3 className="text-lg font-medium text-white">{feature.name}</h3>
-                    <p className="mt-2 text-base text-purple-200">{feature.description}</p>
+                    <p className="mt-2 text-base text-blue-200">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -327,7 +326,7 @@ export const IndexPage = (props: Props) => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
             <div className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
               <h2 className="text-sm font-semibold tracking-wide uppercase">
-                <span className="bg-gradient-to-r from-purple-300 to-indigo-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">
                   Valuable Metrics
                 </span>
               </h2>
@@ -357,23 +356,23 @@ export const IndexPage = (props: Props) => {
         <div className="bg-white">
           <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to get started?</span>
-              <span className="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                Get in touch or create an account.
+              <span className="block">Ready to simplify your workflow?</span>
+              <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
+                Get in touch.
               </span>
             </h2>
             <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5">
               <a
                 href="#"
-                className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
+                className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
               >
                 Learn more
               </a>
               <a
                 href="#"
-                className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-800 bg-indigo-50 hover:bg-indigo-100"
+                className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-800 bg-blue-50 hover:bg-blue-100"
               >
-                Get started
+                Contact
               </a>
             </div>
           </div>

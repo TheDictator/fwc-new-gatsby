@@ -5,15 +5,12 @@ import Image, { FluidObject } from 'gatsby-image';
 
 import { Card, Row, Col, Icon } from 'antd';
 
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Layout from '../../components/Layout';
+import SEO from '../../components/SEO';
 
-import Twitter from '../components/Twitter';
-import Facebook from '../components/Facebook';
+import { ChildImageSharp } from '../../contracts/post';
 
-import { ChildImageSharp } from '../contracts/post';
-
-import '../styles/blog.scss';
+import '../../styles/blog.scss';
 
 export interface Props {
 	data: {
