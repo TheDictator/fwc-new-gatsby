@@ -70,10 +70,12 @@ export interface Props {
 	location: Location;
 }
 const metrics = [
-	{ id: 1, stat: '1K+', emphasis: 'Clients', rest: 'that are still thriving.' },
-	{ id: 2, stat: '5M+', emphasis: 'Revenue increased', rest: 'because of our work.' },
+	{ id: 1, stat: '1K+', emphasis: 'Clients', rest: 'still thriving.' },
+	{ id: 2, stat: '5M+', emphasis: 'Increased revenue,', rest: 'because we are cool.' },
   ]
-
+  function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
 export const IndexPage = (props: Props) => {
 	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
   const posts = [
@@ -183,7 +185,7 @@ export const IndexPage = (props: Props) => {
       
 
         {/* Alternating Feature Sections */}
-        <div className="relative pt-16 pb-32 overflow-hidden">
+        <div className="relative pt-32 pb-32 overflow-hidden">
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
           <div className="relative">
             <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
@@ -352,11 +354,14 @@ export const IndexPage = (props: Props) => {
               </div>
               <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-indigo-600">
-                    <a href={post.category.href} className="hover:underline">
+                  <a href={post.category.href} className="inline-block">
+                    <span
+                      className=
+                        'bg-blue-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold'
+                    >
                       {post.category.name}
-                    </a>
-                  </p>
+                    </span>
+                  </a>
                   <a href={post.href} className="block mt-2">
                     <p className="text-xl font-semibold text-gray-900">{post.title}</p>
                     <p className="mt-3 text-base text-gray-500">{post.description}</p>
@@ -370,15 +375,13 @@ export const IndexPage = (props: Props) => {
                     </a>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-bold text-gray-900">
                       <a href={post.author.href} className="hover:underline">
                         {post.author.name}
                       </a>
                     </p>
                     <div className="flex space-x-1 text-sm text-gray-500">
                       <time dateTime={post.datetime}>{post.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingTime} read</span>
                     </div>
                   </div>
                 </div>
@@ -441,7 +444,7 @@ export const IndexPage = (props: Props) => {
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
               <span className="block">Ready to solve your woes?</span>
               <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
-                  Contact Us.
+                  Contact Us. The first hour is free.
               </span>
             </h2>
             <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5">
