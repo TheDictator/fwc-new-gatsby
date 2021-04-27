@@ -191,14 +191,10 @@ export const IndexPage = (props: Props) => {
             <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
               <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
                 <div>
-                  <div>
-                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-600">
-                      <InboxIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                    </span>
-                  </div>
+                 
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                      All About <u>Your</u> Business
+                      All About <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">Your</span> Business
                     </h2>
                     <p className="mt-4 text-lg text-gray-500">
                       Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
@@ -255,11 +251,7 @@ export const IndexPage = (props: Props) => {
             <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
               <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
                 <div>
-                  <div>
-                    <span className="h-12 w-12 rounded-md flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-600">
-                      <SparklesIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                    </span>
-                  </div>
+                
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
                       Custom Web Applications
@@ -323,7 +315,8 @@ export const IndexPage = (props: Props) => {
       </div>
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center">
-          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">From the blog</h2>
+          
+          <h2 className="text-3xl tracking-tight font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent sm:text-4xl">From The Blog</h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
             See what we've been working on and the stay up-to-date on anything and everything NetSuite.
           </p>
@@ -345,8 +338,6 @@ export const IndexPage = (props: Props) => {
                 </li>
               );
             })} */}
-
-
           {posts.map((post) => (
             <div key={post.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
               <div className="flex-shrink-0">

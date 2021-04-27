@@ -138,11 +138,7 @@ export const Footer = () => {
                       </li>
                     ))}
                   </ul>
-
-                 
-
                 </div>
-                
               </div>
             </div>
             <div className="mt-12 xl:mt-0">
@@ -177,14 +173,14 @@ export const Footer = () => {
             </div>
           </div>
           <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between lg:mt-16">
-            <div className="flex space-x-6 md:order-2">
+            {/* <div className="flex space-x-6 md:order-2">
               {footerNavigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
-            </div>
+            </div> */}
             <p className="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
               &copy; 2021 FourthWave Consulting, Inc. All rights reserved.
             </p>

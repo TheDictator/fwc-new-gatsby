@@ -108,7 +108,7 @@ export const Header = (props: Props) => {
               <div>
                 <a href="/" className="flex">
                   <span className="sr-only">FourthWave Consulting</span>
-					        <img className="h-8 w-auto sm:h-10" src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png" alt="Author Bio" title="Author Bio" data-pin-nopin="true" />
+					        <img className="h-16 w-auto sm:h-14" src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png" alt="Author Bio" title="Author Bio" data-pin-nopin="true" />
                 </a>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
