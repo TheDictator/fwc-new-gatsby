@@ -6,26 +6,26 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import './Footer.scss';
 const footerNavigation = {
 	services: [
-	  { name: 'SiteBuilder', href: '#' },
-	  { name: 'SuiteCommerce', href: '#' },
-	  { name: 'SuiteCommerce Advanced', href: '#' },
-	  { name: 'Internet Marketing', href: '#' },
-	  { name: 'Migrations', href: '#' },
-	  { name: 'Shopify Development', href: '#' },
-	  { name: 'Custom Web Applications', href: '#' },
+	  { name: 'SiteBuilder', href: '/services/site-builder'},
+	  { name: 'SuiteCommerce', href: '/services/suite-commerce'},
+	  { name: 'SuiteCommerce Advanced', href: '/services/suite-commerce-advanced'},
+	  { name: 'Internet Marketing', href: '/services/internet-marketing'},
+	  { name: 'Migrations', href: '/services/migrations'},
+	  { name: 'Shopify Development', href: '/services/shopify-development'},
+	  { name: 'Custom Web Applications', href: '/services/custom-web-development'},
 	],
-	support: [
-	  { name: 'Contact', href: '#' },
-	  { name: 'Guides', href: '#' },
-	  { name: 'Extensions', href: '#' },
+	resources: [
+    { name: 'Blog', href: '/blog' },
+	  { name: 'Contact', href: '/contact-fourth-wave-consulting' },
+	  { name: 'Demos', href: '#' },
 	],
 	company: [
 	  { name: 'About', href: '#' },
-	  { name: 'Blog', href: '/blog' },
+    { name: 'Our Work', href: '/work' },
+    { name: 'Privacy Policy', href: '#' },
 	],
 	legal: [
-	  { name: 'Privacy Policy', href: '#' },
-	  { name: 'Terms & Conditions', href: '#' },
+	  
 	],
 	social: [
 	  {
@@ -111,21 +111,7 @@ export const Footer = () => {
                   </ul>
                 </div>
                 <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
-                  <ul className="mt-4 space-y-4">
-                    {footerNavigation.support.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
                   <ul className="mt-4 space-y-4">
                     {footerNavigation.company.map((item) => (
                       <li key={item.name}>
@@ -135,11 +121,16 @@ export const Footer = () => {
                       </li>
                     ))}
                   </ul>
+                  
+
                 </div>
-                <div className="mt-12 md:mt-0">
-                  <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+              </div>
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+
+                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
                   <ul className="mt-4 space-y-4">
-                    {footerNavigation.legal.map((item) => (
+                    {footerNavigation.resources.map((item) => (
                       <li key={item.name}>
                         <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
                           {item.name}
@@ -147,7 +138,11 @@ export const Footer = () => {
                       </li>
                     ))}
                   </ul>
+
+                 
+
                 </div>
+                
               </div>
             </div>
             <div className="mt-12 xl:mt-0">

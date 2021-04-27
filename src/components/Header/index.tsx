@@ -24,6 +24,7 @@ import {
   OfficeBuildingIcon,
   PhoneIcon,
   PlayIcon,
+  ReplyIcon,
   ShieldCheckIcon,
   UserGroupIcon,
   ViewGridIcon,
@@ -49,7 +50,7 @@ const services = [
     name: 'NS Migrations',
     description: "Connect with third-party tools that you're already using.",
     href: '/services/migrations',
-    icon: ViewGridIcon,
+    icon: ReplyIcon,
   },
 ]
 const callsToAction = [
@@ -58,8 +59,9 @@ const callsToAction = [
 ]
 const company = [
   { name: 'About', href: '/about', icon: InformationCircleIcon },
-  { name: 'Our Work', href: '#', icon: OfficeBuildingIcon },
+  { name: 'Our Work', href: '/work', icon: OfficeBuildingIcon },
   { name: 'Privacy Policy', href: '/privacy-policy', icon: ShieldCheckIcon },
+  { name: 'Demos', href: '/demos', icon: DesktopComputerIcon },
 ]
 const resources = [
   { name: 'Blog', href: '/blog', icon: GlobeAltIcon },
@@ -106,9 +108,7 @@ export const Header = (props: Props) => {
               <div>
                 <a href="/" className="flex">
                   <span className="sr-only">FourthWave Consulting</span>
-				  {(fluid && fluid.src && fluid.src.length > 0) && (
-					<Image className="h-8 w-auto sm:h-10" fluid={fluid} alt="Author Bio" title="Author Bio" data-pin-nopin="true" />
-				)}
+					        <img className="h-8 w-auto sm:h-10" src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png" alt="Author Bio" title="Author Bio" data-pin-nopin="true" />
                 </a>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
@@ -335,8 +335,8 @@ export const Header = (props: Props) => {
                     <div>
                       <img
                         className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-                        alt="Workflow"
+                        src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png"
+                        alt="FourthWave Consulting"
                       />
                     </div>
                     <div className="-mr-2">

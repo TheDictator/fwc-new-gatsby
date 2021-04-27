@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { graphql } from 'gatsby';
-import Image, { FluidObject } from 'gatsby-image';
-
-import { Button, Card, Row, Col, Icon } from 'antd';
+import { FluidObject } from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -12,61 +10,52 @@ import { ChildImageSharp } from '../contracts/post';
 
 import '../styles/blog.scss';
 import {
-	AnnotationIcon,
-	ChatAlt2Icon,
-	ChatAltIcon,
+  CogIcon,
 	DocumentReportIcon,
-	HeartIcon,
+  ChartBarIcon,
 	InboxIcon,
-	MenuIcon,
+  OfficeBuildingIcon,
 	PencilAltIcon,
-	QuestionMarkCircleIcon,
+  PlusIcon,
 	ReplyIcon,
 	SparklesIcon,
-	TrashIcon,
-	UsersIcon,
-	XIcon,
   } from '@heroicons/react/outline'
+
   const features = [
 	{
 	  name: 'SiteBuilder',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: InboxIcon,
+	  icon: PencilAltIcon,
 	},
 	{
 	  name: 'SuiteCommerce',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: UsersIcon,
+	  icon: OfficeBuildingIcon,
 	},
 	{
 	  name: 'SuiteCommerce Advanced',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: TrashIcon,
+	  icon: PlusIcon,
 	},
 	{
 	  name: 'Internet Marketing',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: PencilAltIcon,
+	  icon: ChartBarIcon,
 	},
 	{
 	  name: 'Migrations',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: DocumentReportIcon,
+	  icon: ReplyIcon,
 	},
 	{
 	  name: 'Shopify Development',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: ReplyIcon,
+	  icon: DocumentReportIcon,
 	},
 	{
 	  name: 'Custom Web Applications',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: ChatAltIcon,
-	},
-	{
-	  name: 'Connect with Customers',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: HeartIcon,
+	  icon: CogIcon,
 	},
   ]
 export interface Props {
@@ -76,10 +65,8 @@ export interface Props {
 	location: Location;
 }
 const metrics = [
-	{ id: 1, stat: '8K+', emphasis: 'Companies', rest: 'use laoreet amet lacus nibh integer quis.' },
-	{ id: 2, stat: '25K+', emphasis: 'Countries around the globe', rest: 'lacus nibh integer quis.' },
-	{ id: 3, stat: '98%', emphasis: 'Customer satisfaction', rest: 'laoreet amet lacus nibh integer quis.' },
-	{ id: 4, stat: '12M+', emphasis: 'Issues resolved', rest: 'lacus nibh integer quis.' },
+	{ id: 1, stat: '1K+', emphasis: 'Clients', rest: 'that are still thriving.' },
+	{ id: 2, stat: '5M+', emphasis: 'Revenue increased', rest: 'because of our work.' },
   ]
 
 export const IndexPage = (props: Props) => {
@@ -92,7 +79,7 @@ export const IndexPage = (props: Props) => {
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
+            <div className="relative shadow-xl sm:rounded-2xl sm:rounded-t-none sm:overflow-hidden">
               <div className="absolute inset-0">
                 <img
                   className="h-full w-full object-cover"
@@ -124,7 +111,7 @@ export const IndexPage = (props: Props) => {
                       href="/services"
                       className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
                     >
-                     Our Services
+                     Our services
                     </a>
                   </div>
                 </div>
@@ -133,43 +120,7 @@ export const IndexPage = (props: Props) => {
           </div>
         </div>
 
-        {/* Logo Cloud */}
-        <div className="bg-gray-100">
-          <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-              Trusted by over 100+ small to enterprise-level businesses
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
-              </div>
-              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
-              </div>
-              <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                  alt="StaticKit"
-                />
-              </div>
-              <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                  alt="Transistor"
-                />
-              </div>
-              <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-                <img
-                  className="h-12"
-                  src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                  alt="Workcation"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
         {/* Alternating Feature Sections */}
         <div className="relative pt-16 pb-32 overflow-hidden">
@@ -185,7 +136,7 @@ export const IndexPage = (props: Props) => {
                   </div>
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                      Stay on top of what matters most
+                      Netsuite At The Core
                     </h2>
                     <p className="mt-4 text-lg text-gray-500">
                       Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
@@ -249,12 +200,10 @@ export const IndexPage = (props: Props) => {
                   </div>
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                      Better understand your customers
+                      Custom Web Applications
                     </h2>
                     <p className="mt-4 text-lg text-gray-500">
-                      Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                      porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at.
-                      Lectus viverra dui tellus ornare pharetra.
+                      It doesn't just stop at NetSuite. Our vast developmental knowledge and experience have you covered, regardless of technical debt.
                     </p>
                     <div className="mt-6">
                       <a
@@ -327,11 +276,11 @@ export const IndexPage = (props: Props) => {
             <div className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
               <h2 className="text-sm font-semibold tracking-wide uppercase">
                 <span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">
-                  Valuable Metrics
+                  Valuable Development
                 </span>
               </h2>
               <p className="mt-3 text-3xl font-extrabold text-white">
-                Get actionable data that will help grow your business
+                Get code that will help grow your business
               </p>
               <p className="mt-5 text-lg text-gray-300">
                 Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing quis in viverra tristique sem. Ornare
@@ -356,9 +305,9 @@ export const IndexPage = (props: Props) => {
         <div className="bg-white">
           <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to simplify your workflow?</span>
+              <span className="block">Ready to solve your woes?</span>
               <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
-                Get in touch.
+                  Contact Us.
               </span>
             </h2>
             <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5">
