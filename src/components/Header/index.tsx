@@ -5,7 +5,9 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { Layout as AntLayout, Menu, Col, Button, Row } from 'antd';
 
 import './Header.scss';
-import Image from 'gatsby-image';
+import Image, { FluidObject } from 'gatsby-image';
+
+import { ChildImageSharp } from '../../contracts/post';
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
@@ -51,22 +53,17 @@ const services = [
   },
 ]
 const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+  { name: 'View All Services', href: '/services', icon: CheckCircleIcon },
+  { name: 'Contact Us', href: '/contact-fourth-wave-consulting', icon: PhoneIcon },
 ]
 const company = [
   { name: 'About', href: '/about', icon: InformationCircleIcon },
-  { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
-  { name: 'Press', href: '#', icon: NewspaperIcon },
-  { name: 'Careers', href: '#', icon: BriefcaseIcon },
-  { name: 'Privacy', href: '/privacy-policy', icon: ShieldCheckIcon },
+  { name: 'Our Work', href: '#', icon: OfficeBuildingIcon },
+  { name: 'Privacy Policy', href: '/privacy-policy', icon: ShieldCheckIcon },
 ]
 const resources = [
-  { name: 'Community', href: '#', icon: UserGroupIcon },
-  { name: 'Partners', href: '#', icon: GlobeAltIcon },
-  { name: 'Guides', href: '#', icon: BookmarkAltIcon },
-  { name: 'Webinars', href: '#', icon: DesktopComputerIcon },
+  { name: 'Blog', href: '/blog', icon: GlobeAltIcon },
+  { name: 'Updates', href: '/updates', icon: UserGroupIcon },
 ]
 const blogPosts = [
   {
@@ -90,8 +87,15 @@ const blogPosts = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
+export interface Props {
+	data: {
+		file: ChildImageSharp;
+	};
+	location: Location;
+}
 export const Header = (props: Props) => {
+	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
+
   return (
     <Popover className="relative bg-white">
       {({ open }) => (
@@ -101,16 +105,14 @@ export const Header = (props: Props) => {
             <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
               <div>
                 <a href="/" className="flex">
-                  <span className="sr-only">Workflow</span>
-                  <img
-                    className="h-8 w-auto sm:h-10"
-                    src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
-                    alt=""
-                  />
+                  <span className="sr-only">FourthWave Consulting</span>
+				  {(fluid && fluid.src && fluid.src.length > 0) && (
+					<Image className="h-8 w-auto sm:h-10" fluid={fluid} alt="Author Bio" title="Author Bio" data-pin-nopin="true" />
+				)}
                 </a>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100">
                   <span className="sr-only">Open menu</span>
                   <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -123,7 +125,7 @@ export const Header = (props: Props) => {
                         <Popover.Button
                           className={classNames(
                             open ? 'text-gray-900' : 'text-gray-500',
-                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900'
                           )}
                         >
                           <span>Services</span>
@@ -196,19 +198,16 @@ export const Header = (props: Props) => {
                       </>
                     )}
                   </Popover>
-                  <a href="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                    About
-                  </a>
                   <Popover>
                     {({ open }) => (
                       <>
                         <Popover.Button
                           className={classNames(
                             open ? 'text-gray-900' : 'text-gray-500',
-                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900'
                           )}
                         >
-                          <span>Blog & More</span>
+                          <span>Resources</span>
                           <ChevronDownIcon
                             className={classNames(
                               open ? 'text-gray-600' : 'text-gray-400',
@@ -237,7 +236,7 @@ export const Header = (props: Props) => {
                               <div className="bg-gray-50 w-1/2" />
                             </div>
                             <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
-                              <nav className="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
+                              <nav className="grid gap-y-10 px-4 py-8 bg-white sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                                 <div>
                                   <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
                                   <ul className="mt-5 space-y-6">
@@ -257,27 +256,7 @@ export const Header = (props: Props) => {
                                     ))}
                                   </ul>
                                 </div>
-                                <div>
-                                  <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                                    Resources
-                                  </h3>
-                                  <ul className="mt-5 space-y-6">
-                                    {resources.map((item) => (
-                                      <li key={item.name} className="flow-root">
-                                        <a
-                                          href={item.href}
-                                          className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
-                                        >
-                                          <item.icon
-                                            className="flex-shrink-0 h-6 w-6 text-gray-400"
-                                            aria-hidden="true"
-                                          />
-                                          <span className="ml-4">{item.name}</span>
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
+                                
                               </nav>
                               <div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                                 <div>
@@ -307,7 +286,7 @@ export const Header = (props: Props) => {
                                   </ul>
                                 </div>
                                 <div className="mt-6 text-sm font-medium">
-                                  <a href="#" className="text-blue-600 hover:text-blue-500">
+                                  <a href="/blog" className="text-blue-600 hover:text-blue-500">
                                     {' '}
                                     View all posts <span aria-hidden="true">&rarr;</span>
                                   </a>
@@ -321,11 +300,11 @@ export const Header = (props: Props) => {
                   </Popover>
                 </Popover.Group>
                 <div className="flex items-center md:ml-12">
-                  <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                    Something
+                  <a href="/blog" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                    Blog
                   </a>
                   <a
-                    href="#"
+                    href="/contact-fourth-wave-consulting"
                     className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                   >
                     Contact
@@ -361,7 +340,7 @@ export const Header = (props: Props) => {
                       />
                     </div>
                     <div className="-mr-2">
-                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                      <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100">
                         <span className="sr-only">Close menu</span>
                         <XIcon className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
@@ -384,9 +363,9 @@ export const Header = (props: Props) => {
                         ))}
                       </div>
                       <div className="mt-8 text-base">
-                        <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
+                        <a href="/services" className="font-medium text-blue-600 hover:text-blue-500">
                           {' '}
-                          View all products <span aria-hidden="true">&rarr;</span>
+                          View all services <span aria-hidden="true">&rarr;</span>
                         </a>
                       </div>
                     </nav>
@@ -399,10 +378,6 @@ export const Header = (props: Props) => {
                     </a>
 
                     <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Docs
-                    </a>
-
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                       Company
                     </a>
 
@@ -410,27 +385,22 @@ export const Header = (props: Props) => {
                       Resources
                     </a>
 
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href="/blog" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                       Blog
                     </a>
 
-                    <a href="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                      Contact Sales
+                    <a href="/contact-fourth-wave-consulting" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
+                      Contact
                     </a>
                   </div>
                   <div className="mt-6">
                     <a
-                      href="#"
+                      href="/contact-fourth-wave-consulting"
                       className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                     >
-                      Sign up
+                      Contact Us
                     </a>
-                    <p className="mt-6 text-center text-base font-medium text-gray-500">
-                      Existing customer?{' '}
-                      <a href="#" className="text-blue-600 hover:text-blue-500">
-                        Sign in
-                      </a>
-                    </p>
+                    
                   </div>
                 </div>
               </div>
@@ -443,3 +413,22 @@ export const Header = (props: Props) => {
 };
 
 export default Header;
+
+export const query = graphql`
+  	query {
+    	file(relativePath: { eq: "logo.png" }) {
+      		childImageSharp {
+        		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+					aspectRatio
+					src
+					srcSet
+					sizes
+					base64
+					tracedSVG
+					srcWebp
+					srcSetWebp
+				}
+      		}
+		}
+  	}
+`;
