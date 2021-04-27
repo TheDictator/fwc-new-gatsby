@@ -23,8 +23,13 @@ import {
 
   const features = [
 	{
-	  name: 'SiteBuilder',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+	  name: 'NetSuite Site Builder Web Sites',
+	  description: 'Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress',
+	  icon: PencilAltIcon,
+	},
+  {
+	  name: 'NetSuite Reference Checkout and My Account',
+	  description: 'Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.',
 	  icon: PencilAltIcon,
 	},
 	{
@@ -71,6 +76,62 @@ const metrics = [
 
 export const IndexPage = (props: Props) => {
 	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
+  const posts = [
+    {
+      title: 'Boost your conversion rate',
+      href: '#',
+      category: { name: 'SEO', href: '#' },
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+      date: 'Mar 16, 2020',
+      datetime: '2020-03-16',
+      imageUrl:
+        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      readingTime: '6 min',
+      author: {
+        name: 'David Norris',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+    {
+      title: 'How to use search engine optimization to drive sales',
+      href: '#',
+      category: { name: 'SiteBuilder', href: '#' },
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+      date: 'Mar 10, 2020',
+      datetime: '2020-03-10',
+      imageUrl:
+        'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      readingTime: '4 min',
+      author: {
+        name: 'Kevin Carpenter',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+    {
+      title: 'Improve your customer experience',
+      href: '#',
+      category: { name: 'SuiteCommerce', href: '#' },
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+      date: 'Feb 12, 2020',
+      datetime: '2020-02-12',
+      imageUrl:
+        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      readingTime: '11 min',
+      author: {
+        name: 'David Norris',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+  ]
 	return (
 		<Layout location={props.location}>
 			<SEO title="Home" />
@@ -120,6 +181,81 @@ export const IndexPage = (props: Props) => {
           </div>
         </div>
 
+
+
+  <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+      <div className="absolute inset-0">
+        <div className="bg-white h-1/3 sm:h-2/3" />
+      </div>
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">From the blog</h2>
+          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+            See what we've been working on and the stay up-to-date on anything and everything NetSuite.
+          </p>
+        </div>
+        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            {/* {data.allWordpressPost.edges.node.map((article) => {
+              return (
+                <li className="itemNews">
+                  <span>{article.date}</span>
+                  {article.tags && article.tags.map((prop) => {
+                    return <span>{prop.name}</span>;
+                  })}
+                  {article.featured_media && article.featured_media.map((prop) => {
+                    return (
+                      <div className="itemImage">{article.source_url}</div>
+                    );
+                  })}
+                  <div className="itemTitle">{article.title}</div>
+                </li>
+              );
+            })} */}
+
+
+          {posts.map((post) => (
+            <div key={post.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+              <div className="flex-shrink-0">
+                <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
+              </div>
+              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-indigo-600">
+                    <a href={post.category.href} className="hover:underline">
+                      {post.category.name}
+                    </a>
+                  </p>
+                  <a href={post.href} className="block mt-2">
+                    <p className="text-xl font-semibold text-gray-900">{post.title}</p>
+                    <p className="mt-3 text-base text-gray-500">{post.description}</p>
+                  </a>
+                </div>
+                <div className="mt-6 flex items-center">
+                  <div className="flex-shrink-0">
+                    <a href={post.author.href}>
+                      <span className="sr-only">{post.author.name}</span>
+                      <img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt="" />
+                    </a>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-gray-900">
+                      <a href={post.author.href} className="hover:underline">
+                        {post.author.name}
+                      </a>
+                    </p>
+                    <div className="flex space-x-1 text-sm text-gray-500">
+                      <time dateTime={post.datetime}>{post.date}</time>
+                      <span aria-hidden="true">&middot;</span>
+                      <span>{post.readingTime} read</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
       
 
         {/* Alternating Feature Sections */}
@@ -136,7 +272,7 @@ export const IndexPage = (props: Props) => {
                   </div>
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                      Netsuite At The Core
+                      All About <u>Your</u> Business
                     </h2>
                     <p className="mt-4 text-lg text-gray-500">
                       Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
@@ -334,21 +470,69 @@ export const IndexPage = (props: Props) => {
 
 export default IndexPage;
 
-export const query = graphql`
-  	query {
-    	file(relativePath: { eq: "banner.png" }) {
-      		childImageSharp {
-        		fluid(maxWidth: 960, maxHeight: 600, quality: 100) {
-					aspectRatio
-					src
-					srcSet
-					sizes
-					base64
-					tracedSVG
-					srcWebp
-					srcSetWebp
-				}
-      		}
-		}
-	}
-`;
+export const pageQuery = graphql`
+  query IndexQuery {
+    allWordpressPost(limit: 6) {
+      edges {
+        node {
+          id
+          slug
+          status
+          template
+          format
+          wordpress_id
+          title
+          excerpt
+          date(formatString: "MMMM DD, YYYY")
+          modified(formatString: "MMMM DD, YYYY")
+          author {
+            id
+            name
+            url
+            description
+            link
+            slug
+            path
+            wordpress_id
+          }
+          featured_media {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                  base64
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                }
+              }
+            }
+          }
+          categories {
+            id
+            link
+            wordpress_id
+            count
+            description
+            name
+            slug
+            path
+          }
+          tags {
+            id
+            link
+            wordpress_id
+            count
+            description
+            name
+            slug
+            path
+          }
+        }
+      }
+    }
+  }
+`

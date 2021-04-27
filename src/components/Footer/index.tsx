@@ -150,7 +150,7 @@ export const Footer = () => {
                 Subscribe to our newsletter
               </h3>
               <p className="mt-4 text-base text-gray-500">
-                The latest news, articles, and resources, sent to your inbox weekly.
+                The latest updates, articles, and resources, sent to your inbox.
               </p>
               <form className="mt-4 sm:flex sm:max-w-md">
                 <label htmlFor="emailAddress" className="sr-only">
