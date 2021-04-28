@@ -90,7 +90,7 @@ export const Footer = () => {
 	return (
 		
 		
-		<footer className="bg-gray-50" aria-labelledby="footerHeading">
+		<footer className="bg-gray-800" aria-labelledby="footerHeading">
         <h2 id="footerHeading" className="sr-only">
           Footer
         </h2>
@@ -103,7 +103,7 @@ export const Footer = () => {
                   <ul className="mt-4 space-y-4">
                     {footerNavigation.services.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                        <a href={item.href} className="text-base text-gray-500 hover:text-white">
                           {item.name}
                         </a>
                       </li>
@@ -115,7 +115,7 @@ export const Footer = () => {
                   <ul className="mt-4 space-y-4">
                     {footerNavigation.company.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                        <a href={item.href} className="text-base text-gray-500 hover:text-white">
                           {item.name}
                         </a>
                       </li>
@@ -132,7 +132,7 @@ export const Footer = () => {
                   <ul className="mt-4 space-y-4">
                     {footerNavigation.resources.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                        <a href={item.href} className="text-base text-gray-500 hover:text-white">
                           {item.name}
                         </a>
                       </li>
@@ -158,7 +158,7 @@ export const Footer = () => {
                   id="emailAddress"
                   autoComplete="email"
                   required
-                  className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:placeholder-gray-400"
+                  className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-white focus:border-white focus:placeholder-gray-400"
                   placeholder="Enter your email"
                 />
                 <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
