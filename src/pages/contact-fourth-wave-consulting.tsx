@@ -1,17 +1,14 @@
 import React from 'react';
 
 import { graphql, navigate } from 'gatsby';
-import { FluidObject } from 'gatsby-image';
 
-import { Row, Col, Button, Form, Input, Radio } from 'antd';
-const { TextArea } = Input;
+import { Row, Col } from 'antd';
+import TagCloud from '../components/TagCloud';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import '../styles/blog.scss';
-
-
 
 export const ContactPage = (props: Props) => {
 	const formName = `contact`;
@@ -49,74 +46,37 @@ export const ContactPage = (props: Props) => {
 			<SEO title="Contact Us" />
 			<Row gutter={36}>
 				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
-					<h1>Contact Us</h1>
+					<h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Contact Us</h1>
 					<form
 						name={formName}
 						data-netlify="true"
 						data-netlify-honeypot="bot-field"
 						hidden
 					>
-						<input type="text" name="subject" />
 						<input type="text" name="name" />
 						<input type="email" name="email" />
 						<textarea name="message"></textarea>
 					</form>
-					<Form name="cf" method="post" onFinish={handleSubmit} layout="vertical">
-			{/* This is the hidden field that the netlify-honeypot uses. */}
-			<Form.Item
-			label="Don't fill this out"
-			className={`hidden`}
-			style={{ display: `none` }}
-			name="bot-field"
-			>
-			<Input type={`hidden`} />
-			</Form.Item>
-			<Row justify="space-between">
-			
-			<Col xs={24} lg={24}>
-				<Form.Item
-				label="Name"
-				rules={[{ required: true, message: `Please enter your name.` }]}
-				name="name"
-				>
-				<Input placeholder="Name" />
-				</Form.Item>
-
-				<Form.Item
-				label="Email"
-				rules={[
-					{
-					required: true,
-					type: `email`,
-					message: `Please enter your email.`
-					}
-				]}
-				name="email"
-				>
-				<Input placeholder="Your Email" />
-				</Form.Item>
-
-				<Form.Item
-				label="Message"
-				rules={[
-					{ required: true, message: `Please enter your message.` }
-				]}
-				name="message"
-				>
-				<TextArea placeholder="Your Message" rows={5} />
-				</Form.Item>
-
-				<Form.Item>
-				<Button type="primary" htmlType="submit" disabled={false}>
-					Send Message
-				</Button>
-				</Form.Item>
-			</Col>
-			</Row>
-		</Form>
+					<form name="cf" method="POST" data-netlify="true" onSubmit={handleSubmit} className="display-flex flex-col my-24">
+						<input type="hidden" name="form-name" value="cf" />
+						<div>
+							<label>Your Name:</label>
+							<input type="text" name="name" required className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-white focus:border-blue-400 focus:placeholder-gray-400"/>
+						</div>
+						<div>
+							<label>Your Email:</label>
+							<input type="email" name="email" required className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-white focus:border-blue-400 focus:placeholder-gray-400"/>
+						</div>
+						<div>
+							<label>Message:</label>
+							<textarea name="message" required className="appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-white focus:border-blue-400 focus:placeholder-gray-400" />
+						</div>
+						<button type="submit" className="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700">Send</button>
+						</form>
+				
 				</Col>
 				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-				<h3>Tag Cloud</h3>
+					<TagCloud/>
 				</Col>
 			</Row>
 		</Layout>

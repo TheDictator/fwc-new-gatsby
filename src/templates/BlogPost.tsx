@@ -89,7 +89,7 @@ export const BlogPostPage = (props: Props) => {
 							)}
 							{props.pageContext.previous && props.pageContext.previous.slug && (
 								<Link to={`/${props.pageContext.previous.categories[0].slug}/${moment(props.pageContext.previous.date).format('YYYY')}/${moment(props.pageContext.previous.date).format('MM')}/${props.pageContext.previous.slug}`} title={props.pageContext.previous.slug}>
-								<Button type="primary">Go to Next Post</Button>
+									<Button type="primary">Go to Next Post</Button>
 								</Link>
 							)}
 						</div>
