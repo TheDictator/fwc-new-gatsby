@@ -50,83 +50,76 @@ export const BlogPostsPage = (props: Props) => {
 	return (
 		<Layout location={props.location}>
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
-			<Row gutter={36} className="posts">
-				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
+			<div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
 					{group.map(({ node }: { node: Post }) => {
 						const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
 						const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 						const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
 						return (
-							<List
-							grid={{ gutter: 16, column: 1 }}
-							>
-							  <List.Item>
-								<Card bordered={false} className="post" key={node.slug} hoverable={true}>
-								<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
-										<h2 className="black-color">{decodeHtmlCharCodes(node.title)}</h2>
-									</Link>
-									<div className="categories-container tags-container post-meta-container margin-bottom-24px">
-										{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
+							  <div key={node.slug} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+								<div className="flex-shrink-0">
+								  <img className="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="" />
+							  	</div>
+								
+								<div className="flex-1 bg-white p-6 flex flex-col justify-between">
+									<div className="flex-1">
+									{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 											return (
-												<Tag key={categoryIndex}>
-													<Link to={`/category/${category.slug}`} title={category.name}>
-														<Icon type="folder" />{capitalizeFirstLetter(category.name)}
-													</Link>
-												</Tag>
+												<a  key={categoryIndex} href={`/category/${category.slug}`} className="inline-block" title={category.name}>
+													<span
+													className=
+														'bg-blue-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold'
+													>
+													{capitalizeFirstLetter(category.name)}
+													</span>
+												</a>
 											);
 										})}
+									<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} className="block mt-2">
+										<p className="text-xl font-semibold text-gray-900">{node.title}</p>
+										<div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }}></div>
+									</a>
 									</div>
-									<div className="author-container">
-									<span className="post-meta margin-left-2px">
-										<span className="author">{capitalizeFirstLetter(node.author.name)}</span>
-										<span className="separator"></span>
-										<span className="date">{(node.modified && node.modified.length > 0) ? node.modified : node.date}</span>
-									</span>
+									<div className="mt-6 flex items-center">
+									<div className="flex-shrink-0">
+										<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`}>
+										<span className="sr-only">{capitalizeFirstLetter(node.author.name)}</span>
+										<img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="" />
+										</a>
 									</div>
-									{(fluid && fluid.src && fluid.src.length > 0) && (
-										<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} title={node.slug}>
-											<Image fluid={fluid} alt={node.title} title={node.title} />
-										</Link>
-									)}
-									<div className="post-excerpt" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }} />
-									<div className="post-footer">
-										<h4>Tagged With:</h4>
-									{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
-											return (
-												<Tag key={tagIndex}>
-													<Link to={`/tag/${tag.slug}`} title={tag.name}>
-														{capitalizeFirstLetter(tag.name)}
-													</Link>
-												</Tag>
-											);
-										})}
+									<div className="ml-3">
+										<p className="text-sm font-bold text-gray-900">
+										<a className="hover:underline">
+										{capitalizeFirstLetter(node.author.name)}
+										</a>
+										</p>
+										<div className="flex space-x-1 text-sm text-gray-500">
+										<time dateTime={node.date}>{(node.modified && node.modified.length > 0) ? node.modified : node.date}</time>
+										</div>
 									</div>
-								</Card>
-							  </List.Item>
-						  </List>
+									</div>
+								</div>
+							</div>
 						);
 					})}
-					<div className="navigation-links">
-						{index > 1 && (
-							<div className="previous-link">
-								<Link to={`/posts/${previousUrl}`} title={`/posts/${previousUrl}`}>
-									<Button type="primary">Go to Previous Page</Button>
-								</Link>
-							</div>
-						)}
-						{index <= (pageCount - 1) && (
-							<div className="next-link">
-								<Link to={`/posts/${nextUrl}`} title={`/posts/${nextUrl}`}>
-									<Button type="primary">Go to Next Page</Button>
-								</Link>
-							</div>
-						)}
-					</div>
-				</Col>
-				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-					<TagCloud/>
-				</Col>
-			</Row>
+				</div>
+				<div className="navigation-links">
+					{index > 1 && (
+						<div className="previous-link">
+							<Link to={`/posts/${previousUrl}`} title={`/posts/${previousUrl}`}>
+								<Button type="primary">Go to Previous Page</Button>
+							</Link>
+						</div>
+					)}
+					{index <= (pageCount - 1) && (
+						<div className="next-link">
+							<Link to={`/posts/${nextUrl}`} title={`/posts/${nextUrl}`}>
+								<Button type="primary">Go to Next Page</Button>
+							</Link>
+						</div>
+					)}
+				</div>
+				<TagCloud/>
 		</Layout>
 	);
 };

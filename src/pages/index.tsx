@@ -69,10 +69,7 @@ export interface Props {
 	};
 	location: Location;
 }
-const metrics = [
-	{ id: 1, stat: '1K+', emphasis: 'Clients', rest: 'still thriving.' },
-	{ id: 2, stat: '5M+', emphasis: 'Increased revenue,', rest: 'because we are cool.' },
-  ]
+
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
@@ -316,7 +313,7 @@ export const IndexPage = (props: Props) => {
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center">
           
-          <h2 className="text-3xl tracking-tight font-extrabold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent sm:text-4xl">From The Blog</h2>
+          <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">From The Blog</h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
             See what we've been working on and the stay up-to-date on anything and everything NetSuite.
           </p>
@@ -415,45 +412,12 @@ export const IndexPage = (props: Props) => {
                 feugiat viverra eleifend fusce orci in quis amet. Sit in et vitae tortor, massa. Dapibus laoreet amet
                 lacus nibh integer quis. Eu vulputate diam sit tellus quis at.
               </p>
-              <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
-                {metrics.map((item) => (
-                  <p key={item.id}>
-                    <span className="block text-2xl font-bold text-white">{item.stat}</span>
-                    <span className="mt-1 block text-base text-gray-300">
-                      <span className="font-medium text-white">{item.emphasis}</span> {item.rest}
-                    </span>
-                  </p>
-                ))}
-              </div>
+              
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="bg-white">
-          <div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">
-            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              <span className="block">Ready to solve your woes?</span>
-              <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
-                  Contact Us. The first hour is free.
-              </span>
-            </h2>
-            <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5">
-              <a
-                href="#"
-                className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
-              >
-                Learn more
-              </a>
-              <a
-                href="#"
-                className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-800 bg-blue-50 hover:bg-blue-100"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-        </div>
+        
       </main>
 				
 		</Layout>
