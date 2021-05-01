@@ -117,11 +117,12 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <img
+            <a href="/"> <img
               className="h-10"
               src={file.childImageSharp.fluid.src}
               alt="FourthWave Consulting"
-            />
+            /></a>
+           
             <p className="text-white text-base">
               Your trusted partner in Netsuite for over 20 years.
             </p>
