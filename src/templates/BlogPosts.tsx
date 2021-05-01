@@ -73,7 +73,7 @@ export const BlogPostsPage = (props: Props) => {
 						const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 						const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
 						return (
-							  <div key={node.slug} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+							  <div key={node.slug} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
 								<div className="flex-shrink-0">
 								  <img className="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="" />
 							  	</div>

@@ -97,7 +97,7 @@ export interface Props {
 }
 export const Header = (props: Props) => {
 	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
-
+  
   return (
     <Popover className="relative bg-white">
       {({ open }) => (
@@ -108,7 +108,7 @@ export const Header = (props: Props) => {
               <div>
                 <a href="/" className="flex">
                   <span className="sr-only">FourthWave Consulting</span>
-					        <img className="h-16 w-auto sm:h-14" src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png" alt="Author Bio" title="Author Bio" data-pin-nopin="true" />
+					        <img className="h-16 w-auto sm:h-14" src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png" alt="FourthWave Consulting" title="Author Bio" data-pin-nopin="true" />
                 </a>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
@@ -419,16 +419,16 @@ export const query = graphql`
     	file(relativePath: { eq: "logo.png" }) {
       		childImageSharp {
         		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-					aspectRatio
-					src
-					srcSet
-					sizes
-					base64
-					tracedSVG
-					srcWebp
-					srcSetWebp
-				}
-      		}
-		}
+            aspectRatio
+            src
+            srcSet
+            sizes
+            base64
+            tracedSVG
+            srcWebp
+            srcSetWebp
+          }
+        }
+		  }
   	}
 `;

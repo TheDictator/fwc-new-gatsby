@@ -208,28 +208,8 @@ input[type='number']::-webkit-outer-spin-button {
     }
 }
 
-.home {
-    .ant-card {
-        box-shadow: none;
-    }
-}
-
-.about {
-    .ant-card {
-        box-shadow: none;
-
-        .ant-card-body {
-            .description-wrapper {
-                .description {
-                    .icon {
-                        margin-right: 12px;
-
-                        .anticon {
-                            vertical-align: text-bottom;
-                        }
-                    }
-                }
-            }
-        }
-    }
+.card {
+ p {
+     margin: 0;
+ }
 }

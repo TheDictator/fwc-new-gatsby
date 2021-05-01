@@ -43,35 +43,25 @@ const navigation = {
   ],
 }
 export const Footer = () => {
-	const { site } = useStaticQuery(graphql`
-      query {
-        site {
-          siteMetadata {
-            social {
-				twitter
-				facebook
-				email
-				linkedin
-				github
-			}
-          }
+  const { file } = useStaticQuery(graphql`
+  query {    
+    file(relativePath: { eq: "logoShort.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 32, maxHeight: 32, quality: 100) {
+          aspectRatio
+          src
+          srcSet
+          sizes
+          base64
+          tracedSVG
+          srcWebp
+          srcSetWebp
         }
-		file(relativePath: { eq: "learnMore.svg" }) {
-			childImageSharp {
-			  fluid(maxWidth: 960, maxHeight: 600, quality: 100) {
-				  aspectRatio
-				  src
-				  srcSet
-				  sizes
-				  base64
-				  tracedSVG
-				  srcWebp
-				  srcSetWebp
-			  }
-			}
-	  }
       }
+    }
+  }
 	`);
+	
 	return (
 		<>
  <div className="bg-white">
@@ -129,11 +119,11 @@ export const Footer = () => {
           <div className="space-y-8 xl:col-span-1">
             <img
               className="h-10"
-              src="https://tailwindui.com/img/logos/workflow-mark-gray-300.svg"
-              alt="Company name"
+              src={file.childImageSharp.fluid.src}
+              alt="FourthWave Consulting"
             />
             <p className="text-white text-base">
-              Making the world a better place through constructing elegant hierarchies.
+              Your trusted partner in Netsuite for over 20 years.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
