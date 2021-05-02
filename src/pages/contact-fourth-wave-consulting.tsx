@@ -119,9 +119,12 @@ const footerNavigation = {
 						data-netlify-honeypot="bot-field"
 						hidden
 					>
-					<input type="text" name="name" />
+					<input type="text" name="first_name" />
+          <input type="text" name="last_name" />
 					<input type="email" name="email" />
-					<textarea name="message"></textarea>
+          <input type="text" name="phone" />
+          <input type="text" name="budget" />
+					<textarea name="how_can_we_help"></textarea>
 				</form>
                 <form name="cf" method="POST" data-netlify="true" onSubmit={handleSubmit} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                   <div>
