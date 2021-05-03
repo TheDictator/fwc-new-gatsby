@@ -6,12 +6,14 @@ module.exports = {
     extend: {
       colors: {
         grape: colors.purple,
+        
       },
       fontFamily: {
         roboto: ["roboto-condensed", "sans-serif"],
         cabin: ["cabin", "sans-serif"],
       }
     },
+    
   },
   plugins: [
     require('@tailwindcss/typography'),

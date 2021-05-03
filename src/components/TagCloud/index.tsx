@@ -1,5 +1,7 @@
 import React, { Fragment, ReactNode } from 'react';
 import ReactWordcloud from 'react-wordcloud';
+import { useStaticQuery, graphql } from 'gatsby';
+import words from "./words";
 
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
@@ -16,34 +18,21 @@ const options = {
   hue: 'blue',
   };
   const size = [200, 100];
-const words = [
-    {
-      text: 'Netsuite',
-      value: 6,
-    },
-    {
-      text: 'E-Commerce',
-      value: 5,
-    },
-    {
-      text: 'Marketing',
-      value: 4,
-    },
-    {
-      text: 'SEO',
-      value: 3,
-    },
-    {
-        text: 'Google',
-        value: 3,
-    },
-    {
-    text: 'Site Builder',
-    value: 35,
-    },
-  ]
+
 
 export const TagCloudd = () => {
+  const { allWordpressTag } = useStaticQuery(graphql`
+      query {
+        allWordpressTag {
+          edges {
+            node {
+              count
+              name
+            }
+          }
+        }
+      }
+	`);
 	return (
 		<Fragment>
             <h3>Tag Cloud</h3>
@@ -51,6 +40,7 @@ export const TagCloudd = () => {
             callbacks={callbacks}
             options={options}
             size={size}
+            //words={allWordpressTag.edges.node}
             words={words}
             />
 		</Fragment>
