@@ -2,24 +2,12 @@ import React, { useContext, useState, } from "react";
 
 import { graphql, navigate } from 'gatsby';
 
-import ReCaptcha from "react-google-recaptcha";
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import '../styles/blog.scss';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
 
-const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
-if (typeof RECAPTCHA_KEY === 'undefined') {
-  throw new Error(`
-  Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
-  You probably forget to set it in your Netlify build environment variables. 
-  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
-  Note this demo is specifically for Recaptcha v2
-  `)
-}
-
-const isDev = process.env.NODE_ENV === "development";
 const onRegisterSuccess = (navUrl) => {    
   navigate(navUrl);
 };
@@ -31,7 +19,6 @@ const encode = (data) => Object.keys(data)
 
 export const ContactPage = (props: Props) => {
   const [fieldsState, setFields] = useState({ "name": "", "email": "" });
-    const [recaptchaValue, setRecaptchaValue] = useState(null);
 
 const onFieldChange = (e) =>
     setFields({
@@ -56,7 +43,6 @@ const onSubmit = (e) => {
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: encode({
                    ...fieldsState,
-                    "g-recaptcha-response": recaptchaValue, //must set the recaptcha field or submissions will fail (without error)
                     "form-name": form.getAttribute("name"),
                 }),
             })
@@ -281,9 +267,7 @@ const onSubmit = (e) => {
                       />
                     </div>
                   </div>
-                  {!isDev && <ReCaptcha
-                sitekey={process.env.GATSBY_SITE_RECAPTCHA_KEY}
-                onChange={setRecaptchaValue} />}     
+                 
 
                   <div className="text-right sm:col-span-2">
                     <button
