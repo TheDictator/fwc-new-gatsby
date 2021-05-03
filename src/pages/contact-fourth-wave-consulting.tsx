@@ -59,8 +59,8 @@ export const ContactPage = (props: Props) => {
                 <form 
                 name="contact" 
                 method="POST" 
-                data-netlify-recaptcha="true" 
-                data-netlify="true"
+                netlify-honeypot="bot-field" data-netlify="true"
+                
                 className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
                 >
                   <noscript>
@@ -211,7 +211,6 @@ export const ContactPage = (props: Props) => {
                       />
                     </div>
                   </div>
-                  <div data-netlify-recaptcha="true"></div>
 
                   <div className="text-right sm:col-span-2">
                     <button

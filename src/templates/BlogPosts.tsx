@@ -67,6 +67,7 @@ export const BlogPostsPage = (props: Props) => {
         </p>
       </div>
     </div>
+	<div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
 			<div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
 					{group.map(({ node }: { node: Post }) => {
 						const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
@@ -120,6 +121,7 @@ export const BlogPostsPage = (props: Props) => {
 						);
 					})}
 				</div>
+			</div>
 				<div className="navigation-links">
 					{index > 1 && (
 						<div className="previous-link">
