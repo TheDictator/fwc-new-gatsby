@@ -67,7 +67,7 @@ const footerNavigation = {
 	const showSuccess = () => {
 		// TODO: Show a success message or navigate to a success page.
 		console.log(`form submitted successfully`);
-		navigate("/thank-you-page-contact-us");
+		navigate("/");
 	};
 
 	const showError = error => {
@@ -267,6 +267,7 @@ const footerNavigation = {
                         rows={4}
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
                         defaultValue={''}
+                        required
                       />
                     </div>
                   </div>
