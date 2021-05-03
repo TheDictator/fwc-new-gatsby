@@ -11,7 +11,12 @@ import SEO from '../components/SEO';
 import '../styles/blog.scss';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
 export const ContactPage = (props: Props) => {
-
+  
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 const navigation = [
   { name: 'Work', href: '#' },
@@ -45,9 +50,11 @@ const footerNavigation = {
     { name: 'Terms', href: '#' },
   ]
 }
-	const formName = `contact`;
-	const subject = ``;
-	const handleSubmit = values => {
+	
+	const handleSubmit = (values) => {
+    const formName = `contact`;
+	  const subject = ``;
+  
 		if (values[`bot-field`] === undefined) {
 		delete values[`bot-field`];
 		}
@@ -113,20 +120,8 @@ const footerNavigation = {
                   We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear
                   from you! Send us a message using the form opposite, or email us.
                 </p>
-				<form
-						name={formName}
-						data-netlify="true"
-						data-netlify-honeypot="bot-field"
-						hidden
-					>
-					<input type="text" name="first_name" />
-          <input type="text" name="last_name" />
-					<input type="email" name="email" />
-          <input type="text" name="phone" />
-          <input type="text" name="budget" />
-					<textarea name="how_can_we_help"></textarea>
-				</form>
-                <form name="cf" method="POST" data-netlify="true" onSubmit={handleSubmit} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                <form name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="bot-field"  onSubmit={handleSubmit} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                <input type="hidden" name="form-name" value="contact" />
                   <div>
                     <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
                       First name *
@@ -153,7 +148,7 @@ const footerNavigation = {
                         id="last_name"
                         autoComplete="family-name"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-						required
+						            required
                       />
                     </div>
                   </div>
@@ -168,7 +163,7 @@ const footerNavigation = {
                         type="email"
                         autoComplete="email"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-						required
+						            required
                       />
                     </div>
                   </div>
