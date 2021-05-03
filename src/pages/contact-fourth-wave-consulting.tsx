@@ -16,6 +16,8 @@ const encode = (data) => Object.keys(data)
 
 export const ContactPage = (props: Props) => {
 
+
+
 	return (
 		<Layout location={props.location}>
 			<SEO title="Contact Us" />
@@ -54,10 +56,13 @@ export const ContactPage = (props: Props) => {
                   We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear
                   from you! Send us a message using the form opposite, or email us.
                 </p>
-                <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
-                <input type="hidden" name="bot-field" />
-                <input type="hidden" name="form-name" value="contact" />
-
+                <form 
+                name="contact" 
+                method="POST" 
+                data-netlify-recaptcha="true" 
+                data-netlify="true"
+                className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                >
                   <noscript>
                     <p>This form won’t work with Javascript disabled</p>
                   </noscript>
@@ -127,13 +132,13 @@ export const ContactPage = (props: Props) => {
                       />
                     </div>
                   </div>
-                  <fieldset className="sm:col-span-2">
-                    <div className="flex justify-between">
-                      <legend className="block text-sm font-medium text-gray-700">Expected budget (<em>if applicable</em>)</legend>
-                      <span id="how_can_we_help_description" className="text-sm text-gray-500">
+				  <fieldset className="sm:col-span-2">
+					  <div className="flex justify-between">
+					  <legend className="block text-sm font-medium text-gray-700">Expected budget (<em>if applicable</em>)</legend>
+					  <span id="how_can_we_help_description" className="text-sm text-gray-500">
                         Optional
                       </span>
-                    </div>
+					  </div>
                     <div className="mt-4 grid grid-cols-1 gap-y-4">
                       <div className="flex items-center">
                         <input
@@ -207,6 +212,7 @@ export const ContactPage = (props: Props) => {
                     </div>
                   </div>
                   <div data-netlify-recaptcha="true"></div>
+
                   <div className="text-right sm:col-span-2">
                     <button
                       type="submit"
