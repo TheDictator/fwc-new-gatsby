@@ -1,5 +1,10 @@
 @import './colors.scss';
-
+h1,h2,h3,h4,h5 {
+    font-family: $fontHead;
+}
+html,body, p {
+    font-family: $fontBody;
+}
 .display-none {
     display: none;
 }
