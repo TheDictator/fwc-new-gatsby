@@ -124,7 +124,6 @@ export const ContactPage = (props: Props) => {
                         autoComplete="tel"
                         aria-describedby="phone_description"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -143,7 +142,6 @@ export const ContactPage = (props: Props) => {
                           defaultValue="under_25k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_under_25k" className="ml-3">
                           <span className="block text-sm text-gray-700">Less than $25K</span>
@@ -156,7 +154,6 @@ export const ContactPage = (props: Props) => {
                           defaultValue="25k-50k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_25k-50k" className="ml-3">
                           <span className="block text-sm text-gray-700">$25K – $50K</span>
@@ -169,7 +166,6 @@ export const ContactPage = (props: Props) => {
                           defaultValue="50k-100k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_50k-100k" className="ml-3">
                           <span className="block text-sm text-gray-700">$50K – $100K</span>
@@ -182,7 +178,6 @@ export const ContactPage = (props: Props) => {
                           defaultValue="over_100k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_over_100k" className="ml-3">
                           <span className="block text-sm text-gray-700">$100K+</span>
