@@ -1,86 +1,81 @@
-import React from 'react';
+import React, { useContext, useState, } from "react";
 
 import { graphql, navigate } from 'gatsby';
 
-import { Row, Col } from 'antd';
-import TagCloud from '../components/TagCloud';
-
+import ReCaptcha from "react-google-recaptcha";
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import '../styles/blog.scss';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
+
+const RECAPTCHA_KEY = process.env.GATSBY_APP_SITE_RECAPTCHA_KEY
+if (typeof RECAPTCHA_KEY === 'undefined') {
+  throw new Error(`
+  Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
+  You probably forget to set it in your Netlify build environment variables. 
+  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
+  Note this demo is specifically for Recaptcha v2
+  `)
+}
+
+const isDev = process.env.NODE_ENV === "development";
+const onRegisterSuccess = (navUrl) => {    
+  navigate(navUrl);
+};
+
+const encode = (data) => Object.keys(data)
+    .map((key) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+
 export const ContactPage = (props: Props) => {
-  
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+  const [fieldsState, setFields] = useState({ "name": "", "email": "" });
+    const [recaptchaValue, setRecaptchaValue] = useState(null);
 
-const navigation = [
-  { name: 'Work', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Blog', href: '#' },
-]
-const footerNavigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ]
-}
-	
-	const handleSubmit = (values) => {
-    const formName = `contact`;
-	  const subject = ``;
-  
-		if (values[`bot-field`] === undefined) {
-		delete values[`bot-field`];
-		}
+const onFieldChange = (e) =>
+    setFields({
+        ...fieldsState,
+        [e.target.name]: e.target.value
+    });
 
-		fetch(`/`, {
-		method: `POST`,
-		headers: { "Content-Type": `application/x-www-form-urlencoded` },
-		body: encode({
-			"form-name": formName,
-			...values
-		})
-		})
-		.then(() => showSuccess())
-		.catch(error => showError(error));
-	};
+const onSubmit = (e) => {
+    e.preventDefault();
 
-	const showSuccess = () => {
-		// TODO: Show a success message or navigate to a success page.
-		console.log(`form submitted successfully`);
-		navigate("/");
-	};
+    const form = e.target,
+        successUrl = form.getAttribute("action");
 
-	const showError = error => {
-		// TODO: Show an error message to the user
-		console.log(`There was an error submitting the form`);
-		console.log(error);
+
+    if (!Object.values(fieldsState).find((f) => !f)) {
+        if (~document.location.host.indexOf("localhost")) {
+            onRegisterSuccess(successUrl);
+        }
+        else {
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: encode({
+                   ...fieldsState,
+                    "g-recaptcha-response": recaptchaValue, //must set the recaptcha field or submissions will fail (without error)
+                    "form-name": form.getAttribute("name"),
+                }),
+            })
+                .then(() => {
+                    if (response.status === 200 && !response.redirected) { //netlify doesnt give an error on recaptcha fail (only 303 redirect...) :(
+                        onRegisterSuccess(successUrl);
+                    }
+  else{
+     console.log("!!!!!!!!!!! form server response: ", response);
+  }
+                })
+                .catch(err => {
+                    console.log("!!!!!!!!! FORM ERROR ", err);
+                });
+        }
+    }
+    else {
+      console.log("!!!!!!!!! please fill all fields ");
+    };
 	};
 	return (
 		<Layout location={props.location}>
@@ -120,7 +115,18 @@ const footerNavigation = {
                   We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear
                   from you! Send us a message using the form opposite, or email us.
                 </p>
-                <form name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="bot-field"  onSubmit={handleSubmit} className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                <form 
+                name="contact" 
+                method="POST" 
+                action="/thanks" 
+                data-netlify="true"
+                data-netlify-recaptcha="true"
+                onSubmit={onSubmit}
+                className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                >
+                  <noscript>
+                    <p>This form won’t work with Javascript disabled</p>
+                  </noscript>
                 <input type="hidden" name="form-name" value="contact" />
                   <div>
                     <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
@@ -133,7 +139,8 @@ const footerNavigation = {
                         id="first_name"
                         autoComplete="given-name"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
-						required
+						            required
+                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -149,6 +156,7 @@ const footerNavigation = {
                         autoComplete="family-name"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
 						            required
+                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -164,6 +172,7 @@ const footerNavigation = {
                         autoComplete="email"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
 						            required
+                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -184,6 +193,7 @@ const footerNavigation = {
                         autoComplete="tel"
                         aria-describedby="phone_description"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
+                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -202,6 +212,7 @@ const footerNavigation = {
                           defaultValue="under_25k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_under_25k" className="ml-3">
                           <span className="block text-sm text-gray-700">Less than $25K</span>
@@ -214,6 +225,7 @@ const footerNavigation = {
                           defaultValue="25k-50k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_25k-50k" className="ml-3">
                           <span className="block text-sm text-gray-700">$25K – $50K</span>
@@ -226,6 +238,7 @@ const footerNavigation = {
                           defaultValue="50k-100k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_50k-100k" className="ml-3">
                           <span className="block text-sm text-gray-700">$50K – $100K</span>
@@ -238,6 +251,7 @@ const footerNavigation = {
                           defaultValue="over_100k"
                           type="radio"
                           className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
+                          onChange={onFieldChange}
                         />
                         <label htmlFor="budget_over_100k" className="ml-3">
                           <span className="block text-sm text-gray-700">$100K+</span>
@@ -263,10 +277,14 @@ const footerNavigation = {
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
                         defaultValue={''}
                         required
+                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
-                 
+                  {!isDev && <ReCaptcha
+                sitekey={process.env.GATSBY_SITE_RECAPTCHA_KEY}
+                onChange={setRecaptchaValue} />}     
+
                   <div className="text-right sm:col-span-2">
                     <button
                       type="submit"
