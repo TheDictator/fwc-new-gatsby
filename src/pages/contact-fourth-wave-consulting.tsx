@@ -54,7 +54,7 @@ export const ContactPage = (props: Props) => {
                   We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear
                   from you! Send us a message using the form opposite, or email us.
                 </p>
-                <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
 
@@ -211,6 +211,7 @@ export const ContactPage = (props: Props) => {
                       />
                     </div>
                   </div>
+                  <div data-netlify-recaptcha="true"></div>
                   <div className="text-right sm:col-span-2">
                     <button
                       type="submit"
