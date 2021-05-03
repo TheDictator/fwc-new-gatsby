@@ -8,9 +8,6 @@ import SEO from '../components/SEO';
 import '../styles/blog.scss';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
 
-const onRegisterSuccess = (navUrl) => {    
-  navigate(navUrl);
-};
 
 const encode = (data) => Object.keys(data)
     .map((key) =>
@@ -18,51 +15,7 @@ const encode = (data) => Object.keys(data)
     .join("&");
 
 export const ContactPage = (props: Props) => {
-  const [fieldsState, setFields] = useState({ "name": "", "email": "" });
 
-const onFieldChange = (e) =>
-    setFields({
-        ...fieldsState,
-        [e.target.name]: e.target.value
-    });
-
-const onSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target,
-        successUrl = form.getAttribute("action");
-
-
-    if (!Object.values(fieldsState).find((f) => !f)) {
-        if (~document.location.host.indexOf("localhost")) {
-            onRegisterSuccess(successUrl);
-        }
-        else {
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: encode({
-                   ...fieldsState,
-                    "form-name": form.getAttribute("name"),
-                }),
-            })
-                .then(() => {
-                    if (response.status === 200 && !response.redirected) { //netlify doesnt give an error on recaptcha fail (only 303 redirect...) :(
-                        onRegisterSuccess(successUrl);
-                    }
-  else{
-     console.log("!!!!!!!!!!! form server response: ", response);
-  }
-                })
-                .catch(err => {
-                    console.log("!!!!!!!!! FORM ERROR ", err);
-                });
-        }
-    }
-    else {
-      console.log("!!!!!!!!! please fill all fields ");
-    };
-	};
 	return (
 		<Layout location={props.location}>
 			<SEO title="Contact Us" />
@@ -101,15 +54,10 @@ const onSubmit = (e) => {
                   We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear
                   from you! Send us a message using the form opposite, or email us.
                 </p>
-                <form 
-                name="contact" 
-                method="POST" 
-                action="/thanks" 
-                data-netlify="true"
-                data-netlify-recaptcha="true"
-                onSubmit={onSubmit}
-                className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
-                >
+                <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contact" />
+
                   <noscript>
                     <p>This form won’t work with Javascript disabled</p>
                   </noscript>
@@ -126,7 +74,6 @@ const onSubmit = (e) => {
                         autoComplete="given-name"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
 						            required
-                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -142,7 +89,6 @@ const onSubmit = (e) => {
                         autoComplete="family-name"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
 						            required
-                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -158,7 +104,6 @@ const onSubmit = (e) => {
                         autoComplete="email"
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
 						            required
-                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
@@ -183,13 +128,13 @@ const onSubmit = (e) => {
                       />
                     </div>
                   </div>
-				  <fieldset className="sm:col-span-2">
-					  <div className="flex justify-between">
-					  <legend className="block text-sm font-medium text-gray-700">Expected budget (<em>if applicable</em>)</legend>
-					  <span id="how_can_we_help_description" className="text-sm text-gray-500">
+                  <fieldset className="sm:col-span-2">
+                    <div className="flex justify-between">
+                      <legend className="block text-sm font-medium text-gray-700">Expected budget (<em>if applicable</em>)</legend>
+                      <span id="how_can_we_help_description" className="text-sm text-gray-500">
                         Optional
                       </span>
-					  </div>
+                    </div>
                     <div className="mt-4 grid grid-cols-1 gap-y-4">
                       <div className="flex items-center">
                         <input
@@ -263,12 +208,9 @@ const onSubmit = (e) => {
                         className="block w-full shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md"
                         defaultValue={''}
                         required
-                        onChange={onFieldChange}
                       />
                     </div>
                   </div>
-                 
-
                   <div className="text-right sm:col-span-2">
                     <button
                       type="submit"
