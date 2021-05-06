@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import { ChildImageSharp } from '../contracts/post';
+import RecentPosts from '../components/recent-posts'
 
 import '../styles/blog.scss';
 import {
@@ -23,22 +24,22 @@ import {
 
   const features = [
 	{
-	  name: 'NetSuite Site Builder Web Sites',
+	  name: 'Suite Commerce',
 	  description: 'Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress',
 	  icon: PencilAltIcon,
 	},
   {
-	  name: 'NetSuite Reference Checkout and My Account',
+	  name: 'Site Builder',
 	  description: 'Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.',
 	  icon: PencilAltIcon,
 	},
 	{
-	  name: 'SuiteCommerce',
+	  name: 'SEO',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: OfficeBuildingIcon,
 	},
 	{
-	  name: 'SuiteCommerce Advanced',
+	  name: 'Netsuite Process Optimization',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: PlusIcon,
 	},
@@ -63,6 +64,23 @@ import {
 	  icon: CogIcon,
 	},
   ]
+
+  // // List of Blog posts per category
+  // SuiteCommerce
+  // Protect Your Online Forms from Bots & Spam - https://www.fourthwc.com/e-commerce/2019/10/google-recaptcha-online-forms.html
+
+  // Sitebuilder
+  // Make Your NetSuite Site Builder Site Secure – HTTPS Throughout - https://www.fourthwc.com/netsuite/2017/05/site-builder-site-secure-https-throughout.html
+  // How to Increase eCommerce Revenue With Upsells and Cross-sells: Cart and Product Detail Page - https://www.fourthwc.com/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html
+  // Netsuite 2020.2 Update: Data-center URL deprecation + What You Need To Know - https://www.fourthwc.com/e-commerce/2020/08/netsuite-2020-2-update-data-center-url-deprecation.html
+  // Site Builder Performance Upgrades - https://www.fourthwc.com/e-commerce/2020/07/site-builder-performance-upgrades.html
+  // An Introduction to NetSuite’s Reference Checkout & My Account Bundles - https://www.fourthwc.com/netsuite/2016/04/reference-checkout.html
+
+  // SEO
+  // What to know about schema.org and microdata tagging - https://www.fourthwc.com/netsuite/2019/05/what-to-know-about-schema-org-and-microdata-tagging.html
+  // Internet Marketing
+  // An Introduction to Automating XML Sitemaps for NetSuite Companies - https://www.fourthwc.com/netsuite/2016/11/xml-sitemaps.html
+
 export interface Props {
 	data: {
 		file: ChildImageSharp;
@@ -319,63 +337,8 @@ export const IndexPage = (props: Props) => {
           </p>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-            {/* {data.allWordpressPost.edges.node.map((article) => {
-              return (
-                <li className="itemNews">
-                  <span>{article.date}</span>
-                  {article.tags && article.tags.map((prop) => {
-                    return <span>{prop.name}</span>;
-                  })}
-                  {article.featured_media && article.featured_media.map((prop) => {
-                    return (
-                      <div className="itemImage">{article.source_url}</div>
-                    );
-                  })}
-                  <div className="itemTitle">{article.title}</div>
-                </li>
-              );
-            })} */}
-          {posts.map((post) => (
-            <div key={post.title} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
-              <div className="flex-shrink-0">
-                <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
-              </div>
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                <div className="flex-1">
-                  <a href={post.category.href} className="inline-block">
-                    <span
-                      className=
-                        'bg-blue-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold'
-                    >
-                      {post.category.name}
-                    </span>
-                  </a>
-                  <a href={post.href} className="block mt-2">
-                    <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                    <p className="mt-3 text-base text-gray-500">{post.description}</p>
-                  </a>
-                </div>
-                <div className="mt-6 flex items-center">
-                  <div className="flex-shrink-0">
-                    <a href={post.author.href}>
-                      <span className="sr-only">{post.author.name}</span>
-                      <img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt="" />
-                    </a>
-                  </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-bold text-gray-900">
-                      <a href={post.author.href} className="hover:underline">
-                        {post.author.name}
-                      </a>
-                    </p>
-                    <div className="flex space-x-1 text-sm text-gray-500">
-                      <time dateTime={post.datetime}>{post.date}</time>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+          <RecentPosts />
+            
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 
 import './Footer.scss';
@@ -123,7 +123,7 @@ export const Footer = () => {
               alt="FourthWave Consulting"
             /></a>
            
-            <p className="text-white text-base">
+            <p className="text-gray-400 text-base">
               Your trusted partner in Netsuite for over 20 years.
             </p>
             <div className="flex space-x-6">
@@ -138,11 +138,11 @@ export const Footer = () => {
           <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Services</h3>
+                <h3 className="text-sm font-semibold text-white tracking-wider uppercase">Services</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.services.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-white hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-white">
                         {item.name}
                       </a>
                     </li>
@@ -150,11 +150,11 @@ export const Footer = () => {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+                <h3 className="text-sm font-semibold text-white tracking-wider uppercase">Company</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-white hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-white">
                         {item.name}
                       </a>
                     </li>
@@ -164,11 +164,11 @@ export const Footer = () => {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Resources</h3>
+                <h3 className="text-sm font-semibold text-white tracking-wider uppercase">Resources</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.resources.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-white hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-white">
                         {item.name}
                       </a>
                     </li>
@@ -176,11 +176,11 @@ export const Footer = () => {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+                <h3 className="text-sm font-semibold text-white tracking-wider uppercase">Legal</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-base text-white hover:text-gray-900">
+                      <a href={item.href} className="text-base text-gray-400 hover:text-white">
                         {item.name}
                       </a>
                     </li>

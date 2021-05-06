@@ -11,8 +11,6 @@ import { ChildImageSharp } from '../../contracts/post';
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
-  BookmarkAltIcon,
-  BriefcaseIcon,
   ChartBarIcon,
   CheckCircleIcon,
   CursorClickIcon,
@@ -20,14 +18,11 @@ import {
   GlobeAltIcon,
   InformationCircleIcon,
   MenuIcon,
-  NewspaperIcon,
   OfficeBuildingIcon,
   PhoneIcon,
-  PlayIcon,
   ReplyIcon,
   ShieldCheckIcon,
   UserGroupIcon,
-  ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
