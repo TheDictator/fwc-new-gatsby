@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { StaticQuery, graphql } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
@@ -149,6 +149,11 @@ export const IndexPage = (props: Props) => {
       },
     },
   ]
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
 	return (
 		<Layout location={props.location}>
 			<SEO title="Home" />
@@ -218,7 +223,8 @@ export const IndexPage = (props: Props) => {
                     </p>
                     <div className="mt-6">
                       <a
-                        href="#"
+                        onClick={showDrawer}
+                        
                         className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
                       >
                         Get started
@@ -230,8 +236,7 @@ export const IndexPage = (props: Props) => {
                   <blockquote>
                     <div>
                       <p className="text-base text-gray-500">
-                        &ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean
-                        curabitur donec aliquet. Mi venenatis in euismod ut.&rdquo;
+                        &ldquo;Dave and Fourth Wave consulting were an absolute joy to work with.  The whole process was outlined out for us before we started so we knew exactly what to expect.  When it comes to Netsuite website customization at an affordable and fair price... Fourth Wave is your answer!!!&rdquo;
                       </p>
                     </div>
                     <footer className="mt-3">
@@ -244,7 +249,7 @@ export const IndexPage = (props: Props) => {
                           />
                         </div>
                         <div className="text-base font-medium text-gray-700">
-                          Marcia Hill, Digital Marketing Manager
+                          Joe Nardi
                         </div>
                       </div>
                     </footer>

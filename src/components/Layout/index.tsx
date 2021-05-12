@@ -4,7 +4,7 @@ import { Layout as AntLayout, Drawer } from 'antd';
 
 import Header from '../Header';
 import Footer from '../Footer';
-
+import SideDrawer from '../SideDrawer';
 import CookieConsent from "react-cookie-consent";
 import './Layout.scss';
 
@@ -27,13 +27,7 @@ export class Layout extends Component<Props> {
 						<main>{this.props.children}</main>
 					</div>
 					<Footer />
-					<Drawer
-					width={500}
-					placement="right"
-					closable={true}
-					>
-						
-					</Drawer>
+					<SideDrawer />
 					<CookieConsent
 						location='bottom'
 						buttonText='I Accept'
