@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 import { ChildImageSharp } from '../contracts/post';
-import RecentPosts from '../components/recent-posts'
+import RecentPosts from '../components/Posts/recent-posts'
 
 import '../styles/blog.scss';
 import {
@@ -301,23 +301,15 @@ export const IndexPage = (props: Props) => {
         {/* Gradient Feature Section */}
         <div className="bg-gradient-to-r from-blue-800 to-blue-700">
           <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">Technical solutions crafted from expertise</h2>
+            <h2 className="text-3xl font-extrabold text-white tracking-tight">Technical Solutions Crafted From Expertise</h2>
             <p className="mt-4 max-w-3xl text-lg text-blue-200">
-              Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis. Blandit
-              aliquam sit nisl euismod mattis in.
+            With over 20 years’ of combined experience with NetSuite, we can solution just about anything a SMB can throw at me. 
             </p>
             <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
               {features.map((feature) => (
                 <div key={feature.name}>
-                  <div>
-                    <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-10">
-                      <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                    </span>
-                  </div>
-                  <div className="mt-6">
-                    <h3 className="text-lg font-medium text-white">{feature.name}</h3>
-                    <p className="mt-2 text-base text-blue-200">{feature.description}</p>
-                  </div>
+                  <h3 className="text-xl font-medium text-white">{feature.name}</h3>
+                  <p className="mt-2 text-base text-blue-200">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -368,7 +360,7 @@ export const IndexPage = (props: Props) => {
                 </span>
               </h2>
               <p className="mt-3 text-3xl font-extrabold text-white">
-                Get code that will help grow your business
+                Get More Than Just Code
               </p>
               <p className="mt-5 text-lg text-gray-300">
                 Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing quis in viverra tristique sem. Ornare

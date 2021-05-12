@@ -29,21 +29,21 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 
 const services = [
   {
-    name: 'Sitebuilder',
-    description: 'Get a better understanding of where your traffic is coming from.',
-    href: '/services/sitebuilder',
+    name: 'Suite Commerce',
+    description: 'Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress',
+    href: '/services/suite-commerce',
     icon: ChartBarIcon,
   },
   {
-    name: 'SuiteCommerce',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '/services/suite-commerce',
+    name: 'Site Builder',
+    description: 'Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.',
+    href: '/services/sitebuilder',
     icon: CursorClickIcon,
   },
   { name: 'SC Advanced', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
   {
-    name: 'NS Migrations',
-    description: "Connect with third-party tools that you're already using.",
+    name: 'SEO',
+    description: "Maximize your search presence & rankings on Google. Fixing SEO penalties or other search engine optimization, etc.",
     href: '/services/migrations',
     icon: ReplyIcon,
   },
@@ -156,9 +156,9 @@ export const Header = (props: Props) => {
                                 >
                                   <div className="flex md:h-full lg:flex-col">
                                     <div className="flex-shrink-0">
-                                      <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white sm:h-12 sm:w-12">
+                                      {/* <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white sm:h-12 sm:w-12">
                                         <item.icon className="h-6 w-6" aria-hidden="true" />
-                                      </span>
+                                      </span> */}
                                     </div>
                                     <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
                                       <div>
@@ -241,10 +241,7 @@ export const Header = (props: Props) => {
                                           href={item.href}
                                           className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
                                         >
-                                          <item.icon
-                                            className="flex-shrink-0 h-6 w-6 text-gray-400"
-                                            aria-hidden="true"
-                                          />
+                                          
                                           <span className="ml-4">{item.name}</span>
                                         </a>
                                       </li>

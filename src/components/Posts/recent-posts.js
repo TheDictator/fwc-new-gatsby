@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
-import { Post, CategoryTagInfo } from '../contracts/post';
-import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
+import { Post, CategoryTagInfo } from '../../contracts/post';
+import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../../utils';
 const moment = require('moment');
 
 export const RecentPosts = () => (
@@ -74,7 +74,7 @@ export const RecentPosts = () => (
                     <div key={post.node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div className="flex-shrink-0">
                     <a href={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}`}>
-                        <img className="h-48 w-full object-cover" src={post.node.imageUrl} alt="" />
+                        <img className="h-48 w-full object-cover" src={post.node.featured_media.localFile.childImageSharp.fluid.src} alt="" />
                     </a>
                     </div>
                     <div className="flex-1 bg-white p-6 flex flex-col justify-between">

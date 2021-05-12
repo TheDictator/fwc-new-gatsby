@@ -75,8 +75,7 @@ export const Footer = () => {
               Sign up for our newsletter
             </h2>
             <p className="mt-3 max-w-3xl text-lg text-blue-gray-500">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat.
+              Stay up-to-date on our latest offerings and be the first to learn about anything Netsuite.
             </p>
           </div>
           <div className="mt-8 lg:mt-0 lg:ml-8">
