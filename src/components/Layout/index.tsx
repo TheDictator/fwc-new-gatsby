@@ -27,7 +27,7 @@ export class Layout extends Component<Props> {
 						<main>{this.props.children}</main>
 					</div>
 					<Footer />
-					<SideDrawer />
+					{/* <SideDrawer /> */}
 					<CookieConsent
 						location='bottom'
 						buttonText='I Accept'

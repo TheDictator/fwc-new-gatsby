@@ -36,21 +36,11 @@ export const RecentPosts = () => (
                         wordpress_id
                         content
                         featured_media {
-                            localFile {
-                              childImageSharp {
-                                fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-                                  aspectRatio
-                                  src
-                                  srcSet
-                                  sizes
-                                  base64
-                                  tracedSVG
-                                  srcWebp
-                                  srcSetWebp
-                                }
-                              }
-                            }
+                          localFile {
+                            publicURL
+                          }
                         }
+                        
                         categories {
                             id
                             link
@@ -74,7 +64,7 @@ export const RecentPosts = () => (
                     <div key={post.node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div className="flex-shrink-0">
                     <a href={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}`}>
-                        <img className="h-48 w-full object-cover" src={post.node.featured_media.localFile.childImageSharp.fluid.src} alt="" />
+                        <img className="h-48 w-full object-cover" src={post.node.featured_media.localFile.publicURL} alt="" />
                     </a>
                     </div>
                     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
