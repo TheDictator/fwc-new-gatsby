@@ -99,7 +99,7 @@ exports.createPages = async ({
 		const category = post.node.categories.slug;
 		const date = post.node.date;
 		createPage({
-			path: `/${post.node.categories[0].slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}`,
+			path: `/${post.node.categories[0].slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}.html`,
 			component: BlogPostTemplate,
 			context: {
 				id: post.node.wordpress_id,
