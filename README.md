@@ -1,3 +1,17 @@
+# TODO before go live
+- LinkedIN link in footer
+- New Logos (horizontal, just logo sphere)
+- Author sidebar information
+- Make testimonials cycle on homepage
+- Install Search Algolia
+- Blog Post Styles
+- Import comments from Wordpress
+- Sidebar Open from `Get Started` links (input hidden field to include where initiated contact from & what page)
+- Services listing w/ blog posts on homepage
+- Extended Services on listing page (ask about what to do from David on detail pages)
+- Slack direct message / chat room
+- Newsletter signup
+- 
 # FourthWave Consulting Gatsby / Wordpress Headless Build
 
 This is an opinionated starter project created with [Gatsby](https://gatsbyjs.org) and [Wordpress](https://wordpress.com) CMS, built using [Typescript](http://www.typescriptlang.org/), [SCSS](https://sass-lang.com/) and [Ant Design](https://github.com/ant-design/ant-design).
