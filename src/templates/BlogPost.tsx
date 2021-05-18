@@ -16,6 +16,8 @@ import { CommentEdges } from '../contracts/comment';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import { GrNext, GrPrevious } from "react-icons/gr";
+
 
 import '../styles/blog.scss';
 
@@ -49,9 +51,9 @@ export const BlogPostPage = (props: Props) => {
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
 			<div className="container container--l">
 			<Row gutter={36}>
-				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
+				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar max-w-prose mx-auto">
 					<article className="post relative px-4 sm:px-6 lg:px-8">
-						<div className="text-lg max-w-prose mx-auto">
+						<div className="text-lg">
 							<h1 className="mb-4">
 								<span className="block text-base text-center text-blue-600 font-semibold tracking-wide uppercase">
 									Article
@@ -70,17 +72,19 @@ export const BlogPostPage = (props: Props) => {
 					<div className="navigation-links margin-bottom-24px">
 						{props.pageContext.next && props.pageContext.next.slug && (
 							<Link to={`/${props.pageContext.next.categories[0].slug}/${moment(props.pageContext.next.date).format('YYYY')}/${moment(props.pageContext.next.date).format('MM')}/${props.pageContext.next.slug}.html`} title={props.pageContext.next.slug} className="bg-blue-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
-								Go to Previous Post
+								<GrPrevious/> Prev
 							</Link>
 						)}
 						{props.pageContext.previous && props.pageContext.previous.slug && (
 							<Link to={`/${props.pageContext.previous.categories[0].slug}/${moment(props.pageContext.previous.date).format('YYYY')}/${moment(props.pageContext.previous.date).format('MM')}/${props.pageContext.previous.slug}.html`} title={props.pageContext.previous.slug} className="bg-blue-600 text-white inline-flex items-center px-3 py-0.5 text-sm font-bold">
-								Go to Next Post
+								Next <GrNext/>
 							</Link>
 						)}
 					</div>
 					</article>
-					<Disqus config={disqusConfig}/>
+					<div className="px-4 sm:px-6 lg:px-8">
+						<Disqus config={disqusConfig}/>
+					</div>
 				</Col>
 				<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar pt-8">
 					<TagCloud/>
@@ -107,9 +111,9 @@ export const BlogPostPage = (props: Props) => {
 						})}						
 					</div>
 					<blockquote className="relative bg-white rounded-lg shadow-lg">
-						<div className="rounded-t-lg py-8 px-10 pt-10 pb-8">
-							<h3 className="text-xl text-center">About Author</h3>
-							<div className="relative text-sm text-gray-700 font-medium mt-8">
+						<div className="rounded-t-lg p-8">
+							{/* <h3 className="text-xl text-center">About Author</h3> */}
+							<div className="relative text-md text-gray-700 font-medium mt-4">
 								<svg
 									className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200"
 									fill="currentColor"
@@ -132,7 +136,7 @@ export const BlogPostPage = (props: Props) => {
 								/>
 							</div>
 							<span className="relative text-indigo-300 font-semibold leading-7 mt-2">
-								<p className="text-white font-semibold inline text-xl">Kevin Carpenter</p>{' '}
+								<p className="text-white font-semibold inline text-xl">{props.data.wordpressPost.author.name}</p>
 							</span>
 						</cite>
 					</blockquote>

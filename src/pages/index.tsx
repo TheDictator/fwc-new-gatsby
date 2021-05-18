@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 
 import { StaticQuery, graphql } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
-
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-
 import { ChildImageSharp } from '../contracts/post';
 import RecentPosts from '../components/Posts/recent-posts'
 import Help from '../images/help.jpg';
@@ -21,7 +19,7 @@ import {
 	ReplyIcon,
 	SparklesIcon,
   } from '@heroicons/react/outline'
-
+import Business from '../images/business.svg';
   const features = [
 	{
 	  name: 'Suite Commerce',
@@ -211,7 +209,6 @@ export const IndexPage = (props: Props) => {
             <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
               <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
                 <div>
-                 
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
                       All About <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">Your</span> Business
@@ -224,7 +221,6 @@ export const IndexPage = (props: Props) => {
                     <div className="mt-6">
                       <a
                         onClick={showDrawer}
-                        
                         className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
                       >
                         Get started
@@ -241,13 +237,6 @@ export const IndexPage = (props: Props) => {
                     </div>
                     <footer className="mt-3">
                       <div className="flex items-center space-x-3">
-                        <div className="flex-shrink-0">
-                          <img
-                            className="h-6 w-6 rounded-full"
-                            src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                            alt=""
-                          />
-                        </div>
                         <div className="text-base font-medium text-gray-700">
                           Joe Nardi
                         </div>
@@ -259,8 +248,8 @@ export const IndexPage = (props: Props) => {
               <div className="mt-12 sm:mt-16 lg:mt-0">
                 <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                   <img
-                    className="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
+                    className="w-full lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                    src={Business}
                     alt="Inbox user interface"
                   />
                 </div>
@@ -271,7 +260,6 @@ export const IndexPage = (props: Props) => {
             <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
               <div className="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
                 <div>
-                
                   <div className="mt-6">
                     <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
                       Custom Web Applications
@@ -335,7 +323,6 @@ export const IndexPage = (props: Props) => {
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           <RecentPosts />
-            
         </div>
       </div>
     </div>

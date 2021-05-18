@@ -189,6 +189,24 @@ input[type='number']::-webkit-outer-spin-button {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin: 2em 0;
+    a {
+        background-color: #6b7280;
+        color: #fff;
+        transition: all 150ms linear;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        &:hover {
+            background-color: darken(#6b7280, 10%);
+        }
+    }
+    svg {
+        font-size: 1.1rem;
+        polyline {
+            stroke: #fff;
+        }
+    }
 }
 
 .not-found-404 {
