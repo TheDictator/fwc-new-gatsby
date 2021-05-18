@@ -51,7 +51,7 @@ export const BlogPostPage = (props: Props) => {
 			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
 			<div className="container container--l">
 			<Row gutter={36}>
-				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar max-w-prose mx-auto">
+				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
 					<article className="post relative px-4 sm:px-6 lg:px-8">
 						<div className="text-lg">
 							<h1 className="mb-4">
