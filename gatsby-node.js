@@ -37,14 +37,18 @@ exports.createPages = async ({
 					date(formatString: "MMMM DD, YYYY")
 					modified(formatString: "MMMM DD, YYYY")
 					author {
-						id
+						avatar_urls {
+							wordpress_48
+						}
 						name
+						slug
+						wordpress_id
+						id
 						url
 						description
 						link
 						slug
 						path
-						wordpress_id
 					}
 					featured_media {
 						localFile {

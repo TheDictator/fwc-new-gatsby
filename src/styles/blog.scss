@@ -207,5 +207,9 @@ input[type='number']::-webkit-outer-spin-button {
 .prose {
     div {
         width: 100% !important;
+        max-width: 100%;
+    }
+    p {
+        word-break: break-all;
     }
 }

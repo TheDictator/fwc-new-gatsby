@@ -68,7 +68,7 @@ export const BlogPostPage = (props: Props) => {
 									)}
 								</div>
 							</div>
-						<div className="post-content" className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
+							<div className="post-content mt-6 prose prose-blue prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 						</article>
 						<div className="px-4 sm:px-6 lg:px-8">
 							<Disqus config={disqusConfig}/>
@@ -115,7 +115,7 @@ export const BlogPostPage = (props: Props) => {
 									</p>
 								</div>
 							</div>
-							<cite className="relative flex items-center justify-center justify-items-center bg-gray-600 rounded-b-lg not-italic py-6 shadow-lg">
+							<cite className="relative flex items-center justify-center justify-items-center bg-gray-600 rounded-b-lg not-italic pt-6 pb-3 shadow-lg">
 								<a className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
 									<img
 										className="w-12 h-12 rounded-full bg-blue-300"
@@ -123,7 +123,7 @@ export const BlogPostPage = (props: Props) => {
 										alt=""
 									/>
 								</a>
-								<span className="relative text-indigo-300 font-semibold leading-7 mt-2">
+								<span className="relative text-blue-300 font-semibold leading-7 mt-1">
 									<p className="text-white font-semibold inline text-xl">{props.data.wordpressPost.author.name}</p>
 								</span>
 							</cite>
