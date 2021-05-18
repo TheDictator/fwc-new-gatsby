@@ -35,7 +35,7 @@ export const TagCloudd = () => {
 	`);
 	return (
 		<Fragment>
-            <h3 className="text-center text-xl text-black mt-4">Tag Cloud</h3>
+            <h3 className="text-xl text-center text-gray-500 mt-4">Tag Cloud</h3>
             <ReactWordcloud
             callbacks={callbacks}
             options={options}

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
 
-import { Card, Button, Tag, Row, Col, Icon , List} from 'antd';
-
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
@@ -12,8 +10,8 @@ import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 
 import '../styles/blog.scss';
+import { GrNext, GrPrevious } from "react-icons/gr";
 
-import TagCloud from '../components/TagCloud';
 
 export interface Props {
 	pathContext: {
@@ -83,7 +81,7 @@ export const BlogPostsPage = (props: Props) => {
 									<div className="flex-1">
 									{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 											return (
-												<a  key={categoryIndex} href={`/category/${category.slug}`} className="inline-block" title={category.name}>
+												<a key={categoryIndex} href={`/category/${category.slug}`} className="inline-block" title={category.name}>
 													<span
 													className=
 														'bg-blue-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold'
@@ -93,14 +91,14 @@ export const BlogPostsPage = (props: Props) => {
 												</a>
 											);
 										})}
-									<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`} className="block mt-2">
+									<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} className="block mt-2">
 										<p className="text-xl font-semibold text-gray-900">{node.title}</p>
 										<div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }}></div>
 									</a>
 									</div>
 									<div className="mt-6 flex items-center">
 									<div className="flex-shrink-0">
-										<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}`}>
+										<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`}>
 										<span className="sr-only">{capitalizeFirstLetter(node.author.name)}</span>
 										<img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="" />
 										</a>
@@ -125,20 +123,20 @@ export const BlogPostsPage = (props: Props) => {
 				<div className="navigation-links">
 					{index > 1 && (
 						<div className="previous-link">
-							<Link to={`/posts/${previousUrl}`} title={`/posts/${previousUrl}`}>
-								<Button type="primary">Go to Previous Page</Button>
+							<Link to={`/blog/${previousUrl}`} title={`/blog/${previousUrl}`} className="bg-gray-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
+							<GrPrevious/> Prev
 							</Link>
 						</div>
 					)}
 					{index <= (pageCount - 1) && (
 						<div className="next-link">
-							<Link to={`/posts/${nextUrl}`} title={`/posts/${nextUrl}`}>
-								<Button type="primary">Go to Next Page</Button>
+							<Link to={`/blog/${nextUrl}`} title={`/blog/${nextUrl}`} className="bg-gray-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
+								Next <GrNext/>
 							</Link>
 						</div>
 					)}
 				</div>
-				<TagCloud/>
+				
 		</Layout>
 	);
 };
