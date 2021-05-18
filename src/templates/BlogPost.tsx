@@ -77,7 +77,7 @@ export const BlogPostPage = (props: Props) => {
 					<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
 						<blockquote className="relative bg-white rounded-lg">
 							<TagCloud/>
-							<div className="categories-container tags-container post-meta-container px-8 mt-3">
+							<div className="categories-container tags-container post-meta-container pt-4 pb-6 px-8 lg:px-0">
 								<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black-400">
 									{decodeHtmlCharCodes(props.data.wordpressPost.title)}
 								</span>
