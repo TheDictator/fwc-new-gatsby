@@ -149,38 +149,10 @@ input[type='number']::-webkit-outer-spin-button {
 .categories-container,
 .tags-container {
     line-height: 32px;
-
-    .ant-tag {
-        background-color: $secondaryAccentColor;
-        border-color: $secondaryAccentColor;
-        padding: 0.25em 0.5em;
-        border-radius: 12px;
-        font-size: 1rem;
-        white-space: normal;
-
-        a  {
+    a {
+        transition: all 150ms linear;
+        &:hover {
             color: #fff;
-
-            .anticon {
-                margin-right: 6px;
-                color: #fff;
-            }
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: $secondaryAccentColor;
-            border-color: $secondaryAccentColor;
-            a {
-                color: #fff;
-
-                .anticon {
-                    svg {
-                        fill: #fff;
-                    }
-                }
-            }
         }
     }
 }

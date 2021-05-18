@@ -86,31 +86,31 @@ export const BlogPostPage = (props: Props) => {
 						<Disqus config={disqusConfig}/>
 					</div>
 				</Col>
-				<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar pt-8">
-					<TagCloud/>
-					<div className="categories-container tags-container post-meta-container px-8 mt-3">
-						<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-gray-900">
-							{decodeHtmlCharCodes(props.data.wordpressPost.title)}
-						</span>
-						<span className="post-meta mb-2 block">
-							<span className="date block">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
-						</span>
-						{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
-							return (
-								<Link to={`/category/${category.slug}`} title={category.name} key={categoryIndex} className="bg-blue-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1">
-									{capitalizeFirstLetter(category.name)}
-								</Link>
-							);
-						})}
-						{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
-							return (
-								<Link to={`/tag/${tag.slug}`} title={tag.name} key={tagIndex} className="bg-blue-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1">
-									{capitalizeFirstLetter(tag.name)}
-								</Link>
-							);
-						})}						
-					</div>
-					<blockquote className="relative bg-white rounded-lg shadow-lg">
+				<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
+					<blockquote className="relative bg-white rounded-lg">
+						<TagCloud/>
+						<div className="categories-container tags-container post-meta-container px-8 mt-3">
+							<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black">
+								{decodeHtmlCharCodes(props.data.wordpressPost.title)}
+							</span>
+							<span className="post-meta mb-2 block">
+								<span className="date block">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
+							</span>
+							{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
+								return (
+									<Link to={`/category/${category.slug}`} title={category.name} key={categoryIndex} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+										{capitalizeFirstLetter(category.name)}
+									</Link>
+								);
+							})}
+							{tags && tags.length > 0 && tags.map((tag, tagIndex) => {
+								return (
+									<Link to={`/tag/${tag.slug}`} title={tag.name} key={tagIndex} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+										{capitalizeFirstLetter(tag.name)}
+									</Link>
+								);
+							})}						
+						</div>
 						<div className="rounded-t-lg p-8">
 							{/* <h3 className="text-xl text-center">About Author</h3> */}
 							<div className="relative text-md text-gray-700 font-medium mt-4">
@@ -127,14 +127,14 @@ export const BlogPostPage = (props: Props) => {
 								</p>
 							</div>
 						</div>
-						<cite className="relative flex items-center justify-center justify-items-center bg-blue-600 rounded-b-lg not-italic py-6">
-							<div className="absolute rounded-full border-2 border-white sm:absolute top-0 transform -translate-y-1/2">
+						<cite className="relative flex items-center justify-center justify-items-center bg-gray-600 rounded-b-lg not-italic py-6 shadow-lg">
+							<a className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
 								<img
 									className="w-12 h-12 rounded-full bg-blue-300"
 									src={props.data.wordpressPost.author.avatar_urls.wordpress_48}
 									alt=""
 								/>
-							</div>
+							</a>
 							<span className="relative text-indigo-300 font-semibold leading-7 mt-2">
 								<p className="text-white font-semibold inline text-xl">{props.data.wordpressPost.author.name}</p>
 							</span>
