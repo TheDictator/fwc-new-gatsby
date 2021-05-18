@@ -42,8 +42,8 @@ export const BlogTagPostsPage = (props: Props) => {
 					<div className="absolute inset-0 bg-gray-500" style={{ mixBlendMode: 'multiply' }} aria-hidden="true" />
 				</div>
 				<div className="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
-					<span className="block text-gray-500 text-base font-semibold tracking-wide uppercase">Blog</span>
-					<h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl m-0">Browsing By Tag: <span className="text-blue-500">{capitalizeFirstLetter(props.pathContext.slug)}</span></h1>
+					<span className="block bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent text-base font-semibold tracking-wide uppercase">Blog</span>
+					<h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl m-0">Browsing By Tag: <span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">{capitalizeFirstLetter(props.pathContext.slug)}</span></h1>
 				</div>
 			</div>
 			<Row gutter={36}>

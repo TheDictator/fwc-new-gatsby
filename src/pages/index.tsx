@@ -230,7 +230,7 @@ export const IndexPage = (props: Props) => {
                 </div>
                 <div className="mt-8 border-t border-gray-200 pt-6">
                   <blockquote>
-                    <div className="relative text-md text-gray-500 font-medium mt-4">
+                    <div className="relative">
                       <svg
                         className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200"
                         fill="currentColor"
