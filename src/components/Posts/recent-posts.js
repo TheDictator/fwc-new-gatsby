@@ -2,11 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image';
-
 import { capitalizeFirstLetter } from '../../utils';
 const moment = require('moment');
-
-
 export const RecentPosts = () => (
     <StaticQuery
         query={graphql`
@@ -71,7 +68,6 @@ export const RecentPosts = () => (
         `}
         render={data => {						
         return (
-          
                 <>
                 {data.allWordpressPost.edges.map(post => (
                     <div key={post.node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
@@ -119,7 +115,7 @@ export const RecentPosts = () => (
                         </div>
                       </div>
                     </div>
-                    ))
+                  ))
                 }
             </>
         )

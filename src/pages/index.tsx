@@ -51,19 +51,14 @@ import Security from '../images/security.svg';
 	  name: 'Internet Marketing',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: ChartBarIcon,
-	},
-	{
-	  name: 'Migrations',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: ReplyIcon,
-	},
+	},	
 	{
 	  name: 'Shopify Development',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: DocumentReportIcon,
 	},
 	{
-	  name: 'Custom Web Applications',
+	  name: 'Custom Web Solutions',
 	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 	  icon: CogIcon,
 	},
