@@ -78,7 +78,7 @@ export const BlogTagPostsPage = (props: Props) => {
 											);
 											})}
 											<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} className="block mt-2">
-												<p className="text-xl font-semibold text-gray-900">{node.title}</p>
+												<p className="text-xl font-semibold text-black-400 title">{node.title}</p>
 												<p className="mt-3 text-base text-gray-500">{node.description}</p>
 											</a>
 										</div>

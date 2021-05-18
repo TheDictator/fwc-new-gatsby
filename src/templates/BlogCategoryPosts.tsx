@@ -65,7 +65,7 @@ export const BlogCategoryPostsPage = (props: Props) => {
 											</Link>
 										)}
 									</div>
-									<div className="flex-1 bg-white p-6 flex flex-col justify-between">
+									<div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
 										<div className="flex-1 categories-container">
 										{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 											return (
@@ -80,7 +80,7 @@ export const BlogCategoryPostsPage = (props: Props) => {
 											);
 											})}
 											<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} className="block mt-2">
-											<p className="text-xl font-semibold text-gray-900">{node.title}</p>
+											<p className="text-xl font-semibold text-black-400 title">{node.title}</p>
 											<div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }}></div>
 											</a>
 										</div>

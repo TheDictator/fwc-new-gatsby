@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
+import Image, { FluidObject } from 'gatsby-image';
+
 import { Post, CategoryTagInfo } from '../../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../../utils';
 const moment = require('moment');
+
 
 export const RecentPosts = () => (
     <StaticQuery
@@ -37,7 +40,18 @@ export const RecentPosts = () => (
                         content
                         featured_media {
                           localFile {
-                            publicURL
+                            childImageSharp {
+                              fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+                                aspectRatio
+                                src
+                                srcSet
+                                sizes
+                                base64
+                                tracedSVG
+                                srcWebp
+                                srcSetWebp
+                              }
+                            }
                           }
                         }
                         
@@ -58,16 +72,16 @@ export const RecentPosts = () => (
         `}
         render={data => {						
         return (
+          
                 <>
                 {data.allWordpressPost.edges.map(post => (
-
                     <div key={post.node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                       <div className="flex-shrink-0">
-                        <a href={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}.html`}>
-                            <img className="h-48 w-full object-cover" src={post.node.featured_media.localFile.publicURL} alt="" />
-                        </a>
+                          <Link to={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}.html`} title={post.node.slug}>
+                            <Image fluid={post.node.featured_media.localFile.childImageSharp.fluid} alt={post.node.title} title={post.node.title} />
+                          </Link>
                       </div>
-                      <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                      <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
                         <div className="flex-1 categories-container">
                           {post.node.categories && post.node.categories.length > 0 && post.node.categories.map((category, categoryIndex) => {
                               return (
@@ -82,7 +96,7 @@ export const RecentPosts = () => (
                               );
                             })}
                             <a href={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}.html`} className="block mt-2">
-                              <p className="text-xl font-semibold text-gray-900">{post.node.title}</p>
+                              <p className="text-xl font-semibold text-black-400 title">{post.node.title}</p>
                               <div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></div>
                             </a>
                         </div>
