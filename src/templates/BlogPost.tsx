@@ -51,19 +51,20 @@ export const BlogPostPage = (props: Props) => {
 			<Row gutter={36}>
 				<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
 					<article className="post relative px-4 sm:px-6 lg:px-8">
-						
 						<div className="text-lg max-w-prose mx-auto">
-						<h1>
-							<span className="block text-base text-center text-blue-600 font-semibold tracking-wide uppercase">
-								Article
-							</span>
-							<span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-								{decodeHtmlCharCodes(props.data.wordpressPost.title)}
-							</span>
-						</h1>
-						{(fluid && fluid.src && fluid.src.length > 0) && (
-							<Image fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />
-						)}
+							<h1 className="mb-4">
+								<span className="block text-base text-center text-blue-600 font-semibold tracking-wide uppercase">
+									Article
+								</span>
+								<span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+									{decodeHtmlCharCodes(props.data.wordpressPost.title)}
+								</span>
+							</h1>
+							<div className="my-2">
+								{(fluid && fluid.src && fluid.src.length > 0) && (
+									<Image className="rounded-lg shadow-lg object-cover object-center" fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />
+								)}
+							</div>
 						</div>
 					<div className="post-content" className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
 					<div className="navigation-links margin-bottom-24px">
@@ -81,12 +82,12 @@ export const BlogPostPage = (props: Props) => {
 					</article>
 					<Disqus config={disqusConfig}/>
 				</Col>
-				<Col xs={0} sm={0} md={0} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
+				<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar pt-8">
 					<TagCloud/>
-					<span className="mt-2 mb-0 block leading-8 font-extrabold tracking-tight text-gray-900">
-						{decodeHtmlCharCodes(props.data.wordpressPost.title)}
-					</span>
-					<div className="categories-container tags-container post-meta-container margin-bottom-24px">
+					<div className="categories-container tags-container post-meta-container px-8 mt-3">
+						<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-gray-900">
+							{decodeHtmlCharCodes(props.data.wordpressPost.title)}
+						</span>
 						<span className="post-meta mb-2 block">
 							<span className="date block">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
 						</span>
@@ -103,12 +104,38 @@ export const BlogPostPage = (props: Props) => {
 									{capitalizeFirstLetter(tag.name)}
 								</Link>
 							);
-						})}
-						<hr />
-						<span className="post-meta mb-2 block">
-							<span className="author block">{capitalizeFirstLetter(props.data.wordpressPost.author.name)}</span>
-						</span>
+						})}						
 					</div>
+					<blockquote className="relative bg-white rounded-lg shadow-lg">
+						<div className="rounded-t-lg py-8 px-10 pt-10 pb-8">
+							<h3 className="text-xl text-center">About Author</h3>
+							<div className="relative text-sm text-gray-700 font-medium mt-8">
+								<svg
+									className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200"
+									fill="currentColor"
+									viewBox="0 0 32 32"
+									aria-hidden="true"
+								>
+									<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+								</svg>
+								<p className="relative">
+									{props.data.wordpressPost.author.description}
+								</p>
+							</div>
+						</div>
+						<cite className="relative flex items-center justify-center justify-items-center bg-blue-600 rounded-b-lg not-italic py-6">
+							<div className="absolute rounded-full border-2 border-white sm:absolute top-0 transform -translate-y-1/2">
+								<img
+									className="w-12 h-12 rounded-full bg-blue-300"
+									src={props.data.wordpressPost.author.avatar_urls.wordpress_48}
+									alt=""
+								/>
+							</div>
+							<span className="relative text-indigo-300 font-semibold leading-7 mt-2">
+								<p className="text-white font-semibold inline text-xl">Kevin Carpenter</p>{' '}
+							</span>
+						</cite>
+					</blockquote>
 				</Col>
 			</Row>
 			</div>
@@ -127,14 +154,18 @@ export const query = graphql`
 			date(formatString: "MMMM DD, YYYY")
 			modified(formatString: "MMMM DD, YYYY")
 			author {
-				id
+				avatar_urls {
+					wordpress_48
+				}
 				name
+				slug
+				wordpress_id
+				id
 				url
 				description
 				link
 				slug
 				path
-				wordpress_id
 			}
 			slug
 			wordpress_id
