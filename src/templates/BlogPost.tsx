@@ -75,7 +75,7 @@ export const BlogPostPage = (props: Props) => {
 						</div>
 					</Col>
 					<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
-						<blockquote className="relative bg-white rounded-lg">
+						<blockquote className="relative bg-white rounded-lg m-0">
 							<TagCloud/>
 							<div className="categories-container tags-container post-meta-container pt-4 pb-6 px-8 lg:px-0">
 								<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black-400">

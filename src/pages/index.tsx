@@ -20,6 +20,11 @@ import {
 	SparklesIcon,
   } from '@heroicons/react/outline'
 import Business from '../images/business.svg';
+import { SiShopify, SiGoogleanalytics, SiOracle } from "react-icons/si";
+import { DiBackbone } from "react-icons/di";
+
+import Netsuite from "../images/oracle.svg";
+
 import Security from '../images/security.svg';
 
   const features = [
@@ -202,7 +207,40 @@ export const IndexPage = (props: Props) => {
             </div>
           </div>
         </div>
-      
+        {/* Logo cloud */}
+        <div className="logo-cloud bg-gray-100">
+            <div className="max-w-7xl mx-auto py-10 pb-0 px-4 sm:px-6 lg:px-8">
+              <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
+                We trust our <span className="text-blue-500 font-extrabold">20+ years</span> of Netsuite experience with some of these products
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-8 lg:grid-cols-4 text-center">
+                <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                  <SiOracle/>
+                  <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">Netsuite / SuiteCommerce</span>
+                </div>
+                <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                  <SiGoogleanalytics/>
+                  <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">Google Analytics</span>
+                </div>
+                <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                  <SiShopify />
+                  <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">Shopify</span>
+                </div>
+                <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                  <DiBackbone/>
+                  <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">Backbone.js</span>
+                </div>
+                {/* <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                  <img
+                    className="h-12"
+                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
+                    alt="Workcation"
+                  />
+                </div> */}
+              </div>
+            </div>
+          </div>
+        
         {/* Alternating Feature Sections */}
         <div className="relative pt-32 pb-32 overflow-hidden">
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />

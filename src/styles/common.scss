@@ -450,4 +450,14 @@ html,body, p {
       max-width: calc(100vw - 40px);
     }
   }
-  
+  .logo-cloud {
+    .logo-column {
+        display: flex;
+        flex-direction: column;
+        svg {
+            width: 4em;
+            height: auto;
+            margin: 0 auto 10px;
+        }
+    }
+}
