@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
-import Image, { FluidObject } from 'gatsby-image';
+import Image from 'gatsby-image';
 
-import { Post, CategoryTagInfo } from '../../contracts/post';
-import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../../utils';
+import { capitalizeFirstLetter } from '../../utils';
 const moment = require('moment');
 
 

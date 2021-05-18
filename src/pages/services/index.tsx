@@ -2,76 +2,11 @@ import React from 'react';
 
 import { graphql } from 'gatsby';
 import Image, { FluidObject } from 'gatsby-image';
-
-import {
-	ChartBarIcon,
-	CursorClickIcon,
-	ReplyIcon,
-	ShieldCheckIcon
-  } from '@heroicons/react/outline'
-  import { ExternalLinkIcon } from '@heroicons/react/solid'
+import { ExternalLinkIcon } from '@heroicons/react/solid'
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-
 import { ChildImageSharp } from '../../contracts/post';
-
 import '../../styles/blog.scss';
-const sbPosts = [
-    {
-      title: 'Boost your conversion rate',
-      href: '#',
-      category: { name: 'SEO', href: '#' },
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-      readingTime: '6 min',
-      author: {
-        name: 'David Norris',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-    {
-      title: 'How to use search engine optimization to drive sales',
-      href: '#',
-      category: { name: 'SiteBuilder', href: '#' },
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-      date: 'Mar 10, 2020',
-      datetime: '2020-03-10',
-      imageUrl:
-        'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-      readingTime: '4 min',
-      author: {
-        name: 'Kevin Carpenter',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-    {
-      title: 'Improve your customer experience',
-      href: '#',
-      category: { name: 'SuiteCommerce', href: '#' },
-      description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-      date: 'Feb 12, 2020',
-      datetime: '2020-02-12',
-      imageUrl:
-        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-      readingTime: '11 min',
-      author: {
-        name: 'David Norris',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-  ]
 const faqs = [
 	{
 	  id: 1,
@@ -104,28 +39,10 @@ const faqs = [
 		  "I don't know, but the system isr ad. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
 	  },
 	// More questions...
-  ]
-const services = [
-	{
-	  name: 'Sitebuilder',
-	  description: 'Get a better understanding of where your traffic is coming from.',
-	  href: '/services/sitebuilder',
-	  icon: ChartBarIcon,
-	},
-	{
-	  name: 'SuiteCommerce',
-	  description: 'Speak directly to your customers in a more meaningful way.',
-	  href: '/services/suite-commerce',
-	  icon: CursorClickIcon,
-	},
-	{ name: 'SC Advanced', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-	{
-	  name: 'NS Migrations',
-	  description: "Connect with third-party tools that you're already using.",
-	  href: '/services/migrations',
-	  icon: ReplyIcon,
-	},
-  ]
+]
+function classNames(...classes) {
+	return classes.filter(Boolean).join(' ')
+  }
 export interface Props {
 	data: {
 		file: ChildImageSharp;
@@ -147,27 +64,6 @@ export const ServicesPage = (props: Props) => {
 					Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
 					malesuada. Eleifend condimentum id viverra nulla.
 					</p>
-					<div className="mt-12">
-						<div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-							{services.map((feature) => (
-							<div key={feature.name} className="pt-6">
-								<div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-									<div className="-mt-6">
-										<div>
-										<span className="inline-flex items-center justify-center p-3 bg-blue-500 rounded-md shadow-lg">
-											<feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-										</span>
-										</div>
-										<h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature.name}</h3>
-										<p className="mt-5 text-base text-gray-500">
-										Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
-										</p>
-									</div>
-								</div>
-							</div>
-							))}
-						</div>
-					</div>
       			</div>
 			</div>
 			{/* SiteBuilder Section */}
@@ -187,18 +83,15 @@ export const ServicesPage = (props: Props) => {
 				<div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
 					<div className="md:ml-auto md:w-1/2 md:pl-10">
 						<h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-						Sitebuilder
+						NetSuite
 						</h2>
-						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Don't fix what is not broken</p>
+						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Site Builder</p>
 						<p className="mt-3 text-lg text-gray-300">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a
-						scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-						tincidunt duis.
+							Don't fix what isn't broken. Projects have run the gamut from developing a new website from scratch, fixing SEO penalties or other search engine optimization, integrations with 3rd parties, custom Ajax solutions, and converting existing sites into device friendly responsive design.
 						</p>
 						<div className="mt-8">
 							<div className="inline-flex rounded-md shadow">
-								<a
-								href="#"
+								<a href="#"
 								className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
 								>
 								Learn more
@@ -211,28 +104,26 @@ export const ServicesPage = (props: Props) => {
 			</div>
 			{/* Suitecommerce Section */}
 			<div className="relative bg-gray-900">
-				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-				<img
-					className="w-full h-full object-cover"
-					src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-					alt=""
-				/>
-				<div
-					aria-hidden="true"
-					className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
-					style={{ mixBlendMode: 'multiply' }}
-				/>
+				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:right-0 md:h-full md:w-1/2">
+					<img
+						className="w-full h-full object-cover"
+						src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+						alt=""
+					/>
+					<div
+						aria-hidden="true"
+						className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+						style={{ mixBlendMode: 'multiply' }}
+					/>
 				</div>
 				<div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
-					<div className="md:ml-auto md:w-1/2 md:pl-10">
+					<div className="md:mr-auto md:w-1/2 md:pr-10">
 						<h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-						SuiteCommerce
+						NetSuite
 						</h2>
-						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">The step up from SiteBuilder</p>
+						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">SuiteCommerce</p>
 						<p className="mt-3 text-lg text-gray-300">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a
-						scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-						tincidunt duis.
+						The step up from SiteBuilder
 						</p>
 						<div className="mt-8">
 							<div className="inline-flex rounded-md shadow">
@@ -248,6 +139,59 @@ export const ServicesPage = (props: Props) => {
 					</div>
 				</div>
 			</div>
+			{/* <div className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+				<div className="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+					<div>
+					<h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">Recent publications</h2>
+					<p className="mt-3 text-xl text-gray-500 sm:mt-4">
+						Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
+						arcu.
+					</p>
+					</div>
+					<div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+					{data.allWordpressPost.edges.map((post) => (
+						<div key={post.title}>
+						<div>
+							<a href={post.category.href} className="inline-block">
+							<span
+								className={classNames(
+								post.category.color,
+								'inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium'
+								)}
+							>
+								{post.category.name}
+							</span>
+							</a>
+						</div>
+						<a href={post.href} className="block mt-4">
+							<p className="text-xl font-semibold text-gray-900">{post.title}</p>
+							<p className="mt-3 text-base text-gray-500">{post.description}</p>
+						</a>
+						<div className="mt-6 flex items-center">
+							<div className="flex-shrink-0">
+							<a href={post.author.href}>
+								<span className="sr-only">{post.author.name}</span>
+								<img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt="" />
+							</a>
+							</div>
+							<div className="ml-3">
+							<p className="text-sm font-medium text-gray-900">
+								<a href={post.author.href}>{post.author.name}</a>
+							</p>
+							<div className="flex space-x-1 text-sm text-gray-500">
+								<time dateTime={post.datetime}>{post.date}</time>
+								<span aria-hidden="true">&middot;</span>
+								<span>{post.readingTime} read</span>
+							</div>
+							</div>
+						</div>
+						</div>
+					))}
+					</div>
+				</div>
+			</div> */}
+
+			
 			<div className="bg-blue-700">
 				<div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
 					<h2 className="text-3xl font-extrabold text-white">Frequently asked questions</h2>
@@ -309,6 +253,62 @@ export const query = graphql`
 					srcSetWebp
 				}
       		}
+		}
+		allWordpressPost(filter: {status: {eq: "publish"}}, limit: 3) {
+			edges {
+				node {
+					id
+					title
+					excerpt
+					date(formatString: "MMMM DD, YYYY")
+					modified(formatString: "MMMM DD, YYYY")
+					author {
+						avatar_urls {
+							wordpress_48
+						}
+						name
+						slug
+						wordpress_id
+						id
+						url
+						description
+						link
+						slug
+						path
+					}
+					slug
+					title
+					wordpress_id
+					content
+					featured_media {
+					  localFile {
+						childImageSharp {
+						  fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
+							aspectRatio
+							src
+							srcSet
+							sizes
+							base64
+							tracedSVG
+							srcWebp
+							srcSetWebp
+						  }
+						}
+					  }
+					}
+					
+					categories {
+						id
+						link
+						wordpress_id
+						count
+						description
+						name
+						slug
+						path
+					}
+				}
+			}
 		}
   	}
 `;

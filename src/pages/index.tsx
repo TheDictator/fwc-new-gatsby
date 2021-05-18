@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
 import { StaticQuery, graphql } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { ChildImageSharp } from '../contracts/post';
-import RecentPosts from '../components/Posts/recent-posts'
+import RecentPosts from '../components/Posts/recent-posts';
+import { ExternalLinkIcon } from '@heroicons/react/solid'
 import Help from '../images/help.jpg';
 import '../styles/blog.scss';
 import {
@@ -22,7 +22,6 @@ import {
 import Business from '../images/business.svg';
 import { SiShopify, SiGoogleanalytics, SiOracle } from "react-icons/si";
 import { DiBackbone } from "react-icons/di";
-
 import Netsuite from "../images/oracle.svg";
 
 import Security from '../images/security.svg';
@@ -337,7 +336,80 @@ export const IndexPage = (props: Props) => {
             </div>
           </div>
         </div>
-
+{/* SiteBuilder Section */}
+<div className="relative bg-gray-900">
+				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+				<img
+					className="w-full h-full object-cover"
+					src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+					alt=""
+				/>
+				<div
+					aria-hidden="true"
+					className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+					style={{ mixBlendMode: 'multiply' }}
+				/>
+				</div>
+				<div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+					<div className="md:ml-auto md:w-1/2 md:pl-10">
+						<h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+						NetSuite
+						</h2>
+						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Site Builder</p>
+						<p className="mt-3 text-lg text-gray-300">
+							Don't fix what isn't broken. Projects have run the gamut from developing a new website from scratch, fixing SEO penalties or other search engine optimization, integrations with 3rd parties, custom Ajax solutions, and converting existing sites into device friendly responsive design.
+						</p>
+						<div className="mt-8">
+							<div className="inline-flex rounded-md shadow">
+								<a
+								href="#"
+								className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+								>
+								Learn more
+								<ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/* Suitecommerce Section */}
+			<div className="relative bg-gray-900">
+				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:right-0 md:h-full md:w-1/2">
+					<img
+						className="w-full h-full object-cover"
+						src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+						alt=""
+					/>
+					<div
+						aria-hidden="true"
+						className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+						style={{ mixBlendMode: 'multiply' }}
+					/>
+				</div>
+				<div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+					<div className="md:mr-auto md:w-1/2 md:pr-10">
+						<h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+						NetSuite
+						</h2>
+						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">SuiteCommerce</p>
+						<p className="mt-3 text-lg text-gray-300">
+						The step up from SiteBuilder.
+						</p>
+						<div className="mt-8">
+							<div className="inline-flex rounded-md shadow">
+								<a
+								href="#"
+								className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+								>
+								Learn more
+								<ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         {/* Gradient Feature Section */}
         <div className="bg-gradient-to-r from-blue-800 to-blue-700">
           <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
