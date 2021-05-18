@@ -83,7 +83,7 @@ export const RecentPosts = () => (
                             })}
                             <a href={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}.html`} className="block mt-2">
                               <p className="text-xl font-semibold text-gray-900">{post.node.title}</p>
-                              <p className="mt-3 text-base text-gray-500">{post.node.description}</p>
+                              <div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></div>
                             </a>
                         </div>
                         <div className="mt-6 flex items-center">

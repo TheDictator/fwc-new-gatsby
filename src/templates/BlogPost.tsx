@@ -99,7 +99,7 @@ export const BlogPostPage = (props: Props) => {
 									);
 								})}						
 							</div>
-							<div className="rounded-t-lg p-8">
+							<div className="rounded-t-lg pt-4 pb-6 px-8 lg:px-0">
 								<h3 className="text-xl text-center text-gray-500">Author</h3>
 								<div className="relative text-md text-gray-500 font-medium mt-4">
 									<svg

@@ -81,7 +81,7 @@ export const BlogCategoryPostsPage = (props: Props) => {
 											})}
 											<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} className="block mt-2">
 											<p className="text-xl font-semibold text-gray-900">{node.title}</p>
-											<p className="mt-3 text-base text-gray-500">{node.description}</p>
+											<div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }}></div>
 											</a>
 										</div>
 										<div className="mt-6 flex items-center">
