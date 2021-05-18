@@ -162,7 +162,7 @@ export const IndexPage = (props: Props) => {
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div className="relative shadow-xl sm:rounded-2xl sm:rounded-t-none sm:overflow-hidden">
+            <div className="relative shadow-xl w-full sm:rounded-2xl sm:rounded-t-none sm:overflow-hidden">
               <div className="absolute inset-0">
                 <img
                   className="h-full w-full object-cover"
@@ -186,13 +186,13 @@ export const IndexPage = (props: Props) => {
                   <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
                     <a
                       href="#"
-                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 sm:px-8"
+                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-700 sm:px-8"
                     >
                       Get started
                     </a>
                     <a
                       href="/services"
-                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 sm:px-8"
+                      className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 hover:text-white sm:px-8"
                     >
                      Our services
                     </a>
@@ -203,7 +203,6 @@ export const IndexPage = (props: Props) => {
           </div>
         </div>
       
-
         {/* Alternating Feature Sections */}
         <div className="relative pt-32 pb-32 overflow-hidden">
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
@@ -223,7 +222,7 @@ export const IndexPage = (props: Props) => {
                     <div className="mt-6">
                       <a
                         onClick={showDrawer}
-                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
+                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 hover:text-white"
                       >
                         Get started
                       </a>
@@ -280,7 +279,7 @@ export const IndexPage = (props: Props) => {
                     <div className="mt-6">
                       <a
                         href="#"
-                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
+                        className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 hover:text-white"
                       >
                         Get started
                       </a>

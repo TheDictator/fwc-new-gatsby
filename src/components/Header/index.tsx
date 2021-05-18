@@ -297,7 +297,7 @@ export const Header = (props: Props) => {
                   </a>
                   <a
                     href="/contact-fourth-wave-consulting"
-                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 hover:text-white"
                   >
                     Contact
                   </a>
