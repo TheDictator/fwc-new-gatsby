@@ -1,10 +1,11 @@
 # TODO before go live
 - LinkedIN link in footer
+- Logo Cloud under Hero, make into slider?
 - New Logos (horizontal, just logo sphere)
 - Author sidebar information
 - Make testimonials cycle on homepage
 - Install Search Algolia
-- Blog Post Styles
+- Blog Post Styles (Related Posts?)
 - Import comments from Wordpress
 - Sidebar Open from `Get Started` links (input hidden field to include where initiated contact from & what page)
 - Services listing w/ blog posts on homepage
