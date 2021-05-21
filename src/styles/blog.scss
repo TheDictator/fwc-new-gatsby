@@ -51,15 +51,15 @@ select:-webkit-autofill:active {
     color: $blackColor !important;
 }
 
-::-webkit-scrollbar {
-    height: 0px;
-    width: 0px;
-}
+// ::-webkit-scrollbar {
+//     height: 0px;
+//     width: 0px;
+// }
 
-::-webkit-scrollbar:horizontal {
-    height: 0px;
-    width: 0px;
-}
+// ::-webkit-scrollbar:horizontal {
+//     height: 0px;
+//     width: 0px;
+// }
 
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {

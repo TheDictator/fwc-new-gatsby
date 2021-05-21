@@ -13,7 +13,10 @@
 
         .sidebar {
             position: sticky;
-            top: 1.45rem;
+            top: 0;
+            bottom: 0;
+            height: 100vh;
+            overflow-y: scroll;
             svg {
                 margin: 0 auto;
             }
