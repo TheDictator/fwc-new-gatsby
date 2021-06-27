@@ -47,6 +47,23 @@ module.exports = {
 			options: {
 				url: `${process.env.WPGRAPHQL_URL}`,
 				verbose: true,
+				type: {
+					Page: {
+						exclude: true,
+					},
+					Menu: {
+						exclude: true,
+					},
+					MenuItem: {
+						exclude: true,
+					},
+					User: {
+						exclude: true,
+					},
+					UserRole: {
+						exclude: true,
+					},
+				},
 				develop: {
 					hardCacheMediaFiles: true,
 				},

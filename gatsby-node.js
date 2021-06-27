@@ -78,10 +78,10 @@ exports.createPages = async ({
 	const BlogPosts = BlogPostsResult.data.allWpPost.edges;
 
 	BlogPosts.forEach((post, index) => {
-		const category = post.node.categories.slug;
+		const category = post.node.categories.nodes.slug;
 		const date = post.node.date;
 		createPage({
-			path: `/${post.node.categories[0].slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}.html`,
+			path: `/${post.node.categories.nodes[0].slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}.html`,
 			component: BlogPostTemplate,
 			context: {
 				id: post.node.wordpress_id,

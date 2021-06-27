@@ -17,19 +17,6 @@ export const RecentPosts = () => (
                   excerpt
                   date(formatString: "MMMM DD, YYYY")
                   modified(formatString: "MMMM DD, YYYY")
-                  author {
-                    node {
-                      avatar {
-                        url
-                      }
-                      name
-                      slug
-                      id
-                      url
-                      description
-                      slug
-                    }
-                  }
                   slug
                   title
                   content
