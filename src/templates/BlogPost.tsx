@@ -151,7 +151,7 @@ export const BlogPostPage = (props: Props) => {
 export default BlogPostPage;
 
 export const query = graphql`
-	query($id: String!, $slug: String!) {
+	query($id: String!) {
 		wpPost(id: {eq: $id}) {
 			id
 			slug

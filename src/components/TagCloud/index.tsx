@@ -23,7 +23,7 @@ const options = {
 export const TagCloudd = () => {
   const { allWordpressTag } = useStaticQuery(graphql`
       query {
-        allWordpressTag {
+        allWpTag {
           edges {
             node {
               count

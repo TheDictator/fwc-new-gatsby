@@ -1,11 +1,10 @@
 import React from 'react';
+import { StaticImage } from "gatsby-plugin-image"
 
 import { graphql } from 'gatsby';
-import Image, { FluidObject } from 'gatsby-image';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
-import { ChildImageSharp } from '../../contracts/post';
 import '../../styles/blog.scss';
 const faqs = [
 	{
@@ -40,12 +39,9 @@ const faqs = [
 	  },
 	// More questions...
 ]
-function classNames(...classes) {
-	return classes.filter(Boolean).join(' ')
-  }
 export interface Props {
 	data: {
-		file: ChildImageSharp;
+		image: Image;
 	};
 	location: Location;
 }
@@ -69,10 +65,10 @@ export const ServicesPage = (props: Props) => {
 			{/* SiteBuilder Section */}
 			<div className="relative bg-gray-900">
 				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-				<img
+				<StaticImage
 					className="w-full h-full object-cover"
-					src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-					alt=""
+					src="../images/hero1.jpeg"
+					alt={`Services`} 
 				/>
 				<div
 					aria-hidden="true"
@@ -257,58 +253,47 @@ export const query = graphql`
 		allWpPost(filter: {status: {eq: "publish"}}, limit: 3) {
 			edges {
 				node {
-					id
-					title
-					excerpt
-					date(formatString: "MMMM DD, YYYY")
-					modified(formatString: "MMMM DD, YYYY")
-					author {
-						avatar_urls {
-							wordpress_48
-						}
-						name
-						slug
-						wordpress_id
-						id
-						url
-						description
-						link
-						slug
-						path
+				  id
+				  slug
+				  title
+				  excerpt
+				  date(formatString: "MMMM DD, YYYY")
+				  modified(formatString: "MMMM DD, YYYY")
+				  author {
+					node {
+					  id
+					  name
+					  url
+					  slug
 					}
-					slug
-					title
-					wordpress_id
-					content
-					featured_media {
+				  }
+				  featuredImage {
+					node {
 					  localFile {
 						childImageSharp {
-						  fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-							aspectRatio
-							src
-							srcSet
-							sizes
-							base64
-							tracedSVG
-							srcWebp
-							srcSetWebp
-						  }
+						  gatsbyImageData
 						}
 					  }
 					}
-					
-					categories {
-						id
-						link
-						wordpress_id
-						count
-						description
-						name
-						slug
-						path
+				  }
+				  categories {
+					nodes {
+					  id
+					  count
+					  name
+					  slug
 					}
+				  }
+				  tags {
+					nodes {
+					  id
+					  count
+					  name
+					  slug
+					}
+				  }
 				}
-			}
+			  }
 		}
   	}
 `;

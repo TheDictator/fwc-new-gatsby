@@ -1,23 +1,16 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-export const Image = ({
-  image,
-  className,
-  width,
-  alt,
-  gatsbyData,
-}: {
-  image?: string;
-  width?: number;
-  alt: string;
-  className?: string;
-  gatsbyData?: any;
-}) => {
+
+const Image = ({ image }) => {
+  const imageData = getImage(image?.node?.localFile)
+
+  if (!imageData) return null
 
   return (
     <div className="image-component">
-      <GatsbyImage image={gatsbyImageData} className={className} alt={alt} />
+      <GatsbyImage alt={image.node.altText} image={imageData} />
     </div>
-  );
-};
+  )
+}
+export default Image
