@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import RecentPosts from '../components/Posts/recent-posts';
@@ -159,7 +158,7 @@ export const IndexPage = (props: Props) => {
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div className="relative shadow-xl w-full sm:rounded-2xl sm:rounded-t-none sm:overflow-hidden">
               <div className="absolute inset-0">
-                <img
+                <StaticImage
                   className="h-full w-full object-cover"
                   src="../images/help.jpg"
                   alt="People working on laptops"
@@ -319,7 +318,7 @@ export const IndexPage = (props: Props) => {
                 <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                   <img
                     className="w-full lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src="../images/security.svg"
+                    src="images/security.svg"
                     alt="Customer profile user interface"
                   />
                 </div>
