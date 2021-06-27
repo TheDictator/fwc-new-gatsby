@@ -78,13 +78,12 @@ exports.createPages = async ({
 	const BlogPosts = BlogPostsResult.data.allWpPost.edges;
 
 	BlogPosts.forEach((post, index) => {
-		const category = post.node.categories[0].nodes.slug;
 		const date = post.node.date;
 		createPage({
-			path: `/${post.node.categories[0].nodes.slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}.html`,
+			path: `/${post.node.categories.nodes[0].slug}/${moment(date).format('YYYY')}/${moment(date).format('MM')}/${post.node.slug}.html`,
 			component: BlogPostTemplate,
 			context: {
-				id: post.node.wordpress_id,
+				id: post.node.id,
 				slug: post.node.slug,
 				previous: index === 0 ? null : BlogPosts[index - 1].node,
 				next: index === (BlogPosts.length - 1) ? null : BlogPosts[index + 1].node
@@ -106,7 +105,7 @@ exports.createPages = async ({
 				}
 			});
 		}
-		const categories = post.node.categories;
+		const categories = post.node.categories.nodes;
 		if (categories && categories.length > 0) {
 			categories.forEach((category) => {
 				if (BlogCategoryPosts.has(category.slug)) {

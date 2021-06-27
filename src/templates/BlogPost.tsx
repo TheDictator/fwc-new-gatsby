@@ -38,17 +38,13 @@ export interface Props {
 }
 
 export const BlogPostPage = (props: Props) => {
-	const fluid: FluidObject | null = (props.data.wordpressPost.featured_media && props.data.wordpressPost.featured_media.localFile && props.data.wordpressPost.featured_media.localFile.childImageSharp && props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid : null;
-	const categories: CategoryTagInfo[] = (props.data.wordpressPost.categories && props.data.wordpressPost.categories.length) > 0 ? props.data.wordpressPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-	const tags: CategoryTagInfo[] = (props.data.wordpressPost.tags && props.data.wordpressPost.tags.length) > 0 ? props.data.wordpressPost.tags : new Array<CategoryTagInfo>();
-	const disqusConfig = {
-		url: 'https://fwc-new.netlify.app/' + props.data.wordpressPost.path,
-		identifier: props.data.wordpressPost.id,
-		title: props.data.wordpressPost.title,
-	  }
+	const fluid: FluidObject | null = (props.data.wpPost.featured_media && props.data.wpPost.featured_media.localFile && props.data.wpPost.featured_media.localFile.childImageSharp && props.data.wpPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wpPost.featured_media.localFile.childImageSharp.fluid : null;
+	const categories: CategoryTagInfo[] = (props.data.wpPost.categories && props.data.wpPost.categories.length) > 0 ? props.data.wpPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
+	const tags: CategoryTagInfo[] = (props.data.wpPost.tags && props.data.wpPost.tags.length) > 0 ? props.data.wpPost.tags : new Array<CategoryTagInfo>();
+
 	return (
 		<Layout location={props.location}>
-			<SEO title={props.data.wordpressPost.title} description={props.data.wordpressPost.excerpt} />
+			<SEO title={props.data.wpPost.title} description={props.data.wpPost.excerpt} />
 			<div className="container container--l">
 				<Row gutter={36}>
 					<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
@@ -59,19 +55,18 @@ export const BlogPostPage = (props: Props) => {
 										Article
 									</span>
 									<span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-										{decodeHtmlCharCodes(props.data.wordpressPost.title)}
+										{decodeHtmlCharCodes(props.data.wpPost.title)}
 									</span>
 								</h1>
 								<div className="my-2">
 									{(fluid && fluid.src && fluid.src.length > 0) && (
-										<Image className="rounded-lg shadow-lg object-cover object-center" fluid={fluid} alt={props.data.wordpressPost.title} title={props.data.wordpressPost.title} />
+										<Image className="rounded-lg shadow-lg object-cover object-center" fluid={fluid} alt={props.data.wpPost.title} title={props.data.wpPost.title} />
 									)}
 								</div>
 							</div>
-							<div className="post-content mt-6 prose prose-blue prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wordpressPost.content) }} />
+							<div className="post-content mt-6 prose prose-blue prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wpPost.content) }} />
 						</article>
 						<div className="px-4 sm:px-6 lg:px-8">
-							<Disqus config={disqusConfig}/>
 						</div>
 					</Col>
 					<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
@@ -79,10 +74,10 @@ export const BlogPostPage = (props: Props) => {
 							<TagCloud/>
 							<div className="categories-container tags-container post-meta-container pt-4 pb-6 px-8 lg:px-0">
 								<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black-400">
-									{decodeHtmlCharCodes(props.data.wordpressPost.title)}
+									{decodeHtmlCharCodes(props.data.wpPost.title)}
 								</span>
 								<span className="post-meta mb-2 block">
-									<span className="date block text-gray-500">{(props.data.wordpressPost.modified && props.data.wordpressPost.modified.length > 0) ? props.data.wordpressPost.modified : props.data.wordpressPost.date}</span>
+									<span className="date block text-gray-500">{(props.data.wpPost.modified && props.data.wpPost.modified.length > 0) ? props.data.wpPost.modified : props.data.wpPost.date}</span>
 								</span>
 								{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 									return (
@@ -111,7 +106,7 @@ export const BlogPostPage = (props: Props) => {
 										<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
 									</svg>
 									<p className="relative">
-										{props.data.wordpressPost.author.description}
+										{props.data.wpPost.author.description}
 									</p>
 								</div>
 							</div>
@@ -119,12 +114,12 @@ export const BlogPostPage = (props: Props) => {
 								<a className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
 									<img
 										className="w-12 h-12 rounded-full bg-blue-300"
-										src={props.data.wpPost.author.avatar.url}
+										src={props.data.wpPost.author.node.url}
 										alt=""
 									/>
 								</a>
 								<span className="relative text-blue-300 font-semibold leading-7 mt-1">
-									<p className="text-white font-semibold inline text-xl">{props.data.wordpressPost.author.name}</p>
+									<p className="text-white font-semibold inline text-xl">{props.data.wpPost.author.node.name}</p>
 								</span>
 							</cite>
 						</blockquote>
@@ -133,12 +128,12 @@ export const BlogPostPage = (props: Props) => {
 			</div>
 			<div className="navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug && (
-					<Link to={`/${props.pageContext.next.categories[0].slug}/${moment(props.pageContext.next.date).format('YYYY')}/${moment(props.pageContext.next.date).format('MM')}/${props.pageContext.next.slug}.html`} title={props.pageContext.next.slug} className="bg-gray-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
+					<Link to={`/${props.pageContext.next.categories.nodes[0].slug}/${moment(props.pageContext.next.date).format('YYYY')}/${moment(props.pageContext.next.date).format('MM')}/${props.pageContext.next.slug}.html`} title={props.pageContext.next.slug} className="bg-gray-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
 						<GrPrevious/> Prev
 					</Link>
 				)}
 				{props.pageContext.previous && props.pageContext.previous.slug && (
-					<Link to={`/${props.pageContext.previous.categories[0].slug}/${moment(props.pageContext.previous.date).format('YYYY')}/${moment(props.pageContext.previous.date).format('MM')}/${props.pageContext.previous.slug}.html`} title={props.pageContext.previous.slug} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 text-sm font-bold">
+					<Link to={`/${props.pageContext.previous.categories.nodes[0].slug}/${moment(props.pageContext.previous.date).format('YYYY')}/${moment(props.pageContext.previous.date).format('MM')}/${props.pageContext.previous.slug}.html`} title={props.pageContext.previous.slug} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 text-sm font-bold">
 						Next <GrNext/>
 					</Link>
 				)}
