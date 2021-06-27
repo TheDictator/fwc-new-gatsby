@@ -8,62 +8,51 @@ export const RecentPosts = () => (
     <StaticQuery
         query={graphql`
         query RecentPostsQuery {
-            allWpPost(filter: {status: {eq: "publish"}}, limit: 3) {
-                edges {
-                    node {
-                        id
-                        title
-                        excerpt
-                        date(formatString: "MMMM DD, YYYY")
-                        modified(formatString: "MMMM DD, YYYY")
-                        author {
-                            avatar_urls {
-                                wordpress_48
-                            }
-                            name
-                            slug
-                            wordpress_id
-                            id
-                            url
-                            description
-                            link
-                            slug
-                            path
+          allWpPost {
+            edges {
+                node {
+                    id
+                    title
+                    excerpt
+                    date(formatString: "MMMM DD, YYYY")
+                    modified(formatString: "MMMM DD, YYYY")
+                    author {
+                      node {
+                        avatar {
+                          url
                         }
+                        name
                         slug
-                        title
-                        wordpress_id
-                        content
-                        featured_media {
-                          localFile {
-                            childImageSharp {
-                              fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-                                aspectRatio
-                                src
-                                srcSet
-                                sizes
-                                base64
-                                tracedSVG
-                                srcWebp
-                                srcSetWebp
-                              }
-                            }
+                        id
+                        url
+                        description
+                        slug
+                      }
+                    }
+                    slug
+                    title
+                    content
+                    featuredImage {
+                      node {
+                        localFile {
+                          childImageSharp {
+                            gatsbyImageData
                           }
                         }
-                        
-                        categories {
-                            id
-                            link
-                            wordpress_id
-                            count
-                            description
-                            name
-                            slug
-                            path
-                        }
+                      }
                     }
-                }
+                    categories {
+                      nodes {
+                        id
+                        count
+                        description
+                        name
+                        slug
+                      }
+                    }
+              }
             }
+          }
         }
         `}
         render={data => {						
@@ -73,7 +62,7 @@ export const RecentPosts = () => (
                     <div key={post.node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                       <div className="flex-shrink-0">
                           <Link to={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}.html`} title={post.node.slug}>
-                            <Image fluid={post.node.featured_media.localFile.childImageSharp.fluid} alt={post.node.title} title={post.node.title} />
+                            <Image image={post.node.featured_media.localFile.childImageSharp.gatsbyImageData} alt={post.node.title} title={post.node.title} />
                           </Link>
                       </div>
                       <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">

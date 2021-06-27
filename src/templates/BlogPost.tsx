@@ -23,7 +23,7 @@ import '../styles/blog.scss';
 
 export interface Props {
 	data: {
-		wordpressPost: Post;
+		wpPost: wpPost;
 		allCommentsYaml: CommentEdges;
 	};
 	pageContext: {
@@ -119,7 +119,7 @@ export const BlogPostPage = (props: Props) => {
 								<a className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
 									<img
 										className="w-12 h-12 rounded-full bg-blue-300"
-										src={props.data.wordpressPost.author.avatar_urls.wordpress_48}
+										src={props.data.wpPost.author.avatar.url}
 										alt=""
 									/>
 								</a>
@@ -151,77 +151,47 @@ export const BlogPostPage = (props: Props) => {
 export default BlogPostPage;
 
 export const query = graphql`
-	query($id: Int!, $slug: String!) {
-		wordpressPost(wordpress_id: { eq: $id }) {
+	query($id: String!, $slug: String!) {
+		wpPost(id: {eq: $id}) {
+			id
+			slug
 			title
-			content
 			excerpt
 			date(formatString: "MMMM DD, YYYY")
 			modified(formatString: "MMMM DD, YYYY")
 			author {
-				avatar_urls {
-					wordpress_48
-				}
-				name
-				slug
-				wordpress_id
+				node {
 				id
+				name
 				url
-				description
-				link
 				slug
-				path
+				}
 			}
-			slug
-			wordpress_id
-			featured_media {
+			featuredImage {
+				node {
 				localFile {
 					childImageSharp {
-						fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-							aspectRatio
-							src
-							srcSet
-							sizes
-							base64
-							tracedSVG
-							srcWebp
-							srcSetWebp
-						}
+					gatsbyImageData
 					}
+				}
 				}
 			}
 			categories {
+				nodes {
 				id
-				link
-				wordpress_id
 				count
-				description
 				name
 				slug
-				path
+				}
 			}
 			tags {
+				nodes {
 				id
-				link
-				wordpress_id
 				count
-				description
 				name
 				slug
-				path
-			}
-		}
-		allCommentsYaml(filter: { slug: { eq: $slug } }) {
-			edges {
-				node {
-					id
-					name
-					email
-					message
-					date
-					slug
 				}
 			}
 		}
 	}
-`;
+`

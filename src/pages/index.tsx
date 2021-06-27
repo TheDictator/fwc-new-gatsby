@@ -494,59 +494,42 @@ export const pageQuery = graphql`
         node {
           id
           slug
-          status
-          template
-          format
-          wordpress_id
           title
           excerpt
           date(formatString: "MMMM DD, YYYY")
           modified(formatString: "MMMM DD, YYYY")
           author {
-            id
-            name
-            url
-            description
-            link
-            slug
-            path
-            wordpress_id
+            node {
+              id
+              name
+              url
+              slug
+            }
           }
-          featured_media {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                  base64
-                  tracedSVG
-                  srcWebp
-                  srcSetWebp
+          featuredImage {
+            node {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
                 }
               }
             }
           }
           categories {
-            id
-            link
-            wordpress_id
-            count
-            description
-            name
-            slug
-            path
+            nodes {
+              id
+              count
+              name
+              slug
+            }
           }
           tags {
-            id
-            link
-            wordpress_id
-            count
-            description
-            name
-            slug
-            path
+            nodes {
+              id
+              count
+              name
+              slug
+            }
           }
         }
       }

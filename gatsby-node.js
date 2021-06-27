@@ -25,71 +25,49 @@ exports.createPages = async ({
 	{
 		allWpPost {
 			edges {
-				node {
+			  node {
+				id
+				slug
+				title
+				excerpt
+				date(formatString: "MMMM DD, YYYY")
+				modified(formatString: "MMMM DD, YYYY")
+				author {
+				  node {
 					id
+					name
+					url
 					slug
-					status
-					template
-					format
-					wordpress_id
-					title
-					excerpt
-					date(formatString: "MMMM DD, YYYY")
-					modified(formatString: "MMMM DD, YYYY")
-					author {
-						avatar_urls {
-							wordpress_48
-						}
-						name
-						slug
-						wordpress_id
-						id
-						url
-						description
-						link
-						slug
-						path
-					}
-					featured_media {
-						localFile {
-							childImageSharp {
-								fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-									aspectRatio
-									src
-									srcSet
-									sizes
-									base64
-									tracedSVG
-									srcWebp
-									srcSetWebp
-								}
-							}
-						}
-					}
-					categories {
-						id
-						link
-						wordpress_id
-						count
-						description
-						name
-						slug
-						path
-					}
-					tags {
-						id
-						link
-						wordpress_id
-						count
-						description
-						name
-						slug
-						path
-					}
+				  }
 				}
+				featuredImage {
+				  node {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					}
+				  }
+				}
+				categories {
+				  nodes {
+					id
+					count
+					name
+					slug
+				  }
+				}
+				tags {
+				  nodes {
+					id
+					count
+					name
+					slug
+				  }
+				}
+			  }
 			}
-		}
-		
+		  }
 	}`);
 
 	if (BlogPostsResult.errors) {

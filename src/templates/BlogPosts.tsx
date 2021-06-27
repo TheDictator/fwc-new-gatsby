@@ -33,7 +33,7 @@ export const BlogPostsPage = (props: Props) => {
             description
           }
         }
-		allWordpressTag {
+		allWpTag {
 			edges {
 				node {
 					count
