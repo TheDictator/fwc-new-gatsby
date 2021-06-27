@@ -12,6 +12,14 @@ export const RecentPosts = () => (
             allWpPost(limit: 10) {
               edges {
                 node {
+                  author {
+                    node {
+                      uri
+                      avatar {
+                        url
+                      }
+                    }
+                  }
                   id
                   title
                   excerpt
@@ -25,7 +33,7 @@ export const RecentPosts = () => (
                       localFile {
                         childImageSharp {
                           gatsbyImageData (
-                            width: 200
+                            width: 800
                             placeholder: BLURRED
                             formats: [AUTO, WEBP, AVIF]
                           )
@@ -63,14 +71,14 @@ export const RecentPosts = () => (
                         </div>
                         <div className="mt-6 flex items-center">
                           <div className="flex-shrink-0">
-                            <a href={post.node.author.href}>
+                            <a href={post.node.author.uri}>
                               <span className="sr-only">{post.node.author.name}</span>
                               <img className="h-10 w-10 rounded-full" src={post.node.author.node.avatar.url} alt="" />
                             </a>
                           </div>
                           <div className="ml-3">
                             <p className="text-sm font-bold text-gray-900">
-                              <a href={post.node.author.href} className="hover:underline">
+                              <a href={post.node.author.uri} className="hover:underline">
                                 {post.node.author.name}
                               </a>
                             </p>

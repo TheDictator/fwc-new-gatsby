@@ -57,12 +57,6 @@ module.exports = {
 					MenuItem: {
 						exclude: true,
 					},
-					User: {
-						exclude: true,
-					},
-					UserRole: {
-						exclude: true,
-					},
 				},
 				develop: {
 					hardCacheMediaFiles: true,
