@@ -66,7 +66,7 @@ export const BlogPostsPage = (props: Props) => {
 			<div className="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 			<div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
 					{group.map(({ node }: { node: Post }) => {
-						const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
+						const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featuredImage.node.localFile && node.featuredImage.node.localFile.fluid) ? node.featuredImage.node.localFile.fluid : null;
 						const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 						const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
 						return (
@@ -101,13 +101,13 @@ export const BlogPostsPage = (props: Props) => {
 										<div className="flex-shrink-0">
 											<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`}>
 												<span className="sr-only">{capitalizeFirstLetter(node.author.name)}</span>
-												<img className="h-10 w-10 rounded-full" src={node.author.avatar_urls.wordpress_48} alt="" />
+												<img className="h-10 w-10 rounded-full" src={node.author.node.avatar.url} alt="" />
 											</a>
 										</div>
 										<div className="ml-3">
 											<p className="text-sm font-bold text-gray-900">
 												<a href={node.author.href} className="hover:underline">
-													{capitalizeFirstLetter(node.author.name)}
+													{capitalizeFirstLetter(node.author.node.name)}
 												</a>
 											</p>
 											<div className="flex space-x-1 text-sm text-gray-500">

@@ -65,7 +65,7 @@ export const ServicesPage = (props: Props) => {
 			{/* SiteBuilder Section */}
 			<div className="relative bg-gray-900">
 				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-				<StaticImage
+				<img
 					className="w-full h-full object-cover"
 					src="../images/hero1.jpeg"
 					alt={`Services`} 

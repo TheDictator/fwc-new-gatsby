@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import { FluidObject } from 'gatsby-image';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticImage } from "gatsby-plugin-image"
+
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { ChildImageSharp } from '../contracts/post';
 import RecentPosts from '../components/Posts/recent-posts';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
-import Help from '../images/help.jpg';
 import '../styles/blog.scss';
 import {
   CogIcon,
@@ -19,49 +18,47 @@ import {
 	ReplyIcon,
 	SparklesIcon,
   } from '@heroicons/react/outline'
-import Business from '../images/business.svg';
 import { SiShopify, SiGoogleanalytics, SiOracle } from "react-icons/si";
 import { DiBackbone } from "react-icons/di";
 import Netsuite from "../images/oracle.svg";
 
-import Security from '../images/security.svg';
 
   const features = [
-	{
-	  name: 'Suite Commerce',
-	  description: 'Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress',
-	  icon: PencilAltIcon,
-	},
-  {
-	  name: 'Site Builder',
-	  description: 'Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.',
-	  icon: PencilAltIcon,
-	},
-	{
-	  name: 'SEO',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: OfficeBuildingIcon,
-	},
-	{
-	  name: 'Netsuite Process Optimization',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: PlusIcon,
-	},
-	{
-	  name: 'Internet Marketing',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: ChartBarIcon,
-	},	
-	{
-	  name: 'Shopify Development',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: DocumentReportIcon,
-	},
-	{
-	  name: 'Custom Web Solutions',
-	  description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-	  icon: CogIcon,
-	},
+    {
+      name: 'Suite Commerce',
+      description: 'Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress',
+      icon: PencilAltIcon,
+    },
+    {
+      name: 'Site Builder',
+      description: 'Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.',
+      icon: PencilAltIcon,
+    },
+    {
+      name: 'SEO',
+      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      icon: OfficeBuildingIcon,
+    },
+    {
+      name: 'Netsuite Process Optimization',
+      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      icon: PlusIcon,
+    },
+    {
+      name: 'Internet Marketing',
+      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      icon: ChartBarIcon,
+    },	
+    {
+      name: 'Shopify Development',
+      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      icon: DocumentReportIcon,
+    },
+    {
+      name: 'Custom Web Solutions',
+      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+      icon: CogIcon,
+    },
   ]
 
   // // List of Blog posts per category
@@ -91,7 +88,6 @@ export interface Props {
     return classes.filter(Boolean).join(' ')
   }
 export const IndexPage = (props: Props) => {
-	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
   const posts = [
     {
       title: 'Boost your conversion rate',
@@ -165,7 +161,7 @@ export const IndexPage = (props: Props) => {
               <div className="absolute inset-0">
                 <img
                   className="h-full w-full object-cover"
-                  src={Help}
+                  src="../images/help.jpg"
                   alt="People working on laptops"
                 />
                 <div
@@ -183,18 +179,18 @@ export const IndexPage = (props: Props) => {
                 </p>
                 <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                   <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                    <a
-                      href="#"
+                    <Link
+                      to="/"
                       className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-700 sm:px-8"
                     >
                       Get started
-                    </a>
-                    <a
-                      href="/services"
+                    </Link>
+                    <Link
+                      to="/services"
                       className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 hover:text-white sm:px-8"
                     >
                      Our services
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -224,13 +220,13 @@ export const IndexPage = (props: Props) => {
                   <DiBackbone/>
                   <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">Backbone.js</span>
                 </div>
-                {/* <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
                   <img
                     className="h-12"
                     src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
                     alt="Workcation"
                   />
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
@@ -252,12 +248,12 @@ export const IndexPage = (props: Props) => {
                       Lectus viverra dui tellus ornare pharetra.
                     </p>
                     <div className="mt-6">
-                      <a
+                      <Link
                         onClick={showDrawer}
                         className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 hover:text-white"
                       >
                         Get started
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -290,7 +286,7 @@ export const IndexPage = (props: Props) => {
                 <div className="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                   <img
                     className="w-full lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src={Business}
+                    src="../images/business.svg"
                     alt="Inbox user interface"
                   />
                 </div>
@@ -309,12 +305,12 @@ export const IndexPage = (props: Props) => {
                       It doesn't just stop at NetSuite. Our vast developmental knowledge and experience have you covered, regardless of technical debt.
                     </p>
                     <div className="mt-6">
-                      <a
-                        href="#"
+                      <Link
+                        to="/"
                         className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 hover:text-white"
                       >
                         Get started
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -323,7 +319,7 @@ export const IndexPage = (props: Props) => {
                 <div className="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                   <img
                     className="w-full lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                    src={Security}
+                    src="../images/security.svg"
                     alt="Customer profile user interface"
                   />
                 </div>
@@ -331,159 +327,157 @@ export const IndexPage = (props: Props) => {
             </div>
           </div>
         </div>
-{/* SiteBuilder Section */}
-<div className="relative bg-gray-900">
-				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-				<img
-					className="w-full h-full object-cover"
-					src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-					alt=""
-				/>
-				<div
-					aria-hidden="true"
-					className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
-					style={{ mixBlendMode: 'multiply' }}
-				/>
-				</div>
-				<div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
-					<div className="md:ml-auto md:w-1/2 md:pl-10">
-						<h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-						NetSuite
-						</h2>
-						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Site Builder</p>
-						<p className="mt-3 text-lg text-gray-300">
-							Don't fix what isn't broken. Projects have run the gamut from developing a new website from scratch, fixing SEO penalties or other search engine optimization, integrations with 3rd parties, custom Ajax solutions, and converting existing sites into device friendly responsive design.
-						</p>
-						<div className="mt-8">
-							<div className="inline-flex rounded-md shadow">
-								<a
-								href="#"
-								className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
-								>
-								Learn more
-								<ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			{/* Suitecommerce Section */}
-			<div className="relative bg-gray-900">
-				<div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:right-0 md:h-full md:w-1/2">
-					<img
-						className="w-full h-full object-cover"
-						src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-						alt=""
-					/>
-					<div
-						aria-hidden="true"
-						className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
-						style={{ mixBlendMode: 'multiply' }}
-					/>
-				</div>
-				<div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
-					<div className="md:mr-auto md:w-1/2 md:pr-10">
-						<h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-						NetSuite
-						</h2>
-						<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">SuiteCommerce</p>
-						<p className="mt-3 text-lg text-gray-300">
-						The step up from SiteBuilder.
-						</p>
-						<div className="mt-8">
-							<div className="inline-flex rounded-md shadow">
-								<a
-								href="#"
-								className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
-								>
-								Learn more
-								<ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-        {/* Gradient Feature Section */}
-        <div className="bg-gradient-to-r from-blue-800 to-blue-700">
-          <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">Technical Solutions Crafted From Expertise</h2>
-            <p className="mt-4 max-w-3xl text-lg text-blue-200">
-            With over 20 years’ of combined experience with NetSuite, we can solution just about anything a SMB can throw at me. 
-            </p>
-            <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
-              {features.map((feature) => (
-                <div key={feature.name}>
-                  <h3 className="text-xl font-medium text-white">{feature.name}</h3>
-                  <p className="mt-2 text-base text-blue-200">{feature.description}</p>
-                </div>
-              ))}
-            </div>
+  {/* SiteBuilder Section */}
+  <div className="relative bg-gray-900">
+          <div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+          <StaticImage
+            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+            alt="SiteBuilder"
+            placeholder="blurred"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+            style={{ mixBlendMode: 'multiply' }}
+          />
           </div>
-        </div>
-
-        <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-      <div className="absolute inset-0">
-        <div className="bg-white h-1/3 sm:h-2/3" />
-      </div>
-      <div className="relative max-w-7xl mx-auto">
-        <div className="text-center">
-          
-          <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">From The Blog</h2>
-          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-            See what we've been working on and the stay up-to-date on anything and everything NetSuite.
-          </p>
-        </div>
-        <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          <RecentPosts />
-        </div>
-      </div>
-    </div>
-
-        {/* Stats section */}
-        <div className="relative bg-gray-900">
-          <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
-            <div className="h-full w-full xl:grid xl:grid-cols-2">
-              <div className="h-full xl:relative xl:col-start-2">
-                <img
-                  className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
-                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
-                  alt="People working on laptops"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-900 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"
-                />
+          <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+            <div className="md:ml-auto md:w-1/2 md:pl-10">
+              <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              NetSuite
+              </h2>
+              <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Site Builder</p>
+              <p className="mt-3 text-lg text-gray-300">
+                Don't fix what isn't broken. Projects have run the gamut from developing a new website from scratch, fixing SEO penalties or other search engine optimization, integrations with 3rd parties, custom Ajax solutions, and converting existing sites into device friendly responsive design.
+              </p>
+              <div className="mt-8">
+                <div className="inline-flex rounded-md shadow">
+                  <Link
+                  to="/"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                  Learn more
+                  <ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
-            <div className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
-              <h2 className="text-sm font-semibold tracking-wide uppercase">
-                <span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">
-                  Valuable Development
-                </span>
+        </div>
+        {/* Suitecommerce Section */}
+        <div className="relative bg-gray-900">
+          <div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:right-0 md:h-full md:w-1/2">
+            <StaticImage
+              className="w-full h-full object-cover"
+              src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+              alt="SuiteCommerce"
+              placeholder="blurred"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+              style={{ mixBlendMode: 'multiply' }}
+            />
+          </div>
+          <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+            <div className="md:mr-auto md:w-1/2 md:pr-10">
+              <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+              NetSuite
               </h2>
-              <p className="mt-3 text-3xl font-extrabold text-white">
-                Get More Than Just Code
+              <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">SuiteCommerce</p>
+              <p className="mt-3 text-lg text-gray-300">
+              The step up from SiteBuilder.
               </p>
-              <p className="mt-5 text-lg text-gray-300">
-                Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing quis in viverra tristique sem. Ornare
-                feugiat viverra eleifend fusce orci in quis amet. Sit in et vitae tortor, massa. Dapibus laoreet amet
-                lacus nibh integer quis. Eu vulputate diam sit tellus quis at.
-              </p>
-              
+              <div className="mt-8">
+                <div className="inline-flex rounded-md shadow">
+                  <Link
+                  to="/"
+                  className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                  >
+                  Learn more
+                  <ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+          {/* Gradient Feature Section */}
+          <div className="bg-gradient-to-r from-blue-800 to-blue-700">
+            <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
+              <h2 className="text-3xl font-extrabold text-white tracking-tight">Technical Solutions Crafted From Expertise</h2>
+              <p className="mt-4 max-w-3xl text-lg text-blue-200">
+              With over 20 years’ of combined experience with NetSuite, we can solution just about anything a SMB can throw at me. 
+              </p>
+              <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+                {features.map((feature) => (
+                  <div key={feature.name}>
+                    <h3 className="text-xl font-medium text-white">{feature.name}</h3>
+                    <p className="mt-2 text-base text-blue-200">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-        
-      </main>
-				
-		</Layout>
-	);
-};
+          <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="absolute inset-0">
+          <div className="bg-white h-1/3 sm:h-2/3" />
+        </div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center">
+            <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">From The Blog</h2>
+            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+              See what we've been working on and the stay up-to-date on anything and everything NetSuite.
+            </p>
+          </div>
+          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            <RecentPosts />
+          </div>
+        </div>
+      </div>
+
+          {/* Stats section */}
+          <div className="relative bg-gray-900">
+            <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
+              <div className="h-full w-full xl:grid xl:grid-cols-2">
+                <div className="h-full xl:relative xl:col-start-2">
+                  <StaticImage
+                    className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
+                    src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
+                    alt="People working on laptops"
+                    placeholder="blurred"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gray-900 xl:inset-y-0 xl:left-0 xl:h-full xl:w-32 xl:bg-gradient-to-r"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-cols-2 xl:grid-flow-col-dense xl:gap-x-8">
+              <div className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24">
+                <h2 className="text-sm font-semibold tracking-wide uppercase">
+                  <span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">
+                    Valuable Development
+                  </span>
+                </h2>
+                <p className="mt-3 text-3xl font-extrabold text-white">
+                  Get More Than Just Code
+                </p>
+                <p className="mt-5 text-lg text-gray-300">
+                  Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing quis in viverra tristique sem. Ornare
+                  feugiat viverra eleifend fusce orci in quis amet. Sit in et vitae tortor, massa. Dapibus laoreet amet
+                  lacus nibh integer quis. Eu vulputate diam sit tellus quis at.
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </Layout>
+    );
+  };
 
 export default IndexPage;
 
@@ -502,7 +496,7 @@ export const pageQuery = graphql`
             node {
               id
               name
-              url
+              uri
               slug
             }
           }

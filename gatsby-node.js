@@ -28,6 +28,7 @@ exports.createPages = async ({
 			  node {
 				id
 				slug
+				uri
 				title
 				excerpt
 				date(formatString: "MMMM DD, YYYY")
@@ -36,7 +37,7 @@ exports.createPages = async ({
 				  node {
 					id
 					name
-					url
+					uri
 					slug
 				  }
 				}
@@ -85,6 +86,7 @@ exports.createPages = async ({
 			context: {
 				id: post.node.id,
 				slug: post.node.slug,
+				uri: post.node.uri,
 				previous: index === 0 ? null : BlogPosts[index - 1].node,
 				next: index === (BlogPosts.length - 1) ? null : BlogPosts[index + 1].node
 			}
@@ -113,12 +115,18 @@ exports.createPages = async ({
 				} else {
 					BlogCategoryPosts.set(category.slug, [post]);
 				}
+				if (BlogCategoryPosts.has(category.title)) {
+					BlogCategoryPosts.set(category.title, [...BlogCategoryPosts.get(category.title), post]);
+				} else {
+					BlogCategoryPosts.set(category.title, [post]);
+				}
 			});
 		}
 	});
 
 	const BlogTagSlugs = [...BlogTagPosts.keys()];
 	const BlogCategorySlugs = [...BlogCategoryPosts.keys()];
+	const BlogCategoryTitles = [...BlogCategoryPosts.keys()];
 
 	if (BlogTagSlugs.length > 0) {
 		BlogTagSlugs.forEach((BlogTagSlug) => {
@@ -141,6 +149,7 @@ exports.createPages = async ({
 				context: {
 					group: BlogCategoryPosts.get(BlogCategorySlug),
 					slug: BlogCategorySlug,
+					title: BlogCategoryPosts.get('category.title')
 				}
 			});
 		});

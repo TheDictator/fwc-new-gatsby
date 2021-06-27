@@ -38,7 +38,7 @@ export interface Props {
 }
 
 export const BlogPostPage = (props: Props) => {
-	const fluid: FluidObject | null = (props.data.wpPost.featured_media && props.data.wpPost.featured_media.localFile && props.data.wpPost.featured_media.localFile.childImageSharp && props.data.wpPost.featured_media.localFile.childImageSharp.fluid) ? props.data.wpPost.featured_media.localFile.childImageSharp.fluid : null;
+	const fluid: FluidObject | null = (props.data.wpPost.featured_media && props.data.wpPost.featured_media.localFile && props.data.wpPost.featuredImage.node.localFile && props.data.wpPost.featuredImage.node.localFile.fluid) ? props.data.wpPost.featuredImage.node.localFile.fluid : null;
 	const categories: CategoryTagInfo[] = (props.data.wpPost.categories && props.data.wpPost.categories.length) > 0 ? props.data.wpPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 	const tags: CategoryTagInfo[] = (props.data.wpPost.tags && props.data.wpPost.tags.length) > 0 ? props.data.wpPost.tags : new Array<CategoryTagInfo>();
 
@@ -111,13 +111,9 @@ export const BlogPostPage = (props: Props) => {
 								</div>
 							</div>
 							<cite className="relative flex items-center justify-center justify-items-center bg-gray-600 rounded-b-lg not-italic pt-6 pb-3 shadow-lg">
-								<a className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
-									<img
-										className="w-12 h-12 rounded-full bg-blue-300"
-										src={props.data.wpPost.author.node.url}
-										alt=""
-									/>
-								</a>
+								<Link to="" className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
+									
+								</Link>
 								<span className="relative text-blue-300 font-semibold leading-7 mt-1">
 									<p className="text-white font-semibold inline text-xl">{props.data.wpPost.author.node.name}</p>
 								</span>
@@ -156,10 +152,13 @@ export const query = graphql`
 			modified(formatString: "MMMM DD, YYYY")
 			author {
 				node {
-				id
-				name
-				url
-				slug
+					avatar {
+						url
+					}
+					id
+					name
+					uri
+					slug
 				}
 			}
 			featuredImage {

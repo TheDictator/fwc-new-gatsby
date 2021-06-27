@@ -51,7 +51,7 @@ export const BlogTagPostsPage = (props: Props) => {
 					<div className="posts mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
 						{group.map(({ node }: { node: Post }) => {
 							
-							const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featured_media.localFile.childImageSharp && node.featured_media.localFile.childImageSharp.fluid) ? node.featured_media.localFile.childImageSharp.fluid : null;
+							const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featuredImage.node.localFile && node.featuredImage.node.localFile.fluid) ? node.featuredImage.node.localFile.fluid : null;
 							const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 							const tags: CategoryTagInfo[] = (node.tags && node.tags.length > 0) ? node.tags : new Array<CategoryTagInfo>();
 							return (
@@ -86,7 +86,7 @@ export const BlogTagPostsPage = (props: Props) => {
 											<div className="flex-shrink-0">
 												<a href={node.author.href}>
 												<span className="sr-only">{node.author.name}</span>
-												<img className="h-10 w-10 rounded-full" src={node.author.avatar_urls.wordpress_48} alt="" />
+												<img className="h-10 w-10 rounded-full" src={node.author.avatar.node.url} alt="" />
 												</a>
 											</div>
 											<div className="ml-3">
