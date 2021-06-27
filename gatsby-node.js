@@ -23,7 +23,7 @@ exports.createPages = async ({
 
 	const BlogPostsResult = await graphql(`
 	{
-		allWordpressPost {
+		allWpPost {
 			edges {
 				node {
 					id
@@ -97,7 +97,7 @@ exports.createPages = async ({
 		return;
 	}
 
-	const BlogPosts = BlogPostsResult.data.allWordpressPost.edges;
+	const BlogPosts = BlogPostsResult.data.allWpPost.edges;
 
 	BlogPosts.forEach((post, index) => {
 		const category = post.node.categories.slug;

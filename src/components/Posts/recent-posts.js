@@ -8,7 +8,7 @@ export const RecentPosts = () => (
     <StaticQuery
         query={graphql`
         query RecentPostsQuery {
-            allWordpressPost(filter: {status: {eq: "publish"}}, limit: 3) {
+            allWpPost(filter: {status: {eq: "publish"}}, limit: 3) {
                 edges {
                     node {
                         id
@@ -69,7 +69,7 @@ export const RecentPosts = () => (
         render={data => {						
         return (
                 <>
-                {data.allWordpressPost.edges.map(post => (
+                {data.allWpPost.edges.map(post => (
                     <div key={post.node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                       <div className="flex-shrink-0">
                           <Link to={`/${post.node.categories[0].slug}/${moment(post.node.date).format('YYYY')}/${moment(post.node.date).format('MM')}/${post.node.slug}.html`} title={post.node.slug}>

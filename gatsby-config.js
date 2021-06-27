@@ -19,24 +19,15 @@ module.exports = {
 		}
 	},
 	plugins: [
-		'gatsby-plugin-typescript',
+		`gatsby-plugin-image`,
+		`gatsby-plugin-sharp`,
 		{
-			resolve: 'gatsby-plugin-tslint',
+		resolve: `gatsby-source-filesystem`,
 			options: {
-				test: /\.ts$|\.tsx$/,
-				exclude: /(node_modules|cache|public)/
-			}
+				name: `images`,
+				path: `${__dirname}/src/images`,
+			},
 		},
-		'gatsby-plugin-react-helmet',
-		{
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				name: 'images',
-				path: 'src/images'
-			}
-		},
-		'gatsby-transformer-sharp',
-		'gatsby-plugin-sharp',
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
@@ -53,38 +44,26 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-wordpress',
 			options: {
-				baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
-				protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`,
-				plugins: [{
-					resolve: `gatsby-wordpress-inline-images`,
-					options: {
-						baseUrl: `${process.env.GATSBY_WORDPRESS_URL_PATH}`,
-						protocol: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}`,
-						maxWidth: 960,
-						maxHeight: 600,
-						quality: 85,
-						withWebp: true
-					}
-				}],
-				hostingWPCOM: false,
-				useACF: false,
-				verboseOutput: false,
-				perPage: 100,
-				searchAndReplaceContentUrls: {
-					sourceUrl: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
-					replacementUrl: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`
+				url: `${process.env.WPGRAPHQL_URL}`,
+				verbose: true,
+				develop: {
+					hardCacheMediaFiles: true,
 				},
-				concurrentRequests: 10,
-				includedRoutes: [
-					"**/categories",
-					"**/posts",
-					"**/pages",
-					"**/media",
-					"**/tags",
-					"**/taxonomies",
-					"**/users"
-				],
-				excludedRoutes: [],
+				html: {
+					useGatsbyImage: true,
+					fallbackImageMaxWidth: 800
+				},
+				debug: {
+					graphql: {
+						copyHtmlResponseOnError: true
+					}
+				},
+				perPage: 100,
+				searchAndReplace: [{
+					search: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
+					replace: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`
+				}],
+				requestConcurrency: 10,
 				normalizer: function ({
 					entities
 				}) {
@@ -97,6 +76,22 @@ module.exports = {
 			options: {
 				libraryName: "antd",
 				style: true // or 'css'
+			}
+		},
+		'gatsby-plugin-typescript',
+		{
+			resolve: 'gatsby-plugin-tslint',
+			options: {
+				test: /\.ts$|\.tsx$/,
+				exclude: /(node_modules|cache|public)/
+			}
+		},
+		'gatsby-plugin-react-helmet',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'images',
+				path: 'src/images'
 			}
 		},
 		'gatsby-plugin-antd',
@@ -118,7 +113,6 @@ module.exports = {
 				pageTransitionDelay: 0,
 			}
 		},
-		
 		{
 			resolve: `gatsby-plugin-pinterest-twitter-facebook`,
 			options: {

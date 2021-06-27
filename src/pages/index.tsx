@@ -489,7 +489,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allWordpressPost(limit: 6) {
+    allWpPost(limit: 6) {
       edges {
         node {
           id

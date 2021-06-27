@@ -149,7 +149,7 @@ export const ServicesPage = (props: Props) => {
 					</p>
 					</div>
 					<div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-					{data.allWordpressPost.edges.map((post) => (
+					{data.allWpPost.edges.map((post) => (
 						<div key={post.title}>
 						<div>
 							<a href={post.category.href} className="inline-block">
@@ -254,7 +254,7 @@ export const query = graphql`
 				}
       		}
 		}
-		allWordpressPost(filter: {status: {eq: "publish"}}, limit: 3) {
+		allWpPost(filter: {status: {eq: "publish"}}, limit: 3) {
 			edges {
 				node {
 					id
