@@ -145,6 +145,7 @@ export const query = graphql`
 	query($id: String!) {
 		wpPost(id: {eq: $id}) {
 			id
+			content
 			slug
 			title
 			excerpt
