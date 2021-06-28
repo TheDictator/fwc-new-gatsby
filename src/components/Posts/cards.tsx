@@ -10,9 +10,6 @@ const PostCards = ({ posts }) => {
       <>
       {posts.map(({ node }: { wpPost: wpPost }) => {
 							
-            const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-            const tags: CategoryTagInfo[] = (node.tags && node.tags.length > 0) ? node.tags : new Array<CategoryTagInfo>();
-
             return (
                 <div key={node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div className="flex-shrink-0">

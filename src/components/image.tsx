@@ -19,6 +19,13 @@ const Image = ({ image, altText, src }) => {
             placeholder="blurred"
         />
     )}
+    {!src && !imageData &&(
+        <StaticImage
+            src='../images/blog.jpg'
+            alt={altText}
+            placeholder="blurred"
+        />
+    )}
     </div>
   )
 }
