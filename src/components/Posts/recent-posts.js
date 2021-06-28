@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { StaticQuery, graphql } from "gatsby"
-import { Image } from "../image";
 import PostCards from "./cards";
-import { capitalizeFirstLetter } from '../../utils';
 const moment = require('moment');
 
 export const RecentPosts = () => (
@@ -28,6 +25,7 @@ export const RecentPosts = () => (
                   modified(formatString: "MMMM DD, YYYY")
                   slug
                   uri
+                  link
                   title
                   content
                   featuredImage {

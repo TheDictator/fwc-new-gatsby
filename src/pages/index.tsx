@@ -487,6 +487,7 @@ export const pageQuery = graphql`
         node {
           id
           slug
+          link
           title
           excerpt
           date(formatString: "MMMM DD, YYYY")
