@@ -498,6 +498,9 @@ export const pageQuery = graphql`
               name
               uri
               slug
+              avatar {
+                url
+              }
             }
           }
           featuredImage {

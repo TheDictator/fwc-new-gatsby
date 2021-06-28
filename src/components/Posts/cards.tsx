@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../../utils';
 import PostCategories from "./categories"
 import Image from "../image";
+
 const PostCards = ({ posts }) => {
   return (
       <>
@@ -31,7 +32,9 @@ const PostCards = ({ posts }) => {
                             <div className="flex-shrink-0">
                                 <Link to={node.link} title={node.author.node.name}>
                                     <span className="sr-only">{node.author.node.name}</span>
-                                    {/* <Image image={authorImage} alt={node.author.node.name} /> */}
+                                    {node.author.node.avatar && 
+                                        <Image src={node.author.node.avatar.url} altText={node.author.node.name} />
+                                    }
                                 </Link>
                             </div>
                             <div className="ml-3">

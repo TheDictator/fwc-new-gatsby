@@ -1,8 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from "gatsby"
 import PostCards from "./cards";
-const moment = require('moment');
-
 export const RecentPosts = () => (
     <StaticQuery
         query={graphql`
@@ -23,8 +21,6 @@ export const RecentPosts = () => (
                   excerpt
                   date(formatString: "MMMM DD, YYYY")
                   modified(formatString: "MMMM DD, YYYY")
-                  slug
-                  uri
                   link
                   title
                   content

@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
 
-const Image = ({ image, altText }) => {
+const Image = ({ image, altText, src }) => {
 
   const imageData = getImage(image?.node?.localFile)
 
@@ -9,12 +9,12 @@ const Image = ({ image, altText }) => {
 
   return (
     <div className="image-component">
-    {imageData && (
+    {imageData && image && (
           <GatsbyImage image={imageData} alt={altText} />
     )}
-    {!imageData && (
+    {src && (
         <StaticImage
-            src='../images/blog.jpg'
+            src={src}
             alt={altText}
             placeholder="blurred"
         />
