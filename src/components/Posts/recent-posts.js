@@ -10,7 +10,7 @@ export const RecentPosts = () => (
     <StaticQuery
         query={graphql`
           query RecentPostsQuery {
-            allWpPost(limit: 10) {
+            allWpPost(limit: 3) {
               edges {
                 node {
                   author {
