@@ -1,5 +1,7 @@
 @import '../../styles/colors.scss';
-
+.gatsby-image-wrapper.gatsby-image-wrapper-constrained{
+    margin-bottom: 0;
+}
 .layout-container {
     background: $whiteColor;
     position: relative;

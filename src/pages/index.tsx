@@ -16,7 +16,6 @@ import {
   } from '@heroicons/react/outline'
 import { SiShopify, SiGoogleanalytics, SiOracle } from "react-icons/si";
 import { DiBackbone } from "react-icons/di";
-import Netsuite from "../images/oracle.svg";
 
   const features = [
     {
@@ -76,9 +75,6 @@ export interface Props {
 	location: Location;
 }
 
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
 export const IndexPage = (props: Props) => {
   const posts = [
     {
@@ -233,12 +229,12 @@ export const IndexPage = (props: Props) => {
                       Lectus viverra dui tellus ornare pharetra.
                     </p>
                     <div className="mt-6">
-                      <Link
+                      <a
                         onClick={showDrawer}
                         className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 hover:text-white"
                       >
                         Get started
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

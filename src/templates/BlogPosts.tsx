@@ -5,7 +5,7 @@ import Image, { FluidObject } from 'gatsby-image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-import { Post, CategoryTagInfo } from '../contracts/post';
+import { wpPost, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 
@@ -14,7 +14,7 @@ import { GrNext, GrPrevious } from "react-icons/gr";
 import Blog from "../images/blog.jpg";
 export interface Props {
 	pathContext: {
-		group: { node: Post }[];
+		group: { node: wpPost }[];
 		index: number;
 		pageCount: number;
 	};

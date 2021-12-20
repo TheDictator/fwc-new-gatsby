@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import './Header.scss';
 
@@ -17,7 +17,6 @@ import {
   MenuIcon,
   OfficeBuildingIcon,
   PhoneIcon,
-  ReplyIcon,
   ShieldCheckIcon,
   UserGroupIcon,
   XIcon,
@@ -94,7 +93,7 @@ export const Header = (props: Props) => {
               <div>
                 <a href="/" className="flex">
                   <span className="sr-only">FourthWave Consulting</span>
-                  <StaticImage src="../../images/fwc_header.png" alt="FourthWave Consulting" />
+                  <StaticImage src="../../images/fwc_header.png" alt="FourthWave Consulting" width={400} />
                 </a>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
@@ -110,14 +109,14 @@ export const Header = (props: Props) => {
                       <>
                         <Popover.Button
                           className={classNames(
-                            open ? 'text-gray-900' : 'text-gray-500',
-                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900'
+                            open ? 'text-black' : 'text-black',
+                            'group bg-white rounded-md inline-flex items-center text-lg font-bold hover:text-gray-900'
                           )}
                         >
                           <span>NetSuite Services</span>
                           <ChevronDownIcon
                             className={classNames(
-                              open ? 'text-gray-600' : 'text-gray-400',
+                              open ? 'text-black' : 'text-black',
                               'ml-2 h-5 w-5 group-hover:text-gray-500'
                             )}
                             aria-hidden="true"
@@ -198,14 +197,14 @@ export const Header = (props: Props) => {
                       <>
                         <Popover.Button
                           className={classNames(
-                            open ? 'text-gray-900' : 'text-gray-500',
-                            'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900'
+                            open ? 'text-black' : 'text-black',
+                            'group bg-white rounded-md inline-flex items-center text-lg font-bold hover:text-gray-900'
                           )}
                         >
                           <span>About Us</span>
                           <ChevronDownIcon
                             className={classNames(
-                              open ? 'text-gray-600' : 'text-gray-400',
+                              open ? 'text-black' : 'text-black',
                               'ml-2 h-5 w-5 group-hover:text-gray-500'
                             )}
                             aria-hidden="true"
