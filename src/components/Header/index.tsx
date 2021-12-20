@@ -109,14 +109,14 @@ export const Header = (props: Props) => {
                       <>
                         <Popover.Button
                           className={classNames(
-                            open ? 'text-black' : 'text-black',
+                            open ? 'text-gray-900' : 'text-gray-700',
                             'group bg-white rounded-md inline-flex items-center text-lg font-bold hover:text-gray-900'
                           )}
                         >
                           <span>NetSuite Services</span>
                           <ChevronDownIcon
                             className={classNames(
-                              open ? 'text-black' : 'text-black',
+                              open ? 'text-gray-600' : 'text-gray-700',
                               'ml-2 h-5 w-5 group-hover:text-gray-500'
                             )}
                             aria-hidden="true"
@@ -197,14 +197,14 @@ export const Header = (props: Props) => {
                       <>
                         <Popover.Button
                           className={classNames(
-                            open ? 'text-black' : 'text-black',
+                            open ? 'text-gray-900' : 'text-gray-700',
                             'group bg-white rounded-md inline-flex items-center text-lg font-bold hover:text-gray-900'
                           )}
                         >
                           <span>About Us</span>
                           <ChevronDownIcon
                             className={classNames(
-                              open ? 'text-black' : 'text-black',
+                              open ? 'text-gray-600' : 'text-gray-700',
                               'ml-2 h-5 w-5 group-hover:text-gray-500'
                             )}
                             aria-hidden="true"
@@ -324,11 +324,7 @@ export const Header = (props: Props) => {
                 <div className="pt-5 pb-6 px-5 sm:pb-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <img
-                        className="h-8 w-auto"
-                        src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png"
-                        alt="FourthWave Consulting"
-                      />
+                      <StaticImage src="../../images/fwc_header.png" alt="FourthWave Consulting" width={300} />
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100">
