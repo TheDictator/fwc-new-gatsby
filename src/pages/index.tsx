@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -10,17 +10,13 @@ import {
   CogIcon,
 	DocumentReportIcon,
   ChartBarIcon,
-	InboxIcon,
   OfficeBuildingIcon,
 	PencilAltIcon,
   PlusIcon,
-	ReplyIcon,
-	SparklesIcon,
   } from '@heroicons/react/outline'
 import { SiShopify, SiGoogleanalytics, SiOracle } from "react-icons/si";
 import { DiBackbone } from "react-icons/di";
 import Netsuite from "../images/oracle.svg";
-
 
   const features = [
     {
@@ -77,9 +73,6 @@ import Netsuite from "../images/oracle.svg";
   // An Introduction to Automating XML Sitemaps for NetSuite Companies - https://www.fourthwc.com/netsuite/2016/11/xml-sitemaps.html
 
 export interface Props {
-	data: {
-		file: ChildImageSharp;
-	};
 	location: Location;
 }
 
@@ -218,13 +211,6 @@ export const IndexPage = (props: Props) => {
                 <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
                   <DiBackbone/>
                   <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">Backbone.js</span>
-                </div>
-                <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
-                  <img
-                    className="h-12"
-                    src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                    alt="Workcation"
-                  />
                 </div>
               </div>
             </div>

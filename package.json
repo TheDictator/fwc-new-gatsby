@@ -118,9 +118,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog"
-  },
-  "bugs": {
-    "url": "https://github.com/sagar7993/gatsby-wordpress-typescript-scss-blog/issues"
+    "url": "https://github.com/TheDictator/fwc-new-gatsby"
   }
 }

@@ -2,10 +2,7 @@ import React from 'react';
 
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import { Layout as AntLayout, Menu, Col, Button, Row } from 'antd';
-
 import './Header.scss';
-import Image, { FluidObject } from 'gatsby-image';
 
 import { ChildImageSharp } from '../../contracts/post';
 import { Fragment } from 'react'
@@ -26,27 +23,22 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import { StaticImage } from "gatsby-plugin-image"
 
 const services = [
   {
-    name: 'Suite Commerce',
-    description: 'Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress',
+    name: 'SuiteCommerce',
+    description: 'NetSuite\'s flagship ecommerce product. Lots of good features, tightly integrated with the back end, and expensive.',
     href: '/services/suite-commerce',
     icon: ChartBarIcon,
   },
   {
     name: 'Site Builder',
-    description: 'Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.',
+    description: 'If you have invested a great deal in Site Builder, we can help you maximize your conversion rate, SEO, and performance.',
     href: '/services/sitebuilder',
     icon: CursorClickIcon,
   },
-  { name: 'SC Advanced', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-  {
-    name: 'SEO',
-    description: "Maximize your search presence & rankings on Google. Fixing SEO penalties or other search engine optimization, etc.",
-    href: '/services/migrations',
-    icon: ReplyIcon,
-  },
+  { name: 'Shopify', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
 ]
 const callsToAction = [
   { name: 'View All Services', href: '/services', icon: CheckCircleIcon },
@@ -91,7 +83,6 @@ export interface Props {
 	location: Location;
 }
 export const Header = (props: Props) => {
-	const fluid: FluidObject | null = (props.data && props.data.file && props.data.file.childImageSharp && props.data.file.childImageSharp.fluid) ? props.data.file.childImageSharp.fluid : null;
   
   return (
     <Popover className="relative bg-white">
@@ -103,7 +94,7 @@ export const Header = (props: Props) => {
               <div>
                 <a href="/" className="flex">
                   <span className="sr-only">FourthWave Consulting</span>
-					        <img className="h-16 w-auto sm:h-14" src="https://www.fourthwc.com/wp-content/uploads/2015/06/fwc_header3.png" alt="FourthWave Consulting" title="Author Bio" data-pin-nopin="true" />
+                  <StaticImage src="../../images/fwc_header.png" alt="FourthWave Consulting" />
                 </a>
               </div>
               <div className="-mr-2 -my-2 md:hidden">
@@ -123,7 +114,7 @@ export const Header = (props: Props) => {
                             'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900'
                           )}
                         >
-                          <span>Services</span>
+                          <span>NetSuite Services</span>
                           <ChevronDownIcon
                             className={classNames(
                               open ? 'text-gray-600' : 'text-gray-400',
@@ -145,34 +136,43 @@ export const Header = (props: Props) => {
                         >
                           <Popover.Panel
                             static
-                            className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-white"
+                            className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-white max-w-7xl mx-auto "
                           >
-                            <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-16">
-                              {services.map((item) => (
-                                <a
-                                  key={item.name}
-                                  href={item.href}
-                                  className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
-                                >
-                                  <div className="flex md:h-full lg:flex-col">
-                                    <div className="flex-shrink-0">
-                                      {/* <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white sm:h-12 sm:w-12">
-                                        <item.icon className="h-6 w-6" aria-hidden="true" />
-                                      </span> */}
-                                    </div>
-                                    <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
-                                      <div>
-                                        <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                        <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                            <div className="grid grid-cols-2">
+                              <div>
+                                <div className="px-8 pt-4">
+                                  <h2>E-Commerce Solutions</h2>
+                                  <p>Your needs are unique. We can help you find the best solution. This is a critical decision with ramifications for years to come, and there are many factors to consider. </p>
+                                </div>
+                                  
+                                  <div className="grid gap-y-6 px-4 py-2 sm:grid-cols-2 sm:gap-8 sm:px-6 lg:grid-cols-4 lg:px-8 xl:py-4">
+                                {services.map((item) => (
+                                  <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
+                                  >
+                                    <div className="flex md:h-full lg:flex-col">
+                                      <div className="flex-shrink-0">
+                                        {/* <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white sm:h-12 sm:w-12">
+                                          <item.icon className="h-6 w-6" aria-hidden="true" />
+                                        </span> */}
                                       </div>
-                                      <p className="mt-2 text-sm font-medium text-blue-600 lg:mt-4">
-                                        Learn more <span aria-hidden="true">&rarr;</span>
-                                      </p>
+                                      <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
+                                        <div>
+                                          <p className="text-base font-medium text-gray-900">{item.name}</p>
+                                          <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                        </div>
+                                        <p className="mt-2 text-sm font-medium text-blue-600 lg:mt-4">
+                                          Learn more <span aria-hidden="true">&rarr;</span>
+                                        </p>
+                                      </div>
                                     </div>
-                                  </div>
-                                </a>
-                              ))}
+                                  </a>
+                                ))}
+                              </div>
                             </div>
+                          </div>
                             <div className="bg-gray-50">
                               <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
                                 {callsToAction.map((item) => (
@@ -202,7 +202,7 @@ export const Header = (props: Props) => {
                             'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900'
                           )}
                         >
-                          <span>Resources</span>
+                          <span>About Us</span>
                           <ChevronDownIcon
                             className={classNames(
                               open ? 'text-gray-600' : 'text-gray-400',
@@ -407,20 +407,11 @@ export const Header = (props: Props) => {
 export default Header;
 
 export const query = graphql`
-  	query {
-    	file(relativePath: { eq: "logo.png" }) {
-      		childImageSharp {
-        		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-            aspectRatio
-            src
-            srcSet
-            sizes
-            base64
-            tracedSVG
-            srcWebp
-            srcSetWebp
-          }
-        }
-		  }
-  	}
-`;
+  {
+    file(relativePath: { eq: "images/fwc_header.png" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FIXED)
+      }
+    }
+  }
+`
