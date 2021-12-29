@@ -17,12 +17,13 @@ export class AuthorInfo {
 	link: string = '';
 	name: string = '';
 	path: string = '';
+	uri: string = '';
 	slug: string = '';
 	url: string = '';
 	wordpress_id: string = '';
 }
 
-export class wpPost {
+export class Post {
 	id: number = 0;
 	date: string = '';
 	modified: string = '';

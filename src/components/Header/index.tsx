@@ -44,7 +44,7 @@ const callsToAction = [
   { name: 'Contact Us', href: '/contact-fourth-wave-consulting', icon: PhoneIcon },
 ]
 const company = [
-  { name: 'About', href: '/about', icon: InformationCircleIcon },
+  { name: 'Our Philosophy', href: '/about', icon: InformationCircleIcon },
   { name: 'Our Work', href: '/work', icon: OfficeBuildingIcon },
   { name: 'Privacy Policy', href: '/privacy-policy', icon: ShieldCheckIcon },
   { name: 'Demos', href: '/demos', icon: DesktopComputerIcon },
@@ -232,7 +232,7 @@ export const Header = (props: Props) => {
                             <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
                               <nav className="grid gap-y-10 px-4 py-8 bg-white sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
                                 <div>
-                                  <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
+                                  <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">About Us</h3>
                                   <ul className="mt-5 space-y-6">
                                     {company.map((item) => (
                                       <li key={item.name} className="flow-root">
@@ -291,12 +291,12 @@ export const Header = (props: Props) => {
                   </Popover>
                 </Popover.Group>
                 <div className="flex items-center md:ml-12">
-                  <a href="/blog" className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  <a href="/blog" className="text-lg font-medium text-gray-700 hover:text-gray-900">
                     Blog
                   </a>
                   <a
                     href="/contact-fourth-wave-consulting"
-                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 hover:text-white"
+                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 hover:text-white"
                   >
                     Contact
                   </a>

@@ -40,7 +40,7 @@ export const ContactPage = (props: Props) => {
         {/* Contact Section */}
         <div className="relative bg-white">
               <div
-                className="w-full"
+                className="max-w-3xl mx-auto px-4 lg:px-0"
                 
               >
                 <form 

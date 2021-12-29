@@ -45,7 +45,7 @@ exports.createPages = async ({
 				  node {
 					localFile {
 					  childImageSharp {
-						gatsbyImageData
+						gatsbyImageData(layout: FIXED)
 					  }
 					}
 				  }

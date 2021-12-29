@@ -17,13 +17,14 @@ import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 
 import '../styles/blog.scss';
 
 export interface Props {
 	data: {
-		wpPost: wpPost;
+		wpPost: Post;
 		allCommentsYaml: CommentEdges;
 	};
 	pageContext: {
@@ -60,7 +61,8 @@ export const BlogPostPage = (props: Props) => {
 								</h1>
 								<div className="my-2">
 									{(fluid && fluid.src && fluid.src.length > 0) && (
-										<Image className="rounded-lg shadow-lg object-cover object-center" fluid={fluid} alt={props.data.wpPost.title} title={props.data.wpPost.title} />
+										<GatsbyImage className="rounded-lg shadow-lg object-cover object-center" image={props.data.wpPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt={props.data.wpPost.title} />
+										
 									)}
 								</div>
 							</div>
@@ -164,11 +166,11 @@ export const query = graphql`
 			}
 			featuredImage {
 				node {
-				localFile {
-					childImageSharp {
-					gatsbyImageData
+					localFile {
+						childImageSharp {
+							gatsbyImageData(layout: FIXED)
+						}
 					}
-				}
 				}
 			}
 			categories {

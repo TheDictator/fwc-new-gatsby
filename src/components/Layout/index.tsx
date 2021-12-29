@@ -1,13 +1,11 @@
 import React, { Component, Fragment, RefObject, createRef } from 'react';
 
-import { Layout as AntLayout, Drawer } from 'antd';
+import { Layout as AntLayout } from 'antd';
 
 import Header from '../Header';
 import Footer from '../Footer';
-import SideDrawer from '../SideDrawer';
 import CookieConsent from "react-cookie-consent";
 import './Layout.scss';
-
 export interface Props {
 	children: React.ReactNode;
 	location: Location;

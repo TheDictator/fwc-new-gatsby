@@ -187,7 +187,7 @@ export const IndexPage = (props: Props) => {
         </div>
         {/* Logo cloud */}
         <div className="logo-cloud bg-gray-100">
-            <div className="max-w-7xl mx-auto py-10 pb-0 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
               <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
                 We trust our <span className="text-blue-500 font-extrabold">20+ years</span> of Netsuite experience with some of these products
               </p>
@@ -213,7 +213,7 @@ export const IndexPage = (props: Props) => {
           </div>
         
         {/* Alternating Feature Sections */}
-        <div className="relative pt-32 pb-32 overflow-hidden">
+        <div className="relative pt-32 pb-32 overflow-hidden hidden">
           <div aria-hidden="true" className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100" />
           <div className="relative">
             <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">

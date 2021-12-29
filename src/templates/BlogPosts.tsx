@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Image, { FluidObject } from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-import { wpPost, CategoryTagInfo } from '../contracts/post';
+import { Post, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 
@@ -13,8 +13,8 @@ import '../styles/blog.scss';
 import { GrNext, GrPrevious } from "react-icons/gr";
 import Blog from "../images/blog.jpg";
 export interface Props {
+	pageContext: {group: { node: Post }[];}
 	pathContext: {
-		group: { node: wpPost }[];
 		index: number;
 		pageCount: number;
 	};
@@ -22,7 +22,8 @@ export interface Props {
 }
 
 export const BlogPostsPage = (props: Props) => {
-	const { group, index, pageCount } = props.pathContext;
+	const { index, pageCount } = props.pathContext;
+	const { group } = props.pageContext;
 	const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
 	const nextUrl = (index + 1).toString();
 	const { site } = useStaticQuery(graphql`
@@ -41,6 +42,52 @@ export const BlogPostsPage = (props: Props) => {
 				}
 			}
 		}
+		allWpPost {
+			edges {
+			  node {
+				id
+				slug
+				uri
+				title
+				excerpt
+				date(formatString: "MMMM DD, YYYY")
+				modified(formatString: "MMMM DD, YYYY")
+				author {
+				  node {
+					id
+					name
+					uri
+					slug
+				  }
+				}
+				featuredImage {
+				  node {
+					localFile {
+					  childImageSharp {
+						gatsbyImageData
+					  }
+					}
+				  }
+				}
+				categories {
+				  nodes {
+					id
+					count
+					name
+					slug
+				  }
+				}
+				tags {
+				  nodes {
+					id
+					count
+					name
+					slug
+				  }
+				}
+			  }
+			}
+		  }
       }
 	`);
 
@@ -66,15 +113,13 @@ export const BlogPostsPage = (props: Props) => {
 			<div className="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 			<div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
 					{group.map(({ node }: { node: Post }) => {
-						const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featuredImage.node.localFile && node.featuredImage.node.localFile.fluid) ? node.featuredImage.node.localFile.fluid : null;
 						const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
-						const tags: CategoryTagInfo[] = (node.tags && node.tags.length) > 0 ? node.tags : new Array<CategoryTagInfo>();
 						return (
 							  <div key={node.slug} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
 								<div className="flex-shrink-0">
-								{(fluid && fluid.src && fluid.src.length > 0) && (
+								{(node.featuredImage?.node.localFile && node.featuredImage?.node.localFile.length > 0) && (
 									<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} title={node.slug}>
-										<Image fluid={fluid} alt={node.title} title={node.title} />
+										<GatsbyImage image={node.featuredImage?.node.localFile.childImageSharp.gatsbyImageData} alt={node.title} />
 									</Link>
 								)}
 							  	</div>
@@ -106,7 +151,7 @@ export const BlogPostsPage = (props: Props) => {
 										</div>
 										<div className="ml-3">
 											<p className="text-sm font-bold text-gray-900">
-												<a href={node.author.href} className="hover:underline">
+												<a href={node.author.node.uri} className="hover:underline">
 													{capitalizeFirstLetter(node.author.node.name)}
 												</a>
 											</p>
