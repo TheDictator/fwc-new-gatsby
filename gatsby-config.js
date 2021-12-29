@@ -197,16 +197,16 @@ module.exports = {
 				}
 			}
 		},
-		{
-			resolve: `gatsby-plugin-algolia`,
-			options: {
-			  appId: process.env.GATSBY_ALGOLIA_APP_ID,
-			  apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
-			  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
-			  queries: queries,
-			  chunkSize: 10000, // default: 1000
-			},
-		},
+		// {
+		// 	resolve: `gatsby-plugin-algolia`,
+		// 	options: {
+		// 	  appId: process.env.GATSBY_ALGOLIA_APP_ID,
+		// 	  apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
+		// 	  indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
+		// 	  queries: queries,
+		// 	  chunkSize: 10000, // default: 1000
+		// 	},
+		// },
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-postcss`,
 		'gatsby-plugin-robots-txt',

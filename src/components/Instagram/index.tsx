@@ -1,10 +1,9 @@
 import React, { Fragment, ReactNode } from 'react';
 
-import Image from 'gatsby-image';
-
 import { Icon } from 'antd';
 
 import { InstagramFeed } from '../../contracts/post';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import './Instagram.scss';
 
@@ -26,7 +25,7 @@ export const Instagram = (props: Props) => {
 							(instagramPost.node && instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) ? (
 								<div key={index} className="instagram-post">
 									<a href={`https://instagram.com/p/${instagramPost.node.id}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={instagramPost.node.caption}>
-										<Image fluid={instagramPost.node.localFile.childImageSharp.fluid} alt={instagramPost.node.caption} title={instagramPost.node.caption} data-pin-nopin="true" />
+										<GatsbyImage image={instagramPost.node.localFile.childImageSharp.gatsbyImageData} alt={instagramPost.node.caption} title={instagramPost.node.caption} data-pin-nopin="true" />
 									</a>
 								</div>
 							) : <Fragment key={index} />

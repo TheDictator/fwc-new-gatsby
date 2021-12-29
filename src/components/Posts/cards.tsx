@@ -3,7 +3,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../../utils';
 import PostCategories from "./categories"
-import Image from "../image";
+//import Image from "../image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PostCards = ({ posts }) => {
   return (
@@ -14,7 +15,7 @@ const PostCards = ({ posts }) => {
                 <div key={node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div className="flex-shrink-0">
                         <Link to={node.link} title={node.title}>
-                            <Image image={node.featuredImage} altText={node.title} />
+                            <GatsbyImage image={node.featuredImage} alt={node.title} />
                         </Link>
                     </div>
                     <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
@@ -30,7 +31,7 @@ const PostCards = ({ posts }) => {
                                 <Link to={node.link} title={node.author.node.name}>
                                     <span className="sr-only">{node.author.node.name}</span>
                                     {node.author.node.avatar && 
-                                        <Image src={node.author.node.avatar.url} altText={node.author.node.name} />
+                                        <img src={node.author.node.avatar.url} alt={node.author.node.name} />
                                     }
                                 </Link>
                             </div>

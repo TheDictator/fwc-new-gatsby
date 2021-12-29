@@ -50,6 +50,7 @@ export const BlogPostsPage = (props: Props) => {
 				slug
 				uri
 				title
+				link
 				excerpt
 				date(formatString: "MMMM DD, YYYY")
 				modified(formatString: "MMMM DD, YYYY")
@@ -67,9 +68,13 @@ export const BlogPostsPage = (props: Props) => {
 				featuredImage {
 				  node {
 					localFile {
-					  childImageSharp {
-						gatsbyImageData
-					  }
+						childImageSharp {
+							gatsbyImageData (
+								width: 800
+								placeholder: BLURRED
+								formats: [AUTO, WEBP, AVIF]
+							  )
+						}
 					}
 				  }
 				}
@@ -122,7 +127,7 @@ export const BlogPostsPage = (props: Props) => {
 							  <div key={node.slug} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
 								<div className="flex-shrink-0">
 								{(node.featuredImage?.node.localFile && node.featuredImage?.node.localFile.length > 0) && (
-									<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} title={node.slug}>
+									<Link to={node.link} title={node.slug}>
 										<GatsbyImage image={node.featuredImage?.node.localFile.childImageSharp.gatsbyImageData} alt={node.title} />
 									</Link>
 								)}
@@ -131,27 +136,27 @@ export const BlogPostsPage = (props: Props) => {
 									<div className="flex-1">
 									{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 											return (
-												<a key={categoryIndex} href={`/category/${category.slug}`} className="inline-block" title={category.name}>
+												<Link key={categoryIndex} to={`/category/${category.slug}`} className="inline-block" title={category.name}>
 													<span
 													className=
 														'bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
 													>
 													{capitalizeFirstLetter(category.name)}
 													</span>
-												</a>
+												</Link>
 											);
 										})}
-										<a className="block mt-2">
+										<Link to={node.link} className="block mt-2">
 											<p className="text-xl font-semibold text-black-400 title">{node.title}</p>
 											<div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }}></div>
-										</a>
+										</Link>
 									</div>
 									<div className="mt-6 flex items-center">
 										<div className="flex-shrink-0">
-											<a>
+										<Link to={node.link} title={node.slug}>
 												<span className="sr-only">{capitalizeFirstLetter(node.author.name)}</span>
 												<img className="h-10 w-10 rounded-full" src={node.author.node.avatar.url} alt="" />
-											</a>
+											</Link>
 										</div>
 										<div className="ml-3">
 											<p className="text-sm font-bold text-gray-900">

@@ -71,7 +71,7 @@ export class InstagramPost {
 	dimensions: InstagramPostDimensions = new InstagramPostDimensions();
 	id: string = '';
 	likes: number = 0;
-	localFile?: ChildImageSharp;
+	localFile?: Media = new Media();
 	mediaType: string = '';
 	original: string = '';
 	preview: string = '';
