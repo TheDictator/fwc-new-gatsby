@@ -13,17 +13,18 @@ import '../styles/blog.scss';
 import { GrNext, GrPrevious } from "react-icons/gr";
 import Blog from "../images/blog.jpg";
 export interface Props {
-	pageContext: {group: { node: Post }[];}
-	pathContext: {
+	pageContext: {
+		group: { node: Post }[];
 		index: number;
 		pageCount: number;
-	};
+	}
 	location: Location;
 }
 
+
 export const BlogPostsPage = (props: Props) => {
-	const { index, pageCount } = props.pathContext;
-	const { group } = props.pageContext;
+	//const { index, pageCount } = props.pathContext;
+	const { group, index, pageCount } = props.pageContext;
 	const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
 	const nextUrl = (index + 1).toString();
 	const { site } = useStaticQuery(graphql`
@@ -54,6 +55,9 @@ export const BlogPostsPage = (props: Props) => {
 				modified(formatString: "MMMM DD, YYYY")
 				author {
 				  node {
+					avatar {
+						url
+					}
 					id
 					name
 					uri
@@ -137,14 +141,14 @@ export const BlogPostsPage = (props: Props) => {
 												</a>
 											);
 										})}
-										<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} className="block mt-2">
+										<a className="block mt-2">
 											<p className="text-xl font-semibold text-black-400 title">{node.title}</p>
 											<div className="mt-3 text-base text-gray-500" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(node.excerpt) }}></div>
 										</a>
 									</div>
 									<div className="mt-6 flex items-center">
 										<div className="flex-shrink-0">
-											<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`}>
+											<a>
 												<span className="sr-only">{capitalizeFirstLetter(node.author.name)}</span>
 												<img className="h-10 w-10 rounded-full" src={node.author.node.avatar.url} alt="" />
 											</a>

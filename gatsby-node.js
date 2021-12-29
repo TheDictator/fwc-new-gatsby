@@ -2,6 +2,7 @@ const moment = require('moment');
 const path = require('path');
 
 const createPaginatedPages = require('gatsby-paginate');
+const paginate = require('gatsby-awesome-pagination');
 
 require('dotenv').config({
 	path: `.env.${process.env.NODE_ENV}`
@@ -35,6 +36,9 @@ exports.createPages = async ({
 				modified(formatString: "MMMM DD, YYYY")
 				author {
 				  node {
+					avatar {
+						url
+					}
 					id
 					name
 					uri
@@ -92,6 +96,21 @@ exports.createPages = async ({
 			}
 		});
 	});
+
+	createPaginatedPages({
+		edges: BlogPosts,
+		createPage: createPage,
+		pageTemplate: 'src/templates/BlogPosts.tsx',
+		pageLength: 10,
+		pathPrefix: 'blog',
+	});
+	// paginate({
+	// 	createPage,
+	// 	items: BlogPosts,
+	// 	itemsPerPage: 10,
+	// 	pathPrefix: 'blog',
+	// 	component: 'src/templates/BlogPosts.tsx', // your template for post lists
+	//   })
 
 	const BlogTagPosts = new Map();
 	const BlogCategoryPosts = new Map();
@@ -155,12 +174,5 @@ exports.createPages = async ({
 		});
 	}
 
-	createPaginatedPages({
-		edges: BlogPosts,
-		createPage: createPage,
-		pageTemplate: 'src/templates/BlogPosts.tsx',
-		pageLength: 10,
-		pathPrefix: 'blog',
-		
-	});
+	
 }

@@ -45,6 +45,7 @@
     "autoprefixer": "^10.2.6",
     "axios": "^0.21.1",
     "gatsby": "^3.5.0",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-paginate": "^1.0.0",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-algolia": "^0.20.1",

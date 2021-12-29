@@ -383,7 +383,24 @@ export const IndexPage = (props: Props) => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+          <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+            <div className="absolute inset-0">
+              <div className="bg-white h-1/3 sm:h-2/3" />
+            </div>
+            <div className="relative max-w-7xl mx-auto">
+              <div className="text-center">
+                <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">From The Blog</h2>
+                <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                  See what we've been working on and the stay up-to-date on anything and everything NetSuite.
+                </p>
+              </div>
+              <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                <RecentPosts />
+              </div>
+            </div>
+          </div>
+
           {/* Gradient Feature Section */}
           <div className="bg-gradient-to-r from-blue-800 to-blue-700">
             <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
@@ -402,23 +419,7 @@ export const IndexPage = (props: Props) => {
             </div>
           </div>
 
-          <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3" />
-        </div>
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">From The Blog</h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              See what we've been working on and the stay up-to-date on anything and everything NetSuite.
-            </p>
-          </div>
-          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-            <RecentPosts />
-          </div>
-        </div>
-      </div>
-
+         
           {/* Stats section */}
           <div className="relative bg-gray-900">
             <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
