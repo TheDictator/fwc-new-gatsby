@@ -1,21 +1,21 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import RecentPosts from "../components/Posts/recent-posts"
-import { ExternalLinkIcon } from "@heroicons/react/solid"
-import "../styles/blog.scss"
-import {
-    CogIcon,
-    DocumentReportIcon,
-    ChartBarIcon,
-    OfficeBuildingIcon,
-    PencilAltIcon,
-    PlusIcon,
-} from "@heroicons/react/outline"
-import { SiShopify, SiGoogleanalytics, SiOracle } from "react-icons/si"
-import { DiBackbone } from "react-icons/di"
+    import React, { useState } from 'react';
+    import { Link } from 'gatsby';
+    import { StaticImage } from 'gatsby-plugin-image';
+    import Layout from '../components/Layout';
+    import SEO from '../components/SEO';
+    import RecentPosts from '../components/Posts/recent-posts';
+    import { ExternalLinkIcon } from '@heroicons/react/solid';
+    import '../styles/blog.scss';
+    import {
+        CogIcon,
+        DocumentReportIcon,
+        ChartBarIcon,
+        OfficeBuildingIcon,
+        PencilAltIcon,
+        PlusIcon,
+    } from '@heroicons/react/outline'
+    import { SiShopify, SiGoogleanalytics, SiOracle } from 'react-icons/si';
+    import { DiBackbone } from 'react-icons/di';
 
 const features = [
     {

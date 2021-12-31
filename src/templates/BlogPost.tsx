@@ -9,7 +9,7 @@ import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 import { GrNext, GrPrevious } from "react-icons/gr";
 import '../styles/blog.scss';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
 
 export interface Props {
 	data: {
@@ -79,7 +79,7 @@ export const BlogPostPage = (props: Props) => {
 											{capitalizeFirstLetter(tag.name)}
 										</Link>
 									);
-								})}						
+								})}			
 							</div>
 							<div className="rounded-t-lg pt-4 pb-6 px-8 lg:px-0">
 								<h3 className="text-xl text-center text-gray-500">Author</h3>
@@ -99,7 +99,7 @@ export const BlogPostPage = (props: Props) => {
 							</div>
 							<cite className="relative flex items-center justify-center justify-items-center bg-gray-600 rounded-b-lg not-italic pt-6 pb-3 shadow-lg">
 								<Link to="" className="absolute rounded-full border-2 border-white hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 sm:absolute top-0 transform -translate-y-1/2 transition-all">
-									
+									<img className="h-10 w-10 rounded-full" src={props.data.wpPost.author.node.avatar.url} alt={props.data.wpPost.author.node.name} />
 								</Link>
 								<span className="relative text-blue-300 font-semibold leading-7 mt-1">
 									<p className="text-white font-semibold inline text-xl">{props.data.wpPost.author.node.name}</p>
