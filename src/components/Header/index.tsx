@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import './Header.scss';
-import { ChildImageSharp } from '../../contracts/post';
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
   ChartBarIcon,
   CheckCircleIcon,
   CursorClickIcon,
-  DesktopComputerIcon,
   InformationCircleIcon,
   MenuIcon,
   OfficeBuildingIcon,
@@ -68,9 +66,6 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export interface Props {
-	data: {
-		file: ChildImageSharp;
-	};
 	location: Location;
 }
 export const Header = (props: Props) => {
@@ -365,8 +360,7 @@ export const Header = (props: Props) => {
                 <div className="pt-5 pb-6 px-5 sm:pb-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <StaticImage src="../../images/fwc_header.png" alt="FourthWave Consulting" width={300} />
-                      
+                      <StaticImage src="../../images/fwc_header.png" alt="FourthWave Consulting" width={325} />
                     </div>
                     <div className="-mr-2">
                       <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100">
