@@ -53,9 +53,9 @@ export const RecentPosts = () => (
         `}
         render={data => {			
         return (
-                <>
-                <PostCards posts={data.allWpPost.edges} />
-            </>
+          <>
+            <PostCards posts={data.allWpPost.edges} />
+          </>
         )
         }}
     />
