@@ -15,7 +15,7 @@ import {
     PlusIcon,
 } from '@heroicons/react/outline'
 import { SiShopify, SiGoogleanalytics, SiOracle } from 'react-icons/si';
-import { DiBackbone } from 'react-icons/di';
+//import { Netsuite } from '../images/netsuite.svg';
 
 const features = [
     {
@@ -156,9 +156,15 @@ export const IndexPage = (props: Props) => {
                         </p>
                         <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-8 lg:grid-cols-4 text-center">
                             <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
+                                <StaticImage className="mx-auto mb-3" src="../images/netsuite.svg" alt="Netsuite" placeholder="blurred" layout="fixed" width={64} height={64}/>
+                                <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
+                                    Netsuite
+                                </span>
+                            </div>
+                            <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
                                 <SiOracle />
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
-                                    Netsuite / SuiteCommerce
+                                    SuiteCommerce
                                 </span>
                             </div>
                             <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
@@ -173,12 +179,7 @@ export const IndexPage = (props: Props) => {
                                     Shopify
                                 </span>
                             </div>
-                            <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
-                                <DiBackbone />
-                                <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
-                                    Backbone.js
-                                </span>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

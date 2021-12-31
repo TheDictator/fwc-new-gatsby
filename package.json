@@ -64,7 +64,7 @@
     "gatsby-rehype-prismjs": "^2.0.0",
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-source-instagram": "^0.5.0",
-    "gatsby-source-wordpress": "^5.5.0",
+    "gatsby-source-wordpress": "^5.14.2",
     "gatsby-transformer-rehype": "^2.0.0",
     "gatsby-transformer-sharp": "^3.8.0",
     "gatsby-transformer-yaml": "^3.8.0",

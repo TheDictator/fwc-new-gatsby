@@ -1,12 +1,8 @@
 import React from 'react';
-
-import { graphql } from 'gatsby';
-
 import './Header.scss';
-
 import { ChildImageSharp } from '../../contracts/post';
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
 import {
   ChartBarIcon,
   CheckCircleIcon,
@@ -20,9 +16,9 @@ import {
   ShieldCheckIcon,
   UserGroupIcon,
   XIcon,
-} from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import { StaticImage } from "gatsby-plugin-image"
+} from '@heroicons/react/outline';
+import { ChevronDownIcon } from '@heroicons/react/solid';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const services = [
   {
@@ -48,10 +44,6 @@ const company = [
   { name: 'Our Work', href: '/work', icon: OfficeBuildingIcon },
   { name: 'Privacy Policy', href: '/privacy-policy', icon: ShieldCheckIcon },
   { name: 'Demos', href: '/demos', icon: DesktopComputerIcon },
-]
-const resources = [
-  { name: 'Blog', href: '/blog', icon: GlobeAltIcon },
-  { name: 'Updates', href: '/updates', icon: UserGroupIcon },
 ]
 const blogPosts = [
   {
