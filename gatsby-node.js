@@ -51,7 +51,7 @@ exports.createPages = async ({
 					localFile {
 					  childImageSharp {
 						gatsbyImageData (
-                            width: 800
+                            width: 1920
                             placeholder: BLURRED
                             formats: [AUTO, WEBP, AVIF]
                           )

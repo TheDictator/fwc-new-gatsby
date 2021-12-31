@@ -60,12 +60,12 @@ export const BlogPostPage = (props: Props) => {
 						<blockquote className="relative bg-white rounded-lg m-0">
 							<TagCloud/>
 							<div className="categories-container tags-container post-meta-container pt-4 pb-6 px-8 lg:px-0">
-								<span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black-400">
+								{/* <span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black-400">
 									{decodeHtmlCharCodes(props.data.wpPost.title)}
 								</span>
 								<span className="post-meta mb-2 block">
 									<span className="date block text-gray-500">{(props.data.wpPost.modified && props.data.wpPost.modified.length > 0) ? props.data.wpPost.modified : props.data.wpPost.date}</span>
-								</span>
+								</span> */}
 								{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 									return (
 										<Link to={`/category/${category.slug}`} title={category.name} key={categoryIndex} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
@@ -82,7 +82,7 @@ export const BlogPostPage = (props: Props) => {
 								})}			
 							</div>
 							<div className="rounded-t-lg pt-4 pb-6 px-8 lg:px-0">
-								<h3 className="text-xl text-center text-gray-500">Author</h3>
+								<h3 className="text-xl text-center text-gray-800 text-bold">Author</h3>
 								<div className="relative text-md text-gray-500 font-medium mt-4">
 									<svg
 										className="absolute top-0 left-0 transform -translate-x-3 -translate-y-2 h-8 w-8 text-gray-200"
@@ -92,8 +92,8 @@ export const BlogPostPage = (props: Props) => {
 									>
 										<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
 									</svg>
-									<p className="relative">
-										{props.data.wpPost.author.description}
+									<p className="relative text-sm text-italic leading-relaxed p-8">
+										{props.data.wpPost.author.node.description}
 									</p>
 								</div>
 							</div>
@@ -147,6 +147,7 @@ export const query = graphql`
 					name
 					uri
 					slug
+					description
 				}
 			}
 			featuredImage {
