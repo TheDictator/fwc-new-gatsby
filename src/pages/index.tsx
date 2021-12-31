@@ -425,12 +425,12 @@ export const IndexPage = (props: Props) => {
                                                 We try not to sell you on a particular but rather do what is best for your business and the solution that is most effective.
                                             </p>
                                             <div className="mt-6">
-                                                <a
-                                                    onClick={showDrawer}
+                                                <Link
+                                                    to="/testimonials"
                                                     className="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 hover:text-white"
                                                 >
-                                                    Read Reviews
-                                                </a>
+                                                    Read Testimonials
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
