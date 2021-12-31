@@ -1,22 +1,20 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Image, { FluidObject } from 'gatsby-image';
-
-import { Card, Tag, Row, Col, Icon, Button } from 'antd';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const moment = require('moment');
-import { Post, CategoryTagInfo } from '../contracts/post';
+import { wpPost, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 
 import '../styles/blog.scss';
 import TagCloud from '../components/TagCloud';
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export interface Props {
 	pathContext: {
-		group: { node: Post }[];
+		group: { node: wpPost }[];
 		slug: string;
 	};
 	location: Location;
@@ -49,18 +47,17 @@ export const BlogTagPostsPage = (props: Props) => {
 			<Row gutter={36}>
 			<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
 					<div className="posts mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-						{group.map(({ node }: { node: Post }) => {
-							
-							const fluid: FluidObject | null = (node.featured_media && node.featured_media.localFile && node.featuredImage.node.localFile && node.featuredImage.node.localFile.fluid) ? node.featuredImage.node.localFile.fluid : null;
+						{group.map(({ node }: { node: wpPost }) => {
 							const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 							const tags: CategoryTagInfo[] = (node.tags && node.tags.length > 0) ? node.tags : new Array<CategoryTagInfo>();
 							return (
 								<div key={node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
 									<div className="flex-shrink-0">
-										{(fluid && fluid.src && fluid.src.length > 0) && (
+										{node.featuredImage && (
 											<Link to={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} title={node.slug}>
-												<Image fluid={fluid} alt={node.title} title={node.title} />
+												<GatsbyImage image={getImage(node.featuredImage.node.localFile)} alt={node.title} />
 											</Link>
+											
 										)}
 									</div>
 									<div className="flex-1 bg-white p-6 flex flex-col justify-between">

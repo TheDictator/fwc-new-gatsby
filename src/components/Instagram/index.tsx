@@ -1,7 +1,4 @@
 import React, { Fragment, ReactNode } from 'react';
-
-import { Icon } from 'antd';
-
 import { InstagramFeed } from '../../contracts/post';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
@@ -19,7 +16,9 @@ export const Instagram = (props: Props) => {
 			<div className={`instagram-feed ${props.orientation === 'horizontal' ? 'instagram-feed-horizontal' : (props.orientation === 'vertical' ? 'instagram-feed-vertical' : 'instagram-feed-horizontal')}`}>
 				{props.title}
 				<div className="instagram-posts">
-					<a href={`https://instagram.com/${process.env.GATSBY_INSTAGRAM_SOURCE}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={process.env.GATSBY_INSTAGRAM_SOURCE} className="instagram-profile ant-btn ant-btn-default" ><Icon type="instagram" className="margin-right-8px" />Follow me</a>
+					<a href={`https://instagram.com/${process.env.GATSBY_INSTAGRAM_SOURCE}`} target="_blank" rel="noopenernoopener noreferrer nofollow" title={process.env.GATSBY_INSTAGRAM_SOURCE} className="instagram-profile ant-btn ant-btn-default" >
+						{/* <Icon type="instagram" className="margin-right-8px" /> */}
+						Follow me</a>
 					{props.allInstaNode.edges.map((instagramPost, index) => {
 						return (
 							(instagramPost.node && instagramPost.node.localFile && instagramPost.node.localFile.childImageSharp) ? (

@@ -1,23 +1,13 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Row, Col } from 'antd';
-
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import TagCloud from '../components/TagCloud';
-
-import Comments from '../components/Comments';
-
 import { wpPost, CategoryTagInfo } from '../contracts/post';
 import { CommentEdges } from '../contracts/comment';
-
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { GatsbyImage } from "gatsby-plugin-image"
-
-
 import '../styles/blog.scss';
 
 export interface Props {
@@ -44,8 +34,8 @@ export const BlogPostPage = (props: Props) => {
 		<Layout location={props.location}>
 			<SEO title={props.data.wpPost.title} description={props.data.wpPost.excerpt} />
 			<div className="container container--l">
-				<Row gutter={36}>
-					<Col xs={24} sm={24} md={24} lg={16} xl={18} xxl={18} id="primary" className="content-area with-sidebar">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+					<div id="primary" className="content-area with-sidebar col-span-1 lg:col-span-8">
 						<article className="post relative px-4 sm:px-6 lg:px-8">
 							<div className="text-lg">
 								<h1 className="mb-4">
@@ -64,8 +54,8 @@ export const BlogPostPage = (props: Props) => {
 						</article>
 						<div className="px-4 sm:px-6 lg:px-8">
 						</div>
-					</Col>
-					<Col xs={24} sm={24} md={24} lg={8} xl={6} xxl={6} id="secondary" className="sidebar">
+					</div>
+					<div className="sidebar col-span-1 lg:col-span-4 top-0 b-0 lg:sticky lg:h-screen" id="secondary">
 						<blockquote className="relative bg-white rounded-lg m-0">
 							<TagCloud/>
 							<div className="categories-container tags-container post-meta-container pt-4 pb-6 px-8 lg:px-0">
@@ -115,8 +105,8 @@ export const BlogPostPage = (props: Props) => {
 								</span>
 							</cite>
 						</blockquote>
-					</Col>
-				</Row>
+					</div>				
+				</div>
 			</div>
 			<div className="navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug && (

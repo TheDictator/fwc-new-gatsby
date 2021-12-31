@@ -1,6 +1,5 @@
 import React, { useState, } from "react";
 import { graphql, navigate } from 'gatsby';
-import { Drawer } from 'antd';
 import Layout from '../Layout';
 
 const encode = (data) => Object.keys(data)
@@ -20,12 +19,7 @@ export const ContactPage = (props: Props) => {
 
 	return (
 		<Layout location={props.location}>
-			<Drawer
-                width={500}
-                placement="right"
-                closable={true}
-                onClose={onClose}
-                >
+			
                 <div className="relative bg-white">
           <div className="lg:absolute lg:inset-0">
             <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
@@ -208,7 +202,6 @@ export const ContactPage = (props: Props) => {
             </div>
           </div>
         </div>
-            </Drawer>				
 		</Layout>
 	);
 };

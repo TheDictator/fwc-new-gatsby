@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
-
-import { Button } from 'antd';
-
+import { Link } from 'gatsby';
 import Gif404 from '../images/404.gif';
-
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -25,10 +21,10 @@ export const NotFoundPage = (props: Props) => {
 				</div>
 				<div className="action margin-bottom-36px">
 					<Link to="/" className="margin-right-24px">
-						<Button type="primary" htmlType="button">Go Home</Button>
+						Go Home
 					</Link>
 					<Link to="/blog">
-						<Button type="primary" htmlType="button">Go to blog</Button>
+						Go to blog
 					</Link>
 				</div>
 			</div>

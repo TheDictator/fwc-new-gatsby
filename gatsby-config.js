@@ -76,14 +76,15 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
 		{
 		resolve: `gatsby-source-filesystem`,
-			options: [
+			options: 
 				{
 					name: `images`,
 					path: `${__dirname}/src/images`,
 				}
-			],
+			
 			
 		},
 		{
@@ -119,19 +120,11 @@ module.exports = {
 				// 		copyHtmlResponseOnError: true
 				// 	}
 				// },
-				perPage: 100,
 				searchAndReplace: [{
 					search: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
 					replace: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`
 				}],
 				requestConcurrency: 10,
-			}
-		},
-		{
-			resolve: 'gatsby-plugin-import',
-			options: {
-				libraryName: "antd",
-				style: true // or 'css'
 			}
 		},
 		'gatsby-plugin-typescript',
@@ -150,14 +143,7 @@ module.exports = {
 				path: 'src/images'
 			}
 		},
-		'gatsby-plugin-antd',
-		'gatsby-transformer-yaml', {
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				path: './src/data/comments',
-				name: 'comments',
-			},
-		},
+		
 		{
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
