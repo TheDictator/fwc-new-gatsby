@@ -15,7 +15,7 @@ import {
     PlusIcon,
 } from '@heroicons/react/outline'
 import { SiShopify, SiGoogleanalytics, SiOracle } from 'react-icons/si';
-//import { Netsuite } from '../images/netsuite.svg';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const features = [
     {
@@ -126,12 +126,13 @@ export const IndexPage = (props: Props) => {
                                 </p>
                                 <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
                                     <div className="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                                        <Link
-                                            to="/"
-                                            className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-700 sm:px-8"
+                                        <AnchorLink 
+                                        to="#getStarted" 
+                                        title="Check out our team!"
+                                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-700 sm:px-8"
                                         >
                                             Get started
-                                        </Link>
+                                        </AnchorLink>
                                         <Link
                                             to="/services"
                                             className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 hover:text-white sm:px-8"
@@ -303,98 +304,101 @@ export const IndexPage = (props: Props) => {
                         </div>
                     </div>
                 </div>
-                {/* SiteBuilder Section */}
-                <div className="relative bg-gray-900">
-                    <div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-                        <StaticImage
-                            className="w-full h-full object-cover"
-                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-                            alt="SiteBuilder"
-                            placeholder="blurred"
-                        />
-                        <div
-                            aria-hidden="true"
-                            className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
-                            style={{ mixBlendMode: "multiply" }}
-                        />
+                <div id="getStarted">
+                    {/* SiteBuilder Section */}
+                    <div className="relative bg-gray-900">
+                        <div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+                            <StaticImage
+                                className="w-full h-full object-cover"
+                                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+                                alt="SiteBuilder"
+                                placeholder="blurred"
+                            />
+                            <div
+                                aria-hidden="true"
+                                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+                                style={{ mixBlendMode: "multiply" }}
+                            />
+                        </div>
+                        <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+                            <div className="md:ml-auto md:w-1/2 md:pl-10">
+                                <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+                                    NetSuite
+                                </h2>
+                                <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+                                    Site Builder
+                                </p>
+                                <p className="mt-3 text-lg text-gray-300">
+                                    Don't fix what isn't broken. Projects have run
+                                    the gamut from developing a new website from
+                                    scratch, fixing SEO penalties or other search
+                                    engine optimization, integrations with 3rd
+                                    parties, custom Ajax solutions, and converting
+                                    existing sites into device friendly responsive
+                                    design.
+                                </p>
+                                <div className="mt-8">
+                                    <div className="inline-flex rounded-md shadow">
+                                        <Link
+                                            to="/"
+                                            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                                        >
+                                            Learn more
+                                            <ExternalLinkIcon
+                                                className="-mr-1 ml-3 h-5 w-5 text-gray-400"
+                                                aria-hidden="true"
+                                            />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
-                        <div className="md:ml-auto md:w-1/2 md:pl-10">
-                            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-                                NetSuite
-                            </h2>
-                            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
-                                Site Builder
-                            </p>
-                            <p className="mt-3 text-lg text-gray-300">
-                                Don't fix what isn't broken. Projects have run
-                                the gamut from developing a new website from
-                                scratch, fixing SEO penalties or other search
-                                engine optimization, integrations with 3rd
-                                parties, custom Ajax solutions, and converting
-                                existing sites into device friendly responsive
-                                design.
-                            </p>
-                            <div className="mt-8">
-                                <div className="inline-flex rounded-md shadow">
-                                    <Link
-                                        to="/"
-                                        className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
-                                    >
-                                        Learn more
-                                        <ExternalLinkIcon
-                                            className="-mr-1 ml-3 h-5 w-5 text-gray-400"
-                                            aria-hidden="true"
-                                        />
-                                    </Link>
+                    {/* Suitecommerce Section */}
+                    <div className="relative bg-gray-900">
+                        <div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:right-0 md:h-full md:w-1/2">
+                            <StaticImage
+                                className="w-full h-full object-cover"
+                                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
+                                alt="SuiteCommerce"
+                                placeholder="blurred"
+                            />
+                            <div
+                                aria-hidden="true"
+                                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
+                                style={{ mixBlendMode: "multiply" }}
+                            />
+                        </div>
+                        <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
+                            <div className="md:mr-auto md:w-1/2 md:pr-10">
+                                <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
+                                    NetSuite
+                                </h2>
+                                <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
+                                    SuiteCommerce
+                                </p>
+                                <p className="mt-3 text-lg text-gray-300">
+                                    The step up from SiteBuilder.
+                                </p>
+                                <div className="mt-8">
+                                    <div className="inline-flex rounded-md shadow">
+                                        <Link
+                                            to="/"
+                                            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
+                                        >
+                                            Learn more
+                                            <ExternalLinkIcon
+                                                className="-mr-1 ml-3 h-5 w-5 text-gray-400"
+                                                aria-hidden="true"
+                                            />
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* Suitecommerce Section */}
-                <div className="relative bg-gray-900">
-                    <div className="relative h-56 bg-blue-600 sm:h-72 md:absolute md:right-0 md:h-full md:w-1/2">
-                        <StaticImage
-                            className="w-full h-full object-cover"
-                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-                            alt="SuiteCommerce"
-                            placeholder="blurred"
-                        />
-                        <div
-                            aria-hidden="true"
-                            className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600"
-                            style={{ mixBlendMode: "multiply" }}
-                        />
-                    </div>
-                    <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
-                        <div className="md:mr-auto md:w-1/2 md:pr-10">
-                            <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-                                NetSuite
-                            </h2>
-                            <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">
-                                SuiteCommerce
-                            </p>
-                            <p className="mt-3 text-lg text-gray-300">
-                                The step up from SiteBuilder.
-                            </p>
-                            <div className="mt-8">
-                                <div className="inline-flex rounded-md shadow">
-                                    <Link
-                                        to="/"
-                                        className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
-                                    >
-                                        Learn more
-                                        <ExternalLinkIcon
-                                            className="-mr-1 ml-3 h-5 w-5 text-gray-400"
-                                            aria-hidden="true"
-                                        />
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
                     <div className="absolute inset-0">
                         <div className="bg-white h-1/3 sm:h-2/3" />

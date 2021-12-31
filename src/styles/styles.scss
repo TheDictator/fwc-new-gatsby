@@ -8,6 +8,10 @@ body,
     font-family: $fontFamily;
     color: $blackColor;
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
 
 a {
     color: $primaryAccentColor;

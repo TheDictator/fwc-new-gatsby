@@ -49,6 +49,7 @@
     "gatsby-paginate": "^1.0.0",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
     "gatsby-plugin-algolia": "^0.20.1",
+    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-disqus": "^1.2.3",
     "gatsby-plugin-google-analytics": "^3.8.0",
     "gatsby-plugin-image": "^1.5.0",

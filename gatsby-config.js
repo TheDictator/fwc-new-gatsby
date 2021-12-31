@@ -198,7 +198,11 @@ module.exports = {
 				precachePages: ['/posts/*', '/post/*', '/tag/*', '/category/*', '/about']
 			}
 		},
-		
-		
+		{
+			resolve: "gatsby-plugin-anchor-links",
+			options: {
+				offset: -50
+			}
+		}		
 	]
 }
