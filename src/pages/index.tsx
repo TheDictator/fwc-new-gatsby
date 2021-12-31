@@ -14,7 +14,7 @@ import {
     PencilAltIcon,
     PlusIcon,
 } from '@heroicons/react/outline'
-import { SiShopify, SiGoogleanalytics, SiOracle } from 'react-icons/si';
+import { SiGoogleanalytics, SiOracle } from 'react-icons/si';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const features = [
@@ -147,7 +147,7 @@ export const IndexPage = (props: Props) => {
                 </div>
                 {/* Logo cloud */}
                 <div className="logo-cloud bg-gray-100">
-                    <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
                         <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
                             We trust our{" "}
                             <span className="text-blue-500 font-extrabold">
@@ -155,28 +155,28 @@ export const IndexPage = (props: Props) => {
                             </span>{" "}
                             of Netsuite experience with some of these products
                         </p>
-                        <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-8 lg:grid-cols-4 text-center">
-                            <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
-                                <StaticImage className="mx-auto mb-3" src="../images/netsuite.svg" alt="Netsuite" placeholder="blurred" layout="fixed" width={64} height={64}/>
+                        <div className="mt-9 grid grid-cols-2 gap-8 md:grid-cols-8 lg:grid-cols-4 text-center">
+                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                                <StaticImage className="mx-auto" src="../images/netsuite.svg" alt="Netsuite" placeholder="blurred" layout="fixed" width={64} height={64}/>
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
                                     Netsuite
                                 </span>
                             </div>
-                            <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
-                                <SiOracle />
+                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                                <StaticImage className="mx-auto" src="../images/oracle-corporation-logo.svg" alt="SuiteCommerce" placeholder="blurred" width={75} />
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
                                     SuiteCommerce
                                 </span>
                             </div>
-                            <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
-                                <SiGoogleanalytics />
+                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                                <StaticImage className="mx-auto" src="../images/google-analytics.svg" alt="Google Analytics" placeholder="blurred" width={64} />
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
                                     Google Analytics
                                 </span>
                             </div>
-                            <div className="col-span-1 flex flex-column align-center justify-center md:col-span-2 lg:col-span-1 logo-column">
-                                <SiShopify />
-                                <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
+                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                                <StaticImage className="mx-auto" src="../images/shopify.svg" alt="Shopify" placeholder="blurred" width={68} />
+                                <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide mt-1">
                                     Shopify
                                 </span>
                             </div>
