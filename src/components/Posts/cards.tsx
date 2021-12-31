@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { decodeHtmlCharCodes } from "../../utils"
 import PostCategories from "./categories"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { wpPost } from "../../contracts/post"
 
 const PostCards = ({ posts }) => {
     return (
@@ -69,7 +70,7 @@ const PostCards = ({ posts }) => {
                                 <div className="ml-3">
                                     <p className="text-sm font-bold text-gray-900">
                                         <Link
-                                            to={node.author.node.uri}
+                                            to={node.link}
                                             className="hover:underline"
                                         >
                                             {node.author.node.name}

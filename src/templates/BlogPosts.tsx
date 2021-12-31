@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { wpPost, CategoryTagInfo } from '../contracts/post';
-import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
+import { wpPost } from '../contracts/post';
 import PostCards from "../components/Posts/cards";
-
 import '../styles/blog.scss';
 import { GrNext, GrPrevious } from 'react-icons/gr';
-import Blog from '../images/blog.jpg';
+import { StaticImage } from 'gatsby-plugin-image';
+
 export interface Props {
 	pageContext: {
 		group: { node: wpPost }[];
@@ -49,10 +47,11 @@ export const BlogPostsPage = (props: Props) => {
 			<SEO title={`${site.siteMetadata.title} | ${site.siteMetadata.description}`} description={site.siteMetadata.description} />
 			<div className="relative bg-blue-800">
 				<div className="absolute inset-0">
-					<img
-					className="w-full h-full object-cover"
-					src={Blog}
-					alt=""
+					<StaticImage
+						className="w-full h-full object-cover"
+						src="../images/blog.jpg"
+						alt=""
+						placeholder="blurred"
 					/>
 					<div className="absolute inset-0 bg-blue-800" style={{ mixBlendMode: 'multiply' }} aria-hidden="true" />
 				</div>
@@ -74,7 +73,7 @@ export const BlogPostsPage = (props: Props) => {
 				{index > 1 && (
 					<div className="previous-link">
 						<Link to={`/blog/${previousUrl}`} title={`/blog/${previousUrl}`} className="bg-gray-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
-						<GrPrevious/> Prev
+							<GrPrevious/> Prev
 						</Link>
 					</div>
 				)}
