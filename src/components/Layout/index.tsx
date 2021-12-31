@@ -1,7 +1,5 @@
 import React, { Component, Fragment, RefObject, createRef } from 'react';
 
-import { Layout as AntLayout } from 'antd';
-
 import Header from '../Header';
 import Footer from '../Footer';
 import CookieConsent from "react-cookie-consent";
@@ -19,7 +17,7 @@ export class Layout extends Component<Props> {
 
 		return (
 			<Fragment>
-				<AntLayout className="layout-container">
+				<div className="layout-container">
 					<Header location={this.props.location} />
 					<div className="layout" ref={this.target}>
 						<main>{this.props.children}</main>
@@ -36,7 +34,7 @@ export class Layout extends Component<Props> {
 						>
 						This website uses cookies to enhance the user experience.
 					</CookieConsent>
-				</AntLayout>
+				</div>
 			</Fragment>
 		);
 	}

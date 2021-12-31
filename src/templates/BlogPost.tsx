@@ -1,7 +1,5 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Image, { FluidObject } from 'gatsby-image';
-
 import { Row, Col } from 'antd';
 
 import Layout from '../components/Layout';
@@ -10,7 +8,7 @@ import TagCloud from '../components/TagCloud';
 
 import Comments from '../components/Comments';
 
-import { Post, CategoryTagInfo } from '../contracts/post';
+import { wpPost, CategoryTagInfo } from '../contracts/post';
 import { CommentEdges } from '../contracts/comment';
 
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
@@ -24,7 +22,7 @@ import '../styles/blog.scss';
 
 export interface Props {
 	data: {
-		wpPost: Post;
+		wpPost: wpPost;
 		allCommentsYaml: CommentEdges;
 	};
 	pageContext: {
@@ -39,7 +37,6 @@ export interface Props {
 }
 
 export const BlogPostPage = (props: Props) => {
-	const fluid: FluidObject | null = (props.data.wpPost.featured_media && props.data.wpPost.featured_media.localFile && props.data.wpPost.featuredImage.node.localFile && props.data.wpPost.featuredImage.node.localFile.fluid) ? props.data.wpPost.featuredImage.node.localFile.fluid : null;
 	const categories: CategoryTagInfo[] = (props.data.wpPost.categories && props.data.wpPost.categories.length) > 0 ? props.data.wpPost.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 	const tags: CategoryTagInfo[] = (props.data.wpPost.tags && props.data.wpPost.tags.length) > 0 ? props.data.wpPost.tags : new Array<CategoryTagInfo>();
 
@@ -60,10 +57,7 @@ export const BlogPostPage = (props: Props) => {
 									</span>
 								</h1>
 								<div className="my-2">
-									{(fluid && fluid.src && fluid.src.length > 0) && (
-										<GatsbyImage className="rounded-lg shadow-lg object-cover object-center" image={props.data.wpPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt={props.data.wpPost.title} />
-										
-									)}
+									{/* <GatsbyImage className="rounded-lg shadow-lg object-cover object-center" image={props.data.wpPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt={props.data.wpPost.title} /> */}
 								</div>
 							</div>
 							<div className="post-content mt-6 prose prose-blue prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wpPost.content) }} />

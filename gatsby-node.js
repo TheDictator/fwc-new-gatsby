@@ -129,6 +129,11 @@ exports.createPages = async ({
 				} else {
 					BlogTagPosts.set(tag.slug, [post]);
 				}
+				if (BlogTagPosts.has(tag.title)) {
+					BlogTagPosts.set(tag.title, [...BlogTagPosts.get(tag.title), post]);
+				} else {
+					BlogTagPosts.set(tag.title, [post]);
+				}
 			});
 		}
 		const categories = post.node.categories.nodes;
@@ -160,6 +165,7 @@ exports.createPages = async ({
 				context: {
 					group: BlogTagPosts.get(BlogTagSlug),
 					slug: BlogTagSlug,
+					title: BlogTagPosts.get('tag.title')
 				}
 			});
 		});

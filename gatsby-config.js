@@ -76,13 +76,15 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
-		`gatsby-transformer-sharp`,
 		{
 		resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: `${__dirname}/src/images`,
-			},
+			options: [
+				{
+					name: `images`,
+					path: `${__dirname}/src/images`,
+				}
+			],
+			
 		},
 		{
 			resolve: 'gatsby-plugin-manifest',
@@ -112,18 +114,11 @@ module.exports = {
 						exclude: true,
 					},
 				},
-				develop: {
-					hardCacheMediaFiles: true,
-				},
-				html: {
-					useGatsbyImage: true,
-					fallbackImageMaxWidth: 800
-				},
-				debug: {
-					graphql: {
-						copyHtmlResponseOnError: true
-					}
-				},
+				// debug: {
+				// 	graphql: {
+				// 		copyHtmlResponseOnError: true
+				// 	}
+				// },
 				perPage: 100,
 				searchAndReplace: [{
 					search: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
