@@ -1,27 +1,26 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { wpPost, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
-const moment = require('moment');
 
 import '../styles/blog.scss';
-import { GrNext, GrPrevious } from "react-icons/gr";
-import Blog from "../images/blog.jpg";
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import Blog from '../images/blog.jpg';
 export interface Props {
 	pageContext: {
 		group: { node: wpPost }[];
 		index: number;
 		pageCount: number;
-	}
+	};
 	location: Location;
 }
 
 
 export const BlogPostsPage = (props: Props) => {
-	//const { index, pageCount } = props.pathContext;
+	// const { index, pageCount } = props.pathContext;
 	const { group, index, pageCount } = props.pageContext;
 	const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
 	const nextUrl = (index + 1).toString();
@@ -127,7 +126,7 @@ export const BlogPostsPage = (props: Props) => {
 												<Link key={categoryIndex} to={`/category/${category.slug}`} className="inline-block" title={category.name}>
 													<span
 													className=
-														'bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
+														"bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
 													>
 													{capitalizeFirstLetter(category.name)}
 													</span>

@@ -9,6 +9,7 @@ import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 import { GrNext, GrPrevious } from "react-icons/gr";
 import '../styles/blog.scss';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export interface Props {
 	data: {
@@ -47,7 +48,7 @@ export const BlogPostPage = (props: Props) => {
 									</span>
 								</h1>
 								<div className="my-2">
-									{/* <GatsbyImage className="rounded-lg shadow-lg object-cover object-center" image={props.data.wpPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData} alt={props.data.wpPost.title} /> */}
+									<GatsbyImage className="rounded-lg shadow-lg object-cover object-center" image={getImage(props.data.wpPost.featuredImage.node.localFile)} alt={props.data.wpPost.title} />
 								</div>
 							</div>
 							<div className="post-content mt-6 prose prose-blue prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wpPost.content) }} />

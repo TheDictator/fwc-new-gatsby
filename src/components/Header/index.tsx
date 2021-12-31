@@ -400,13 +400,3 @@ export const Header = (props: Props) => {
 };
 
 export default Header;
-
-export const query = graphql`
-  {
-    file(relativePath: { eq: "images/fwc_header.png" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FIXED)
-      }
-    }
-  }
-`
