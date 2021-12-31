@@ -43,9 +43,8 @@ export const BlogCategoryPostsPage = (props: Props) => {
 				</div>
 				<div className="relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
 				<span className="block bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent text-base font-semibold tracking-wide uppercase">Blog</span>
-					<h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl m-0">Browsing By Category: 
-					
-					<span className="bg-gray-600 text-white inline-flex items-center px-6 py-4 rounded-full font-bold mb-1 mr-1 ml-2 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+					<h1 className="text-xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl m-0">Browsing By Category: 
+					<span className="bg-gray-600 text-white inline-flex items-center px-6 py-4 rounded-full font-bold mb-1 mt-4 ml-2 sm:mt-0 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
 						<span className="bg-gradient-to-r from-blue-300 to-blue-300 bg-clip-text text-transparent">
 							{capitalizeFirstLetter(props.pageContext.slug)}
 						</span>
