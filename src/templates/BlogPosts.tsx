@@ -116,8 +116,8 @@ export const BlogPostsPage = (props: Props) => {
 								</div>
 							);
 						})}
-					</div>
 				</div>
+			</div>
 			<div className="navigation-links">
 				{index > 1 && (
 					<div className="previous-link">

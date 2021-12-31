@@ -114,12 +114,12 @@ export const BlogPostPage = (props: Props) => {
 			<div className="navigation-links">
 				{props.pageContext.next && props.pageContext.next.slug && (
 					<Link to={`/${props.pageContext.next.categories.nodes[0].slug}/${moment(props.pageContext.next.date).format('YYYY')}/${moment(props.pageContext.next.date).format('MM')}/${props.pageContext.next.slug}.html`} title={props.pageContext.next.slug} className="bg-gray-600 text-white inline-flex items-center px-2 py-2 text-sm font-bold">
-						<GrPrevious/> Prev
+						<GrPrevious/> Prev Post
 					</Link>
 				)}
 				{props.pageContext.previous && props.pageContext.previous.slug && (
 					<Link to={`/${props.pageContext.previous.categories.nodes[0].slug}/${moment(props.pageContext.previous.date).format('YYYY')}/${moment(props.pageContext.previous.date).format('MM')}/${props.pageContext.previous.slug}.html`} title={props.pageContext.previous.slug} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 text-sm font-bold">
-						Next <GrNext/>
+						Next Post<GrNext/>
 					</Link>
 				)}
 			</div>
