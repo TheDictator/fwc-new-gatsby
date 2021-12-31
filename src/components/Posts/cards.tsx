@@ -26,7 +26,7 @@ const PostCards = ({ posts }) => {
                             )}
                         </div>
                         <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
-                            <div className="flex-1 categories-container">
+                            <div className="flex-1 categories-container mt-4">
                                 <PostCategories categories={node.categories} />
                                 <Link
                                     to={node.link}
@@ -61,6 +61,7 @@ const PostCards = ({ posts }) => {
                                                     node.author.node.avatar.url
                                                 }
                                                 alt={node.author.node.name}
+                                                className="h-10 w-10 rounded-full"
                                             />
                                         )}
                                     </Link>
