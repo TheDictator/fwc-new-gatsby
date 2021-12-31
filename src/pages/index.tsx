@@ -129,15 +129,15 @@ export const IndexPage = (props: Props) => {
                                         <AnchorLink 
                                         to="#getStarted" 
                                         title="Check out our team!"
-                                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-700 sm:px-8"
+                                        className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 hover:text-blue-700 sm:px-8 shadow-lg"
                                         >
-                                            Get started
+                                            Get Started
                                         </AnchorLink>
                                         <Link
                                             to="/services"
-                                            className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 hover:text-white sm:px-8"
+                                            className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-white bg-blue-500 bg-opacity-60 hover:bg-opacity-70 hover:text-white sm:px-8"
                                         >
-                                            Our services
+                                            Our Services
                                         </Link>
                                     </div>
                                 </div>
@@ -156,30 +156,43 @@ export const IndexPage = (props: Props) => {
                             of Netsuite experience with some of these products
                         </p>
                         <div className="mt-9 grid grid-cols-2 gap-8 md:grid-cols-8 lg:grid-cols-4 text-center">
-                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                            <Link
+                                to="/services/netsuite"
+                                className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column"
+                            >
                                 <StaticImage className="mx-auto" src="../images/netsuite.svg" alt="Netsuite" placeholder="blurred" layout="fixed" width={64} height={64}/>
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
                                     Netsuite
                                 </span>
-                            </div>
-                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                            </Link>
+                                <Link
+                                to="/services/suitecommerce"
+                                className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column"
+                            >
                                 <StaticImage className="mx-auto" src="../images/oracle-corporation-logo.svg" alt="SuiteCommerce" placeholder="blurred" width={75} />
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
                                     SuiteCommerce
                                 </span>
-                            </div>
-                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                            </Link>
+                            <Link
+                                to="/services/analytics"
+                                className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column"
+                            >
                                 <StaticImage className="mx-auto" src="../images/google-analytics.svg" alt="Google Analytics" placeholder="blurred" width={64} />
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide">
                                     Google Analytics
                                 </span>
-                            </div>
-                            <div className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column">
+                            </Link>
+                                
+                            <Link
+                                to="/services/shopify"
+                                className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column"
+                            >
                                 <StaticImage className="mx-auto" src="../images/shopify.svg" alt="Shopify" placeholder="blurred" width={68} />
                                 <span className="text-sm font-semibold uppercase text-gray-500 tracking-wide mt-1">
                                     Shopify
                                 </span>
-                            </div>
+                            </Link>
                             
                         </div>
                     </div>
@@ -226,7 +239,7 @@ export const IndexPage = (props: Props) => {
                                 <div className="mt-8">
                                     <div className="inline-flex rounded-md shadow">
                                         <Link
-                                            to="/"
+                                            to="/services/sitebuilder"
                                             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
                                         >
                                             Learn more
@@ -270,7 +283,7 @@ export const IndexPage = (props: Props) => {
                                 <div className="mt-8">
                                     <div className="inline-flex rounded-md shadow">
                                         <Link
-                                            to="/"
+                                            to="/services/suitecommerce"
                                             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
                                         >
                                             Learn more
@@ -316,7 +329,7 @@ export const IndexPage = (props: Props) => {
                                 <div className="mt-8">
                                     <div className="inline-flex rounded-md shadow">
                                         <Link
-                                            to="/"
+                                            to="/services/shopify"
                                             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
                                         >
                                             Learn more
@@ -354,7 +367,7 @@ export const IndexPage = (props: Props) => {
 
                 {/* Gradient Feature Section */}
                 <div className="bg-gradient-to-r from-blue-800 to-blue-700">
-                    <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8">
+                    <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:max-w-7xl lg:px-8">
                         <h2 className="text-3xl font-extrabold text-white tracking-tight">
                             Technical Solutions Crafted From Expertise
                         </h2>
@@ -374,6 +387,16 @@ export const IndexPage = (props: Props) => {
                                     </p>
                                 </div>
                             ))}
+                        </div>
+                        <div className="mt-12 pt-4">
+                            <Link
+                                to="/services/shopify"
+                            >
+                                <h3 className="text-2xl font-medium text-gray-300 hover:text-white">
+                                    View More Solutions 
+                                </h3>
+                                
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -456,7 +479,6 @@ export const IndexPage = (props: Props) => {
                             </div>
                         </div>
                     </div>
-
                 {/* Stats section */}
                 <div className="relative bg-gray-900">
                     <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
