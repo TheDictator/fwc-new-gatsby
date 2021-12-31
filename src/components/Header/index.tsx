@@ -22,7 +22,7 @@ const services = [
   {
     name: 'SuiteCommerce',
     description: 'NetSuite\'s flagship ecommerce product. Lots of good features, tightly integrated with the back end, and expensive.',
-    href: '/services/suite-commerce',
+    href: '/services/suitecommerce',
     icon: ChartBarIcon,
   },
   {
