@@ -77,10 +77,10 @@ export const BlogTagPostsPage = (props: Props) => {
 												</a>
 											);
 											})}
-											<a href={`/${node.categories[0].slug}/${moment(node.date).format('YYYY')}/${moment(node.date).format('MM')}/${node.slug}.html`} className="block mt-2">
+											<Link to={node.link} className="block mt-2">
 												<p className="text-xl font-semibold text-black-400 title">{node.title}</p>
 												<p className="mt-3 text-base text-gray-500">{node.description}</p>
-											</a>
+											</Link>
 										</div>
 										<div className="mt-6 flex items-center">
 											<div className="flex-shrink-0">

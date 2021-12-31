@@ -1,22 +1,23 @@
 
 import React from "react"
 import { Link } from "gatsby"
-import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../../utils';
+import { decodeHtmlCharCodes } from '../../utils';
 import PostCategories from "./categories"
-//import Image from "../image";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const PostCards = ({ posts }) => {
   return (
       <>
       {posts.map(({ node }: { wpPost: wpPost }) => {
-							
+		
             return (
                 <div key={node.id} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
                     <div className="flex-shrink-0">
-                        <Link to={node.link} title={node.title}>
-                            <GatsbyImage image={node.featuredImage} alt={node.title} />
-                        </Link>
+                        {node.featuredImage &&
+                            <Link to={node.link} title={node.title}>
+                                <GatsbyImage image={getImage(node.featuredImage.node.localFile)} alt={node.title} />
+                            </Link>
+                        }
                     </div>
                     <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
                         <div className="flex-1 categories-container">

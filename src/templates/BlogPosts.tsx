@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image"
-
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-
-import { Post, CategoryTagInfo } from '../contracts/post';
+import { wpPost, CategoryTagInfo } from '../contracts/post';
 import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 
@@ -14,7 +12,7 @@ import { GrNext, GrPrevious } from "react-icons/gr";
 import Blog from "../images/blog.jpg";
 export interface Props {
 	pageContext: {
-		group: { node: Post }[];
+		group: { node: wpPost }[];
 		index: number;
 		pageCount: number;
 	}
@@ -45,56 +43,46 @@ export const BlogPostsPage = (props: Props) => {
 		}
 		allWpPost {
 			edges {
-			  node {
-				id
-				slug
-				uri
-				title
-				link
-				excerpt
-				date(formatString: "MMMM DD, YYYY")
-				modified(formatString: "MMMM DD, YYYY")
-				author {
-				  node {
-					avatar {
-						url
-					}
-					id
-					name
-					uri
-					slug
-				  }
-				}
-				featuredImage {
-				  node {
-					localFile {
-						childImageSharp {
-							gatsbyImageData (
-								width: 800
-								placeholder: BLURRED
-								formats: [AUTO, WEBP, AVIF]
-							  )
-						}
-					}
-				  }
-				}
-				categories {
-				  nodes {
-					id
-					count
-					name
-					slug
-				  }
-				}
-				tags {
-				  nodes {
-					id
-					count
-					name
-					slug
-				  }
-				}
-			  }
+                node {
+                  author {
+                    node {
+                      uri
+                      avatar {
+                        url
+                      }
+                    }
+                  }
+                  id
+                  title
+                  excerpt
+                  date(formatString: "MMMM DD, YYYY")
+                  modified(formatString: "MMMM DD, YYYY")
+                  link
+                  title
+                  content
+                  featuredImage {
+                    node {
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData (
+                            width: 800
+                            placeholder: BLURRED
+                            formats: [AUTO, WEBP, AVIF]
+                          )
+                        }
+                      }
+                    }
+                  }
+                  categories {
+                    nodes {
+                      id
+                      count
+                      description
+                      name
+                      slug
+                    }
+                  }
+                }
 			}
 		  }
       }
@@ -121,14 +109,14 @@ export const BlogPostsPage = (props: Props) => {
 			</div>
 			<div className="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
 			<div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-					{group.map(({ node }: { node: Post }) => {
+					{group.map(({ node }: { node: wpPost }) => {
 						const categories: CategoryTagInfo[] = (node.categories && node.categories.length) > 0 ? node.categories.filter((category) => category.name !== 'Uncategorized') : new Array<CategoryTagInfo>();
 						return (
 							  <div key={node.slug} className="card flex flex-col rounded-lg shadow-lg overflow-hidden">
 								<div className="flex-shrink-0">
-								{(node.featuredImage?.node.localFile && node.featuredImage?.node.localFile.length > 0) && (
+								{node.featuredImage && (
 									<Link to={node.link} title={node.slug}>
-										<GatsbyImage image={node.featuredImage?.node.localFile.childImageSharp.gatsbyImageData} alt={node.title} />
+										<GatsbyImage image={getImage(node.featuredImage.node.localFile)} alt={node.title} />
 									</Link>
 								)}
 							  	</div>

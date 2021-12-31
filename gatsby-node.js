@@ -30,6 +30,7 @@ exports.createPages = async ({
 				id
 				slug
 				uri
+				link
 				title
 				excerpt
 				date(formatString: "MMMM DD, YYYY")

@@ -23,7 +23,7 @@ export class AuthorInfo {
 	wordpress_id: string = '';
 }
 
-export class Post {
+export class wpPost {
 	id: number = 0;
 	date: string = '';
 	modified: string = '';
