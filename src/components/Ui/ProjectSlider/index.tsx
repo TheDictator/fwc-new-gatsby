@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { ExternalLinkIcon } from '@heroicons/react/solid';
 
 interface SliderProps {
     className?: string
@@ -124,6 +125,10 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                             >
                                                 <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                                     Live Example 1
+                                                    <ExternalLinkIcon
+                                                        className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                        aria-hidden="true"
+                                                    />
                                                 </span>
                                             </Link>
                                             <Link
@@ -135,6 +140,10 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                             >
                                                 <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                                     Live Example 2
+                                                    <ExternalLinkIcon
+                                                        className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                        aria-hidden="true"
+                                                    />
                                                 </span>
                                             </Link>
                                             <p className="text-xl font-semibold text-black-400 title">
@@ -158,13 +167,21 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                                 accessories or complementary
                                                 products.
                                             </p>
-                                            <Link
-                                                to={
-                                                    "https://www.fourthwc.com/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
-                                                }
-                                            >
-                                                Read More
-                                            </Link>
+                                            <div className="mt-8">
+                                                <div className="inline-flex rounded-md shadow">
+                                                    <Link
+                                                        to={
+                                                        "https://www.fourthwc.com/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
+                                                        }
+                                                        className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
+                                                    >
+                                                        Read More
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </Link>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -198,6 +215,10 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                             >
                                                 <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                                     Live Example 1
+                                                    <ExternalLinkIcon
+                                                        className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                        aria-hidden="true"
+                                                    />
                                                 </span>
                                             </Link>
                                             <Link
@@ -209,6 +230,10 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                             >
                                                 <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                                     Live Example 2
+                                                    <ExternalLinkIcon
+                                                        className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                        aria-hidden="true"
+                                                    />
                                                 </span>
                                             </Link>
 
@@ -229,13 +254,21 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                                 verified and don't have to do
                                                 anything.
                                             </p>
-                                            <Link
-                                                to={
-                                                    "https://www.fourthwc.com/e-commerce/2019/10/google-recaptcha-online-forms.html"
-                                                }
-                                            >
-                                                Read More
-                                            </Link>
+                                            <div className="mt-8">
+                                                <div className="inline-flex rounded-md shadow">
+                                                    <Link
+                                                        to={
+                                                            "https://www.fourthwc.com/e-commerce/2019/10/google-recaptcha-online-forms.html"
+                                                        }
+                                                        className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
+                                                    >
+                                                        Read More
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </Link>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -269,6 +302,10 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                             >
                                                 <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                                     Live Example 1
+                                                    <ExternalLinkIcon
+                                                        className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                        aria-hidden="true"
+                                                    />
                                                 </span>
                                             </Link>
                                             <Link
@@ -280,6 +317,10 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                             >
                                                 <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                                     Live Example 2
+                                                    <ExternalLinkIcon
+                                                        className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                        aria-hidden="true"
+                                                    />
                                                 </span>
                                             </Link>
 
@@ -297,21 +338,29 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                                 help you get the most out of it
                                                 for years to come.
                                             </p>
-                                            <p>
-                                                Here are some of the ways we can optimize your Site Builder site:
+                                            <div>
+                                               <p> Here are some of the ways we can optimize your Site Builder site:</p>
                                                 <ul>
                                                     <li><strong>Responsive conversion:</strong> Convert the built-in templates to a fluid, responsive design that looks great on all devices - desktop, tablet, and mobile. </li>
                                                     <li><strong>CDN integration:</strong> Boost page load times around the world by integrating a low-cost content delivery network (CDN). Don't be held back by slow Site Builder servers, cache up to 75% of your bandwidth at the edge!</li>
                                                     <li><strong>Code optimization:</strong> Using our many years of web development experience, we can speed your site for all users by combining, delaying, or optimizing the scripting for your site's functionality and 3rd party connections. </li>
                                                 </ul>
-                                            </p>
-                                            <Link
-                                                to={
-                                                    "https://www.fourthwc.com/e-commerce/2020/07/site-builder-performance-upgrades.html "
-                                                }
-                                            >
-                                                Read More
-                                            </Link>
+                                            </div>
+                                            <div className="mt-8">
+                                                <div className="inline-flex rounded-md shadow">
+                                                    <Link
+                                                        to={
+                                                            "https://www.fourthwc.com/e-commerce/2020/07/site-builder-performance-upgrades.html"
+                                                        }
+                                                        className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
+                                                    >
+                                                        Read More
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                        </svg>
+                                                    </Link>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
