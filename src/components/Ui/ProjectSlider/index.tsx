@@ -100,19 +100,12 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                             <div className="slide-card">
                                 <div className="card projectCard flex flex-col rounded-lg shadow-lg">
                                     <div className="flex-shrink-0">
-                                        <Link
-                                            to={
-                                                "/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
-                                            }
-                                            title="Upsell crossell featured items"
-                                        >
-                                            <StaticImage
-                                                className="w-full h-full object-cover"
-                                                src="../images/sb-service.jpeg"
-                                                alt="Cross-sell Items in Netsuite"
-                                                placeholder="blurred"
-                                            />
-                                        </Link>
+                                        <StaticImage
+                                            className="w-full h-full object-cover"
+                                            src="../images/sb-service.jpeg"
+                                            alt="Cross-sell Items in Netsuite"
+                                            placeholder="blurred"
+                                        />
                                     </div>
                                     <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
                                         <div className="flex-1 categories-container mt-4">
@@ -187,22 +180,14 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                 </div>
                             </div>
                             <div className="slide-card">
-                                {/* Google Recaptcha */}
                                 <div className="card projectCard flex flex-col rounded-lg shadow-lg">
                                     <div className="flex-shrink-0">
-                                        <Link
-                                            to={
-                                                "/e-commerce/2019/10/google-recaptcha-online-forms.html"
-                                            }
-                                            title="Upsell crossell featured items"
-                                        >
-                                            <StaticImage
-                                                className="w-full h-full object-cover"
-                                                src="../images/sb-service.jpeg"
-                                                alt="Cross-sell Items in Netsuite"
-                                                placeholder="blurred"
-                                            />
-                                        </Link>
+                                        <StaticImage
+                                            className="w-full h-full object-cover"
+                                            src="../images/sb-service.jpeg"
+                                            alt="Cross-sell Items in Netsuite"
+                                            placeholder="blurred"
+                                        />
                                     </div>
                                     <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
                                         <div className="flex-1 categories-container mt-4">
@@ -274,22 +259,14 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                 </div>
                             </div>
                             <div className="slide-card">
-                                {/* Site builder performance optimization  */}
                                 <div className="card projectCard flex flex-col rounded-lg shadow-lg">
                                     <div className="flex-shrink-0">
-                                        <Link
-                                            to={
-                                                "/e-commerce/2020/07/site-builder-performance-upgrades.html"
-                                            }
-                                            title="Site builder performance optimization "
-                                        >
-                                            <StaticImage
-                                                className="w-full h-full object-cover"
-                                                src="../images/sb-service.jpeg"
-                                                alt="Cross-sell Items in Netsuite"
-                                                placeholder="blurred"
-                                            />
-                                        </Link>
+                                        <StaticImage
+                                            className="w-full h-full object-cover"
+                                            src="../images/sb-service.jpeg"
+                                            alt="Cross-sell Items in Netsuite"
+                                            placeholder="blurred"
+                                        />
                                     </div>
                                     <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
                                         <div className="flex-1 categories-container mt-4">
