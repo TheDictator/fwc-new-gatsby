@@ -63,12 +63,6 @@ export const BlogPostPage = (props: Props) => {
 						<blockquote className="relative bg-white rounded-lg m-0">
 							<TagCloud/>
 							<div className="categories-container tags-container post-meta-container pt-4 pb-6 px-8 lg:px-0">
-								{/* <span className="mt-2 mb-0 block leading-5 font-bold tracking-tight text-black-400">
-									{decodeHtmlCharCodes(props.data.wpPost.title)}
-								</span>
-								<span className="post-meta mb-2 block">
-									<span className="date block text-gray-500">{(props.data.wpPost.modified && props.data.wpPost.modified.length > 0) ? props.data.wpPost.modified : props.data.wpPost.date}</span>
-								</span> */}
 								{categories && categories.length > 0 && categories.map((category, categoryIndex) => {
 									return (
 										<Link to={`/category/${category.slug}`} title={category.name} key={categoryIndex} className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">

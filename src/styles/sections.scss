@@ -41,6 +41,6 @@
     @apply absolute w-full inset-0 flex justify-between items-center px-0 lg:px-12;
   }
   .prev, .next {
-    @apply relative z-20 p-2 opacity-90 text-4xl leading-none hover:opacity-100 transition-opacity;
+    @apply relative z-10 p-2 opacity-90 text-4xl leading-none hover:opacity-100 transition-opacity;
   }
 }
