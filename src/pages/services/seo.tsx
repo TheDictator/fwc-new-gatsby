@@ -2,12 +2,11 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import Cta from "../../components/Ui/Cta"
-
 export interface Props {
 	location: Location;
 }
 
-export const ServicesPage = (props: Props) => {
+export const SeoPage = (props: Props) => {
 	return (
 		<Layout location={props.location}>
 			<SEO title="Our Services" />
@@ -30,4 +29,4 @@ export const ServicesPage = (props: Props) => {
 	);
 };
 
-export default ServicesPage;
+export default SeoPage;

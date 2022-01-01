@@ -6,7 +6,7 @@ export interface Props {
     location: Location
 }
 
-export const ServicesPage = (props: Props) => {
+export const NetsuitePage = (props: Props) => {
     return (
         <Layout location={props.location}>
             <SEO title="Our Services" />
@@ -32,4 +32,4 @@ export const ServicesPage = (props: Props) => {
     )
 }
 
-export default ServicesPage
+export default NetsuitePage
