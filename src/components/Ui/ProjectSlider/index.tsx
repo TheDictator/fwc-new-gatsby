@@ -102,7 +102,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <Link
                                             to={
-                                                "https://www.fourthwc.com/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
+                                                "/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
                                             }
                                             title="Upsell crossell featured items"
                                         >
@@ -171,7 +171,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                                 <div className="inline-flex rounded-md shadow">
                                                     <Link
                                                         to={
-                                                        "https://www.fourthwc.com/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
+                                                        "/e-commerce/2020/09/increase-revenue-with-upsells-and-cross-sells.html"
                                                         }
                                                         className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
                                                     >
@@ -192,7 +192,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <Link
                                             to={
-                                                "https://www.fourthwc.com/e-commerce/2019/10/google-recaptcha-online-forms.html"
+                                                "/e-commerce/2019/10/google-recaptcha-online-forms.html"
                                             }
                                             title="Upsell crossell featured items"
                                         >
@@ -258,7 +258,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                                 <div className="inline-flex rounded-md shadow">
                                                     <Link
                                                         to={
-                                                            "https://www.fourthwc.com/e-commerce/2019/10/google-recaptcha-online-forms.html"
+                                                            "/e-commerce/2019/10/google-recaptcha-online-forms.html"
                                                         }
                                                         className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
                                                     >
@@ -279,7 +279,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <Link
                                             to={
-                                                "https://www.fourthwc.com/e-commerce/2020/07/site-builder-performance-upgrades.html "
+                                                "/e-commerce/2020/07/site-builder-performance-upgrades.html"
                                             }
                                             title="Site builder performance optimization "
                                         >
@@ -350,7 +350,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                                 <div className="inline-flex rounded-md shadow">
                                                     <Link
                                                         to={
-                                                            "https://www.fourthwc.com/e-commerce/2020/07/site-builder-performance-upgrades.html"
+                                                            "/e-commerce/2020/07/site-builder-performance-upgrades.html"
                                                         }
                                                         className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
                                                     >
