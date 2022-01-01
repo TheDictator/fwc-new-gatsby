@@ -1,5 +1,6 @@
 @import './colors.scss';
 @import './common.scss';
+@import './sections.scss';
 
 html,
 body,
@@ -38,43 +39,7 @@ img {
 }
 section {
     padding: 3.5em 0;
-    .ant-btn + .ant-btn {
-        margin-left: 30px;
-
-    }
     &.gray-bg {
         background-color: $grayBg;
-    }
-    // Button styles
-    .ant-btn {
-        padding: 1em 4em;
-        height: auto;
-        font-size: 1.1rem;
-        font-weight: 600;
-        transition: all 0.2s;
-        border-radius: 0px;
-        box-shadow: none;
-        text-shadow: none;
-        &.ant-btn-primary {
-            border: 2px solid #fff;
-            border-radius: 0px;
-            &:hover, &:active, &:focus {
-                background-color: transparent;
-                color: $primaryAccentColor;
-                border: 2px solid $primaryAccentColor;
-            
-            }
-        }
-        &.ant-btn-ghost {
-            color: #fff;
-            border-color: #fff;
-            border-width: 2px;
-            border-radius: 0px;
-            &:hover, &:active, &:focus {
-                background-color: #fff;
-                color: $primaryAccentColor;
-                border: 2px solid #fff;
-            }
-        }
     }
 }
