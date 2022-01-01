@@ -51,8 +51,8 @@ export const BlogPostsPage = (props: Props) => {
 					<StaticImage
 						className="w-full h-full object-cover"
 						src="../images/blog.jpg"
-						alt=""
-						placeholder="blurred"
+						alt="The Blog"
+						aspectRatio={16/9}
 					/>
 					<div className="absolute inset-0 bg-blue-800" style={{ mixBlendMode: 'multiply' }} aria-hidden="true" />
 				</div>

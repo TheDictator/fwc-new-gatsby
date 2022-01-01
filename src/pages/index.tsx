@@ -490,6 +490,7 @@ export const IndexPage = (props: Props) => {
                                     src="../images/business-bg.jpeg"
                                     alt="People working on laptops"
                                     placeholder="blurred"
+                                    aspectRatio={16/9}
                                 />
                                 <div
                                     aria-hidden="true"
