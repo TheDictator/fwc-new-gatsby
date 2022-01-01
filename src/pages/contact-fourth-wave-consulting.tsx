@@ -1,13 +1,8 @@
-import React, { useContext, useState, } from "react";
-
-import { graphql, navigate } from 'gatsby';
-
+import React from "react";
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-
 import '../styles/blog.scss';
 import { ExternalLinkIcon } from '@heroicons/react/solid'
-
 
 const encode = (data) => Object.keys(data)
     .map((key) =>
@@ -188,22 +183,3 @@ export const ContactPage = (props: Props) => {
 };
 
 export default ContactPage;
-
-export const query = graphql`
-  	query {
-    	file(relativePath: { eq: "author.jpg" }) {
-      		childImageSharp {
-        		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-					aspectRatio
-					src
-					srcSet
-					sizes
-					base64
-					tracedSVG
-					srcWebp
-					srcSetWebp
-				}
-      		}
-		}
-  	}
-`;

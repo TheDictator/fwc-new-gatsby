@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
+import Cta from "../../components/Ui/Cta"
 export interface Props {
 	location: Location;
 }
@@ -21,53 +21,12 @@ export const ServicesPage = (props: Props) => {
 					</p>
       			</div>
 			</div>			
-			{/* CTA Section */}
-			<div className="bg-gray-900">
-				<div className="max-w-4xl mx-auto py-16 px-4 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 lg:flex lg:items-center lg:justify-between">
-					<h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-					<span className="block text-white">Ready to solve your woes?</span>
-					<span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
-						Contact Us. The first hour is free.
-					</span>
-					</h2>
-					<div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:space-x-5">
-					<Link
-						to="/services"
-						className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
-					>
-						Learn more
-					</Link>
-					<Link
-						to="/contact-fourth-wave-consulting"
-						className="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-800 bg-blue-50 hover:bg-blue-100"
-					>
-						Contact
-					</Link>
-				</div>
-			</div>
-		</div>
+			<Cta
+                headline="Ready to solve your woes?"
+                description="Contact Us. The first hour is free."
+            />
 		</Layout>
 	);
 };
 
 export default ServicesPage;
-
-export const query = graphql`
-  	query {
-    	file(relativePath: { eq: "author.jpg" }) {
-      		childImageSharp {
-        		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-					aspectRatio
-					src
-					srcSet
-					sizes
-					base64
-					tracedSVG
-					srcWebp
-					srcSetWebp
-				}
-      		}
-		}
-		
-  	}
-`;

@@ -14,7 +14,6 @@ import {
     PencilAltIcon,
     PlusIcon,
 } from '@heroicons/react/outline'
-import { SiGoogleanalytics, SiOracle } from 'react-icons/si';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const features = [

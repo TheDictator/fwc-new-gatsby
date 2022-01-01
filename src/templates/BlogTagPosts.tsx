@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-
+import { useStaticQuery, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-
-const moment = require('moment');
 import { wpPost } from '../contracts/post';
 import { capitalizeFirstLetter } from '../utils';
-
 import '../styles/blog.scss';
 import PostCards from "../components/Posts/cards";
+import Cta from "../components/Ui/Cta"
 
 export interface Props {
 	pathContext: {
@@ -50,6 +47,10 @@ export const BlogTagPostsPage = (props: Props) => {
 					</div>
 				</div>
 			</div>
+			<Cta
+                headline="Ready to solve your woes?"
+                description="Contact Us. The first hour is free."
+            />
 		</Layout>
 	);
 };

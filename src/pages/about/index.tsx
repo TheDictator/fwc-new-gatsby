@@ -1,12 +1,8 @@
 import React from 'react';
-
-import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import { ChildImageSharp } from '../../contracts/post';
-
 import '../../styles/blog.scss';
-
 export interface Props {
 	data: {
 		file: ChildImageSharp;
@@ -32,22 +28,3 @@ export const AboutPage = (props: Props) => {
 };
 
 export default AboutPage;
-
-export const query = graphql`
-  	query {
-    	file(relativePath: { eq: "author.jpg" }) {
-      		childImageSharp {
-        		fluid(maxWidth: 960, maxHeight: 600, quality: 85) {
-					aspectRatio
-					src
-					srcSet
-					sizes
-					base64
-					tracedSVG
-					srcWebp
-					srcSetWebp
-				}
-      		}
-		}
-  	}
-`;

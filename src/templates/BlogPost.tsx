@@ -9,7 +9,8 @@ import { decodeHtmlCharCodes, capitalizeFirstLetter } from '../utils';
 const moment = require('moment');
 import { GrNext, GrPrevious } from "react-icons/gr";
 import '../styles/blog.scss';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Cta from "../components/Ui/Cta"
 
 export interface Props {
 	data: {
@@ -123,6 +124,10 @@ export const BlogPostPage = (props: Props) => {
 					</Link>
 				)}
 			</div>
+			<Cta
+                headline="Ready to solve your woes?"
+                description="Contact Us. The first hour is free."
+            />
 		</Layout>
 		
 	);

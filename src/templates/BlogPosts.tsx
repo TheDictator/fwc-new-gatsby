@@ -7,6 +7,7 @@ import PostCards from "../components/Posts/cards";
 import '../styles/blog.scss';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { StaticImage } from 'gatsby-plugin-image';
+import Cta from "../components/Ui/Cta"
 
 export interface Props {
 	pageContext: {
@@ -85,6 +86,10 @@ export const BlogPostsPage = (props: Props) => {
 					</div>
 				)}
 			</div>
+			<Cta
+                headline="Ready to solve your woes?"
+                description="Contact Us. The first hour is free."
+            />
 		</Layout>
 	);
 };
