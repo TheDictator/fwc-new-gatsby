@@ -479,7 +479,7 @@ export const IndexPage = (props: Props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
                 {/* Stats section */}
                 <div className="relative bg-gray-900">
                     <div className="h-80 absolute inset-x-0 bottom-0 xl:top-0 xl:h-full">
