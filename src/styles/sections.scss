@@ -1,11 +1,14 @@
 @import './colors.scss';
 
 @layer components {
-    .featured-slider {
-        .headline {
-            @apply text-center text-3xl text-uppercase;
-        }
-    }
+  #wp_rp_first, #ts-fab-below, .apss-social-share {
+    @apply hidden;
+  }
+  .featured-slider {
+      .headline {
+          @apply text-center text-3xl text-uppercase;
+      }
+  }
 .sliderContainer {
     @apply relative;
   }

@@ -13,14 +13,14 @@ export const TagCloudd = () => {
 
     return (
         <Fragment>
-            <h3 className="text-xl text-center text-gray-500 mt-4">
+            <h3 className="text-xl text-center text-gray-500 mt-6">
                 Tag Cloud
             </h3>
             <TagCloud
                 minSize={12}
                 maxSize={35}
                 tags={words}
-                className="simple-cloud"
+                className="simple-cloud px-8"
                 onClick={goToTag}
             />
         </Fragment>
