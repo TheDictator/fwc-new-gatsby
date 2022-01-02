@@ -1,7 +1,7 @@
 @import './colors.scss';
 
 @layer components {
-  #wp_rp_first, #ts-fab-below, .apss-social-share {
+  #wp_rp_first, #ts-fab-below, .apss-social-share, .wp_rp_wrap {
     @apply hidden;
   }
   .featured-slider {

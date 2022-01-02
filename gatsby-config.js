@@ -107,22 +107,22 @@ module.exports = {
 				develop: {
 					hardCacheData: false,
 				  },
-                // type: {
-                // 	Page: {
-                // 		exclude: true,
-                // 	},
-                // 	Menu: {
-                // 		exclude: true,
-                // 	},
-                // 	MenuItem: {
-                // 		exclude: true,
-                // 	},
-                // },
-                // debug: {
-                // 	graphql: {
-                // 		copyHtmlResponseOnError: true
-                // 	}
-                // },
+					type: {
+						Page: {
+							exclude: true,
+						},
+						Menu: {
+							exclude: true,
+						},
+						MenuItem: {
+							exclude: true,
+						},
+					},
+					debug: {
+						graphql: {
+							copyHtmlResponseOnError: true
+						}
+					},
                 searchAndReplace: [
                     {
                         search: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
