@@ -1,50 +1,30 @@
-import React, { Fragment, ReactNode } from 'react';
-import ReactWordcloud from 'react-wordcloud';
-import { useStaticQuery, graphql } from 'gatsby';
-import words from "./words";
-
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/scale.css';
+import React, { Fragment, ReactNode } from "react"
+import words from "./words"
+import { TagCloud } from "react-tagcloud"
+import { navigate } from "gatsby"
 export interface Props {
-	title?: ReactNode;
+    title?: ReactNode
 }
-const callbacks = {
-    onWordClick: console.log,
-  }
-const options = {
-    rotations: 2,
-    rotationAngles: [-90, 0],
-    luminosity: 'light',
-  hue: 'blue',
-  };
-  const size = [200, 100];
-
-
 export const TagCloudd = () => {
-  const { allWordpressTag } = useStaticQuery(graphql`
-      query {
-        allWpTag {
-          edges {
-            node {
-              count
-              name
-            }
-          }
-        }
-      }
-	`);
-	return (
-		<Fragment>
-            <h3 className="text-xl text-center text-gray-500 mt-4">Tag Cloud</h3>
-            <ReactWordcloud
-            callbacks={callbacks}
-            options={options}
-            size={size}
-            //words={allWordpressTag.edges.node}
-            words={words}
-            />
-		</Fragment>
-	);
-};
+    const goToTag = (tag: any) => {
+        const tagUri = tag.value.replace(/\s+/g, "-").toLowerCase()
+        navigate(`/tag/${tagUri}`)
+    }
 
-export default TagCloudd;
+    return (
+        <Fragment>
+            <h3 className="text-xl text-center text-gray-500 mt-4">
+                Tag Cloud
+            </h3>
+            <TagCloud
+                minSize={12}
+                maxSize={35}
+                tags={words}
+                className="simple-cloud"
+                onClick={goToTag}
+            />
+        </Fragment>
+    )
+}
+
+export default TagCloudd

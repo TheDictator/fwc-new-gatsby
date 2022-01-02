@@ -1,523 +1,523 @@
 export default[
     {
     
-        value: 1,
-        text: '2016.1'
+        count: 1,
+        value: '2016.1'
     },
     {
       
-        value: 1,
-        text: '2020.2'
+        count: 1,
+        value: '2020.2'
       
     },
     {
       
-        value: 1,
-        text: 'accounting'
+        count: 1,
+        value: 'accounting'
       
     },
     {
       
-        value: 1,
-        text: 'arts'
+        count: 1,
+        value: 'arts'
       
     },
     {
       
-        value: 3,
-        text: 'automation'
+        count: 3,
+        value: 'automation'
       
     },
     {
       
-        value: 1,
-        text: 'bot'
+        count: 1,
+        value: 'bot'
       
     },
     {
       
-        value: 1,
-        text: 'Bugs'
+        count: 1,
+        value: 'Bugs'
       
     },
     {
       
-        value: 1,
-        text: 'captcha'
+        count: 1,
+        value: 'captcha'
       
     },
     {
       
-        value: 1,
-        text: 'cart'
+        count: 1,
+        value: 'cart'
       
     },
     {
       
-        value: 1,
-        text: 'CDN'
+        count: 1,
+        value: 'CDN'
       
     },
     {
       
-        value: 1,
-        text: 'checkout'
+        count: 1,
+        value: 'checkout'
       
     },
     {
       
-        value: 1,
-        text: 'content delivery network'
+        count: 1,
+        value: 'content delivery network'
       
     },
     {
       
-        value: 0,
-        text: 'cool stuff'
+        count: 0,
+        value: 'cool stuff'
       
     },
     {
       
-        value: 1,
-        text: 'crosssell'
+        count: 1,
+        value: 'crosssell'
       
     },
     {
       
-        value: 1,
-        text: 'CSS'
+        count: 1,
+        value: 'CSS'
       
     },
     {
       
-        value: 1,
-        text: 'data center'
+        count: 1,
+        value: 'data center'
       
     },
     {
       
-        value: 1,
-        text: 'deprecation'
+        count: 1,
+        value: 'deprecation'
       
     },
     {
       
-        value: 1,
-        text: 'E-Commerce'
+        count: 1,
+        value: 'E-Commerce'
       
     },
     {
       
-        value: 1,
-        text: 'ecommerce'
+        count: 1,
+        value: 'ecommerce'
       
     },
     {
       
-        value: 1,
-        text: 'email templates'
+        count: 1,
+        value: 'email templates'
       
     },
     {
       
-        value: 1,
-        text: 'entropy'
+        count: 1,
+        value: 'entropy'
       
     },
     {
       
-        value: 1,
-        text: 'form'
+        count: 1,
+        value: 'form'
       
     },
     {
       
-        value: 6,
-        text: 'google'
+        count: 6,
+        value: 'google'
       
     },
     {
       
-        value: 1,
-        text: 'Google Adwords'
+        count: 1,
+        value: 'Google Adwords'
       
     },
     {
       
-        value: 2,
-        text: 'Google Analytics'
+        count: 2,
+        value: 'Google Analytics'
       
     },
     {
       
-        value: 1,
-        text: 'google trusted stores'
+        count: 1,
+        value: 'google trusted stores'
       
     },
     {
       
-        value: 1,
-        text: 'Guide'
+        count: 1,
+        value: 'Guide'
       
     },
     {
       
-        value: 1,
-        text: 'html'
+        count: 1,
+        value: 'html'
       
     },
     {
       
-        value: 1,
-        text: 'indexing'
+        count: 1,
+        value: 'indexing'
       
     },
     {
       
-        value: 1,
-        text: 'Javascript'
+        count: 1,
+        value: 'Javascript'
       
     },
     {
       
-        value: 1,
-        text: 'JSON+ld'
+        count: 1,
+        value: 'JSON+ld'
       
     },
     {
       
-        value: 1,
-        text: 'Layout'
+        count: 1,
+        value: 'Layout'
       
     },
     {
       
-        value: 1,
-        text: 'marketing'
+        count: 1,
+        value: 'marketing'
       
     },
     {
       
-        value: 1,
-        text: 'microdata'
+        count: 1,
+        value: 'microdata'
       
     },
     {
       
-        value: 1,
-        text: 'nestuite'
+        count: 1,
+        value: 'nestuite'
       
     },
     {
       
-        value: 22,
-        text: 'Netsuite'
+        count: 22,
+        value: 'Netsuite'
       
     },
     {
       
-        value: 1,
-        text: 'nlapiCreateEmailMerger'
+        count: 1,
+        value: 'nlapiCreateEmailMerger'
       
     },
     {
       
-        value: 1,
-        text: 'nlapiMergeRecord'
+        count: 1,
+        value: 'nlapiMergeRecord'
       
     },
     {
       
-        value: 0,
-        text: 'org'
+        count: 0,
+        value: 'org'
       
     },
     {
       
-        value: 1,
-        text: 'panda'
+        count: 1,
+        value: 'panda'
       
     },
     {
       
-        value: 1,
-        text: 'pdp'
+        count: 1,
+        value: 'pdp'
       
     },
     {
       
-        value: 1,
-        text: 'penguin'
+        count: 1,
+        value: 'penguin'
       
     },
     {
       
-        value: 2,
-        text: 'performance'
+        count: 2,
+        value: 'performance'
       
     },
     {
       
-        value: 1,
-        text: 'power reviews'
+        count: 1,
+        value: 'power reviews'
       
     },
     {
       
-        value: 1,
-        text: 'prilseo'
+        count: 1,
+        value: 'prilseo'
       
     },
     {
       
-        value: 1,
-        text: 'product detail page'
+        count: 1,
+        value: 'product detail page'
       
     },
     {
       
-        value: 1,
-        text: 'Product Pages'
+        count: 1,
+        value: 'Product Pages'
       
     },
     {
       
-        value: 1,
-        text: 'recaptcha'
+        count: 1,
+        value: 'recaptcha'
       
     },
     {
       
-        value: 1,
-        text: 'reference bundles'
+        count: 1,
+        value: 'reference bundles'
       
     },
     {
       
-        value: 2,
-        text: 'Reference Checkout'
+        count: 2,
+        value: 'Reference Checkout'
       
     },
     {
       
-        value: 1,
-        text: 'Reference My Account'
+        count: 1,
+        value: 'Reference My Account'
       
     },
     {
       
-        value: 1,
-        text: 'related items'
+        count: 1,
+        value: 'related items'
       
     },
     {
       
-        value: 1,
-        text: 'Report Builder'
+        count: 1,
+        value: 'Report Builder'
       
     },
     {
       
-        value: 3,
-        text: 'Responsive Design'
+        count: 3,
+        value: 'Responsive Design'
       
     },
     {
       
-        value: 1,
-        text: 'restlet'
+        count: 1,
+        value: 'restlet'
       
     },
     {
       
-        value: 1,
-        text: 'ROI'
+        count: 1,
+        value: 'ROI'
       
     },
     {
       
-        value: 1,
-        text: 'RSP'
+        count: 1,
+        value: 'RSP'
       
     },
     {
       
-        value: 1,
-        text: 'Safari'
+        count: 1,
+        value: 'Safari'
       
     },
     {
       
-        value: 1,
-        text: 'saved searches'
+        count: 1,
+        value: 'saved searches'
       
     },
     {
       
-        value: 1,
-        text: 'scheduled script'
+        count: 1,
+        value: 'scheduled script'
       
     },
     {
       
-        value: 0,
-        text: 'schema'
+        count: 0,
+        value: 'schema'
       
     },
     {
       
-        value: 1,
-        text: 'schema.org'
+        count: 1,
+        value: 'schema.org'
       
     },
     {
       
-        value: 1,
-        text: 'security'
+        count: 1,
+        value: 'security'
       
     },
     {
       
-        value: 10,
-        text: 'SEO'
+        count: 10,
+        value: 'SEO'
       
     },
     {
       
-        value: 0,
-        text: 'shopping'
+        count: 0,
+        value: 'shopping'
       
     },
     {
       
-        value: 5,
-        text: 'Site Builder'
+        count: 5,
+        value: 'Site Builder'
       
     },
     {
       
-        value: 1,
-        text: 'staging'
+        count: 1,
+        value: 'staging'
       
     },
     {
       
-        value: 1,
-        text: 'Stores'
+        count: 1,
+        value: 'Stores'
       
     },
     {
       
-        value: 1,
-        text: 'Styles'
+        count: 1,
+        value: 'Styles'
       
     },
     {
       
-        value: 1,
-        text: 'submission'
+        count: 1,
+        value: 'submission'
       
     },
     {
       
-        value: 1,
-        text: 'SuiteApps'
+        count: 1,
+        value: 'SuiteApps'
       
     },
     {
       
-        value: 1,
-        text: 'SuiteBundles'
+        count: 1,
+        value: 'SuiteBundles'
       
     },
     {
       
-        value: 1,
-        text: 'SuiteCommerce'
+        count: 1,
+        value: 'SuiteCommerce'
       
     },
     {
       
-        value: 1,
-        text: 'SuiteCommerce Advanced'
+        count: 1,
+        value: 'SuiteCommerce Advanced'
       
     },
     {
       
-        value: 1,
-        text: 'suitelet'
+        count: 1,
+        value: 'suitelet'
       
     },
     {
       
-        value: 1,
-        text: 'SuitePromotions'
+        count: 1,
+        value: 'SuitePromotions'
       
     },
     {
       
-        value: 0,
-        text: 'technology'
+        count: 0,
+        value: 'technology'
       
     },
     {
       
-        value: 1,
-        text: 'test drive'
+        count: 1,
+        value: 'test drive'
       
     },
     {
       
-        value: 1,
-        text: 'tips'
+        count: 1,
+        value: 'tips'
       
     },
     {
       
-        value: 1,
-        text: 'traffic'
+        count: 1,
+        value: 'traffic'
       
     },
     {
       
-        value: 3,
-        text: 'Tutorial'
+        count: 3,
+        value: 'Tutorial'
       
     },
     {
       
-        value: 1,
-        text: 'tutorials'
+        count: 1,
+        value: 'tutorials'
       
     },
     {
       
-        value: 1,
-        text: 'Update'
+        count: 1,
+        value: 'Update'
       
     },
     {
       
-        value: 1,
-        text: 'Upgrade'
+        count: 1,
+        value: 'Upgrade'
       
     },
     {
       
-        value: 1,
-        text: 'upsell'
+        count: 1,
+        value: 'upsell'
       
     },
     {
       
-        value: 1,
-        text: 'web development'
+        count: 1,
+        value: 'web development'
       
     },
     {
       
-        value: 1,
-        text: 'xml sitemap'
+        count: 1,
+        value: 'xml sitemap'
       
     }
 ]

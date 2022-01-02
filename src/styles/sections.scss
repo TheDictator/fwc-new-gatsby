@@ -43,4 +43,7 @@
   .prev, .next {
     @apply relative z-10 p-2 opacity-90 text-4xl leading-none hover:opacity-100 transition-opacity;
   }
+  .tag-cloud-tag {
+    @apply cursor-pointer;
+  }
 }
