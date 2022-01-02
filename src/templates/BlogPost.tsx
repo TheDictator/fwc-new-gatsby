@@ -56,8 +56,6 @@ export const BlogPostPage = (props: Props) => {
 							</div>
 							<div className="post-content mt-6 prose prose-blue prose-lg text-gray-500 mx-auto" dangerouslySetInnerHTML={{ __html: decodeHtmlCharCodes(props.data.wpPost.content) }} />
 						</article>
-						<div className="px-4 sm:px-6 lg:px-8">
-						</div>
 					</div>
 					<div className="sidebar col-span-1 lg:col-span-4 top-0 b-0 lg:sticky lg:h-screen" id="secondary">
 						<blockquote className="relative bg-white rounded-lg m-0">

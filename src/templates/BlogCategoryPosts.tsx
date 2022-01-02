@@ -7,6 +7,7 @@ import { wpPost } from "../contracts/post"
 import { capitalizeFirstLetter } from "../utils"
 import "../styles/blog.scss"
 import Cta from "../components/Ui/Cta"
+import TagCloud from '../components/TagCloud';
 
 export interface Props {
     pageContext: {
@@ -58,18 +59,20 @@ export const BlogCategoryPostsPage = (props: Props) => {
                     </h1>
                 </div>
             </div>
-            <div className="relative max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <div
-                        id="primary"
-                        className="content-area with-sidebar col-span-1 md:col-span-12"
-                    >
-                        <div className="posts mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-2 lg:max-w-none xl:grid-cols-3">
-                            <PostCards posts={group} />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div className="container container--l px-4 md:px-0">
+				<div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+					<div id="primary" className="content-area with-sidebar col-span-1 md:col-span-8">
+						<div className="posts mt-12 max-w-lg mx-auto grid gap-5 px-4 md:px-0 md:grid-cols-2 lg:max-w-none">
+							<PostCards posts={group} />
+						</div>
+					</div>
+					<div className="sidebar col-span-1 md:col-span-4 top-0 b-0 lg:sticky lg:h-screen" id="secondary">
+						<blockquote className="relative bg-white rounded-lg m-0">
+							<TagCloud/>
+						</blockquote>
+					</div>
+				</div>
+			</div>
 			<Cta
                 headline="Ready to solve your woes?"
                 description="Contact Us. The first hour is free."
