@@ -174,7 +174,7 @@ export const IndexPage = (props: Props) => {
                                 </span>
                             </Link>
                             <Link
-                                to="/services/analytics"
+                                to="/services/seo"
                                 className="col-span-1 flex flex-column items-center justify-between md:col-span-2 lg:col-span-1 logo-column"
                             >
                                 <StaticImage className="mx-auto" src="../images/google-analytics.svg" alt="Google Analytics" placeholder="blurred" width={64} />
