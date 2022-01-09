@@ -2,8 +2,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import '../../styles/blog.scss';
-import Cta from "../../components/Ui/Cta"
-
+import Cta from "../../components/Ui/Cta";
 const faqs = [
 	{
 	  id: 1,
