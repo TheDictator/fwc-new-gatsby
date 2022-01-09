@@ -59,7 +59,7 @@ export const BlogTagPostsPage = (props: Props) => {
             </div>
             <div className="container container--l px-4 md:px-0">
 				<div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-					<div id="primary" className="content-area with-sidebar col-span-1 md:col-span-8">
+					<div id="primary" className="content-area with-sidebar col-span-1 md:col-span-8 pb-24">
 						<div className="posts mt-12 max-w-lg mx-auto grid gap-5 md:grid-cols-2 md:max-w-none">
 							<PostCards posts={group} />
 						</div>
