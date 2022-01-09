@@ -7,7 +7,6 @@ import RecentPosts from '../components/Posts/recent-posts';
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import '../styles/blog.scss';
 import {
-    CogIcon,
     DocumentReportIcon,
     ChartBarIcon,
     OfficeBuildingIcon,
@@ -20,45 +19,39 @@ const features = [
     {
         name: "Suite Commerce",
         description:
-            "Customization, SEO, and Responsive Design Conversions. We have worked with dozens of websites, mostly running site builder or WordPress",
+        "NetSuite's flagship ecommerce product. Lots of good features, tightly integrated with the back end, and expensive.",
         icon: PencilAltIcon,
     },
     {
         name: "Site Builder",
         description:
-            "Implementation and Customization. We have implemented and customized quite a few of these SSP applications by now, including functionality changes, custom analytics modules, and Google trusted stores integrations.",
+        "If you have invested a great deal in Site Builder, we can help you maximize your conversion rate, SEO, and performance.",
         icon: PencilAltIcon,
+    },
+    {
+        name: "Shopify",
+        description:
+            "Your customers' data will be safe and secure.",
+        icon: OfficeBuildingIcon,
     },
     {
         name: "SEO",
         description:
-            "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-        icon: OfficeBuildingIcon,
-    },
-    {
-        name: "Netsuite Process Optimization",
-        description:
-            "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+            "Whatever platform your site is on, we can help you get more search engine traffic. Start with our in-depth SEO audit to identify areas to improve, or we can work with you on copy writing, link building, and other tactics.",
         icon: PlusIcon,
     },
     {
-        name: "Internet Marketing",
+        name: "Third-Party Integrations",
         description:
-            "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+            "NetSuite has many ways to connect your account with other systems. Stop hacking together spreadsheets and bring it all together!",
         icon: ChartBarIcon,
     },
     {
-        name: "Shopify Development",
+        name: "Accounting",
         description:
-            "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+            "Get the most out of NetSuite's accounting features. From automated bank reconciliation to sales taxes to multi-book complexity, we can help.",
         icon: DocumentReportIcon,
-    },
-    {
-        name: "Custom Web Solutions",
-        description:
-            "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-        icon: CogIcon,
-    },
+    }
 ]
 
 // // List of Blog posts per category
