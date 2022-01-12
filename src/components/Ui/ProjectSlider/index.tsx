@@ -37,7 +37,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
         dots: false,
         arrows: true,
         infinite: true,
-        fade: true,
+        fade: false,
         centerMode: true,
         centerPadding: "30px",
         adapativeHeight: true,
@@ -57,12 +57,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                     slidesToShow: 1,
                 },
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
+           
         ],
     }
 
