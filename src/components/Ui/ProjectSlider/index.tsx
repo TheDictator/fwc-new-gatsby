@@ -102,7 +102,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <StaticImage
                                             className="w-full h-full object-cover"
-                                            src="../images/sb-service.jpeg"
+                                            src="../../../images/sb-service.jpeg"
                                             alt="Cross-sell Items in Netsuite"
                                             placeholder="blurred"
                                         />
@@ -184,7 +184,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <StaticImage
                                             className="w-full h-full object-cover"
-                                            src="../images/sb-service.jpeg"
+                                            src="../../../images/sb-service.jpeg"
                                             alt="Cross-sell Items in Netsuite"
                                             placeholder="blurred"
                                         />
@@ -263,7 +263,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <StaticImage
                                             className="w-full h-full object-cover"
-                                            src="../images/sb-service.jpeg"
+                                            src="../../../images/sb-service.jpeg"
                                             alt="Cross-sell Items in Netsuite"
                                             placeholder="blurred"
                                         />

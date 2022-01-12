@@ -1,5 +1,4 @@
 import React, { Component, Fragment, RefObject, createRef } from 'react';
-
 import Header from '../Header';
 import Footer from '../Footer';
 import CookieConsent from "react-cookie-consent";
@@ -23,7 +22,6 @@ export class Layout extends Component<Props> {
 						<main>{this.props.children}</main>
 					</div>
 					<Footer />
-					{/* <SideDrawer /> */}
 					<CookieConsent
 						location='bottom'
 						buttonText='I Accept'
