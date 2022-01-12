@@ -368,11 +368,11 @@ export const IndexPage = (props: Props) => {
                             Technical Solutions Crafted From Expertise
                         </h2>
                         <p className="mt-4 max-w-3xl text-lg text-blue-200">
-                            With over 20 years’ of combined experience with
+                            With over 20 years' of combined experience with
                             NetSuite, we can solution just about anything a SMB
                             can throw at me.
                         </p>
-                        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16">
+                        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8">
                             {features.map((feature) => (
                                 <div key={feature.name}>
                                     <h3 className="text-xl font-medium text-white">

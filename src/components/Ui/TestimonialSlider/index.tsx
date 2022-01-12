@@ -38,7 +38,6 @@ const TestimonialSlider: FC<SliderProps> = ({  }) => {
         <>
             <div className="testimonial-slider">
                 <div className="slider-container">
-                    
                     <div className="sliderContainer py-6">
                         <Slider
                             {...settings}

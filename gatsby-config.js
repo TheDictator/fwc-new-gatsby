@@ -82,7 +82,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: `${__dirname}/src/images`,
+                path: `${__dirname}/src/hooks/images`,
             },
         },
         {
@@ -96,7 +96,7 @@ module.exports = {
                 theme_color:
                     process.env.GATSBY_PRIMARY_ACCENT_COLOR || "#0047E0",
                 display: "minimal-ui",
-                icon: "src/images/logo.png",
+                icon: "src/hooks/images/logo.png",
             },
         },
         {
