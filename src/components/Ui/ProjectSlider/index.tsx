@@ -100,87 +100,92 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                 className="slider"
                                 afterChange={afterChangeHandler}
                             >
-                                {Projects?.projects.map((item, i) => (
-                                <div className="slide-card" key={i}>
-                                    <div className="card projectCard flex flex-col rounded-lg shadow-lg">
-                                        {item.image && 
-                                            <div className="flex-shrink-0">
-                                                <StaticImage
-                                                    className="w-full h-full object-cover"
-                                                    src={item.image}
-                                                    alt="Cross-sell Items in Netsuite"
-                                                    placeholder="blurred"
-                                                />
-                                            </div>
-                                        }
-                                        <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
-                                            <div className="flex-1 categories-container mt-4">
-                                                {item.example1 && 
-                                                    <Link
-                                                        to={item.example1}
-                                                        rel="category tag"
-                                                        className="inline-block"
-                                                        title={item.example1}
-                                                        target="_blank"
-                                                    >
-                                                        <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                                                            Live Example 1
-                                                            <ExternalLinkIcon
-                                                                className="-mr-1 ml-1 h-4 w-4 text-gray-200"
-                                                                aria-hidden="true"
+                                {Projects?.projects
+                                    .map(function(item, i){
+                                        const Image = item.image;
+                                        return (
+                                            <div className="slide-card" key={i}>
+                                                <div className="card projectCard flex flex-col rounded-lg shadow-lg">
+                                                    {item.image && 
+                                                        <div className="flex-shrink-0">
+                                                            <StaticImage
+                                                                className="w-full h-full object-cover"
+                                                                src={Image}
+                                                                alt="Cross-sell Items in Netsuite"
+                                                                placeholder="blurred"
                                                             />
-                                                        </span>
-                                                    </Link>
-                                                }
-                                                {item.example2 && 
-                                                    <Link
-                                                        to={item.example2}
-                                                        rel="category tag"
-                                                        className="inline-block"
-                                                        title={item.example2}
-                                                        target="_blank"
-                                                    >
-                                                        <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                                                            Live Example 2
-                                                            <ExternalLinkIcon
-                                                                className="-mr-1 ml-1 h-4 w-4 text-gray-200"
-                                                                aria-hidden="true"
-                                                            />
-                                                        </span>
-                                                    </Link>
-                                                }
-                                                {item.description &&
-                                                    <p className="text-xl font-semibold text-black-400 title" dangerouslySetInnerHTML={{ __html: item.title }} />
-                                                }
-                                               
-                                                {item.description && 
-                                                    <p>
-                                                        {item.description}
-                                                    </p>
-                                                }
-                                                {item.description2 && 
-                                                    <div dangerouslySetInnerHTML={{ __html: item.description2 }}></div>
-                                                }
-                                                {item.link && 
-                                                    <div className="mt-8">
-                                                        <div className="inline-flex rounded-md shadow">
-                                                            <Link
-                                                                to={item.link}
-                                                                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
-                                                            >
-                                                                Read More
-                                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                                                                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                                                </svg>
-                                                            </Link>
+                                                        </div>
+                                                    }
+                                                    <div className="flex-1 bg-white p-6 pt-0 flex flex-col justify-between">
+                                                        <div className="flex-1 categories-container mt-4">
+                                                            {item.example1 && 
+                                                                <Link
+                                                                    to={item.example1}
+                                                                    rel="category tag"
+                                                                    className="inline-block"
+                                                                    title={item.example1}
+                                                                    target="_blank"
+                                                                >
+                                                                    <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                                                                        Live Example 1
+                                                                        <ExternalLinkIcon
+                                                                            className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    </span>
+                                                                </Link>
+                                                            }
+                                                            {item.example2 && 
+                                                                <Link
+                                                                    to={item.example2}
+                                                                    rel="category tag"
+                                                                    className="inline-block"
+                                                                    title={item.example2}
+                                                                    target="_blank"
+                                                                >
+                                                                    <span className="bg-gray-600 text-white inline-flex items-center px-3 py-0.5 rounded-full text-sm font-bold mb-1 mr-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                                                                        Live Example 2
+                                                                        <ExternalLinkIcon
+                                                                            className="-mr-1 ml-1 h-4 w-4 text-gray-200"
+                                                                            aria-hidden="true"
+                                                                        />
+                                                                    </span>
+                                                                </Link>
+                                                            }
+                                                            {item.description &&
+                                                                <p className="text-xl font-semibold text-black-400 title" dangerouslySetInnerHTML={{ __html: item.title }} />
+                                                            }
+                                                        
+                                                            {item.description && 
+                                                                <p>
+                                                                    {item.description}
+                                                                </p>
+                                                            }
+                                                            {item.description2 && 
+                                                                <div dangerouslySetInnerHTML={{ __html: item.description2 }}></div>
+                                                            }
+                                                            {item.link && 
+                                                                <div className="mt-8">
+                                                                    <div className="inline-flex rounded-md shadow">
+                                                                        <Link
+                                                                            to={item.link}
+                                                                            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md bg-gray-900 text-white bg-white hover:bg-gray-600"
+                                                                        >
+                                                                            Read More
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                                                                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                                            </svg>
+                                                                        </Link>
+                                                                    </div>
+                                                                </div>
+                                                            }
                                                         </div>
                                                     </div>
-                                                }
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                                        )
+                                    })
+                                }
                             </Slider>
                         </div>
                     </div>
