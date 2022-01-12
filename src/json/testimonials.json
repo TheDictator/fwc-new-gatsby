@@ -1,0 +1,33 @@
+{
+    "testimonials": 
+    [
+      {
+        "name": "Andrés González - Matr Boomie",
+        "comment": "My experience with Fourth Wave was extremely valuable. David Norris did not only solved our problems, but he took the time to educate us through the process so we could better understand the tools we were using (Netsuite & Google Analytics). He further created value to our company by pointing out things that our website could improved on. His attention to detail and his prompt email responses made everything smooth."
+      },
+      {
+        "name": "GirlsCrochetHeadbands.com - Tracy Sutter",
+        "comment": "As a small business owner, I am not very tech savvy and have to rely on others to help me out. Fourth Wave Consulting has been a live saver!  Very dependable, quickly replies to emails and gets the job done! Our business wouldn't be where it is today without the help of Fourth Wave.  Thanks David for helping make GCH a success!"
+      },
+      {
+        "name": "Taha Raja",
+        "comment": "David has in depth Netsuite knowledge and was able to address our issues in detail and provide fixes."
+      },
+      {
+        "name": "Joe Nardi",
+        "comment": "Dave and Fourth Wave consulting were an absolute joy to work with.  The whole process was outlined out for us before we started so we knew exactly what to expect.  When it comes to Netsuite website customization at an affordable and fair price... Fourth Wave is your answer!!!"
+      },
+      {
+        "name": "Brian Whitehurst, President - Pexheat.com",
+        "comment": "Dave @ Fourth Wave has been a blessing in growing our business and getting a hand on technology issues. His knowledge, professionalism and personal attention sets Fourth Wave apart from other consulting outfits. I look forward to many more projects with Dave and Fourth Wave."
+      },
+      {
+        "name": "Marc Cerceo, CEO Yowza Fitness",
+        "comment": "We have just recently connected with Fourth Wave Consulting to implement changes to our shopping cart.  Their team, led by David Norris is one of the best, most efficient eCommerce consulting firms I have worked with.  Their pricing structure is better than reasonable, they deliver on time and they DO NOT nickel and dime for extras.  When they quote fixed price, they deliver fixed price.  While this started out as a one time engagement, they have become a permanent, on-demand extension of our internal marketing team. FIVE STARS *****"
+      },
+      {
+        "name": "Tom, Owner,SignsDirect.com",
+        "comment": "David is the most knowledgeable programmer we've found in regards to working with NetSuite reference checkout. His job was especially difficult because NetSuite hadn't provided any documentation for the version of reference checkout that we needed help with. I'm sure he is equally proficient in all things netSuite."
+      }
+    ]
+}
