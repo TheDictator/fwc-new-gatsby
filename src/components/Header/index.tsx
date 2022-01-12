@@ -399,16 +399,12 @@ export const Header = (props: Props) => {
                     <Link to="/about" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                       About
                     </Link>
-
                     <Link to="#" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                       Company
                     </Link>
-
-
                     <Link to="/blog" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                       Blog
                     </Link>
-
                     <Link to="/contact-fourth-wave-consulting" className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
                       Contact
                     </Link>
@@ -420,7 +416,6 @@ export const Header = (props: Props) => {
                     >
                       Contact Us
                     </a>
-                    
                   </div>
                 </div>
               </div>

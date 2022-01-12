@@ -372,7 +372,7 @@ export const IndexPage = (props: Props) => {
                             NetSuite, we can solution just about anything a SMB
                             can throw at me.
                         </p>
-                        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8">
+                        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8">
                             {features.map((feature) => (
                                 <div key={feature.name}>
                                     <h3 className="text-xl font-medium text-white">
