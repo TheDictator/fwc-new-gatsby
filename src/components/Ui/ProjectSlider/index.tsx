@@ -39,7 +39,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
         centerPadding: "30px",
         adapativeHeight: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
             {
@@ -102,7 +102,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <StaticImage
                                             className="w-full h-full object-cover"
-                                            src="../../../images/sb-service.jpeg"
+                                            src="../../../images/strike-example.jpg"
                                             alt="Cross-sell Items in Netsuite"
                                             placeholder="blurred"
                                         />
@@ -184,7 +184,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                                     <div className="flex-shrink-0">
                                         <StaticImage
                                             className="w-full h-full object-cover"
-                                            src="../../../images/sb-service.jpeg"
+                                            src="../../../images/ss-example.jpg"
                                             alt="Cross-sell Items in Netsuite"
                                             placeholder="blurred"
                                         />
