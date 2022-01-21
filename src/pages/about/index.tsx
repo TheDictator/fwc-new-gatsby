@@ -17,7 +17,11 @@ export const AboutPage = (props: Props) => {
 			<div className="grid grid-cols-1 md:grid-cols-12 gap-8">
 				<div id="primary" className="content-area with-sidebar col-span-1 md:col-span-8">
 					<div className="about">
-						
+						<h1>About Fourth Wave Consulting</h1>
+
+						<h3>A Brief History</h3>
+						<p>
+						</p>
 					</div>
 				</div>
 				<div className="sidebar col-span-1 md:col-span-4 top-0 b-0 md:sticky md:h-screen" id="secondary">
