@@ -36,7 +36,6 @@ export const AboutPage = (props: Props) => {
 						 sometimes the best solution is one that doesn't involve us or NetSuite, and I'm not shy if that's the case. We also take the long 
 						 view, and build our solutions with long-term support in mind. We document all our work, and are ready if a client calls us about work 
 						 we did years ago. 
-
 						 </p>
 						 <h3>Our Team</h3>
 						 <p>Kevin Carpenter is our designer and developer, and has worked with NetSuite for more than 10 years. With a broad background in 
