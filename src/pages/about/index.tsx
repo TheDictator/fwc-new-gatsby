@@ -47,7 +47,7 @@ export const AboutPage = (props: Props) => {
 						 <h3>What Makes Us Different</h3>
 						 <p>
 						 <ul>
-						 	<li><strong>Consistency</strong>. David is the primary contact and project manager for all projects, and has been since 2004. When you call in 5 years, it will be the same. 
+						 	<li><strong>Consistency</strong>. David is the primary contact and project manager for all projects, and has been since 2004. When you call in 5 years, it will be the same. </li>
 						 	<li><strong>We think like you</strong>. We approach your project like we're your CTO - recommending & providing solutions for your long-term best interest, even if it doesn't involve us or NetSuite.</li>
 						 	<li><strong>Broad NetSuite Experience</strong>. Rather than hire inexpensive developers just starting out, we bring experience based on projects with hundreds of companies 
 						 	and dozens of different technologies. </li>
