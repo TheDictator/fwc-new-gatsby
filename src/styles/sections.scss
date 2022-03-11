@@ -49,4 +49,9 @@
   .tag-cloud-tag {
     @apply cursor-pointer;
   }
+  .content-area .prose {
+    p {
+      word-break: break-all;
+    }
+  }
 }
