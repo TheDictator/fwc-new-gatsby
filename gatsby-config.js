@@ -107,29 +107,28 @@ module.exports = {
 				develop: {
 					hardCacheData: false,
 				  },
-					type: {
-						Page: {
-							exclude: true,
-						},
-						Menu: {
-							exclude: true,
-						},
-						MenuItem: {
-							exclude: true,
-						},
-					},
-					debug: {
-						graphql: {
-							copyHtmlResponseOnError: true
-						}
-					},
+                type: {
+                    Page: {
+                        exclude: true,
+                    },
+                    Menu: {
+                        exclude: true,
+                    },
+                    MenuItem: {
+                        exclude: true,
+                    },
+                },
+                debug: {
+                    graphql: {
+                      onlyReportCriticalErrors: true,
+                    },
+                },
                 searchAndReplace: [
                     {
                         search: `${process.env.GATSBY_WORDPRESS_URL_PROTOCOL}://${process.env.GATSBY_WORDPRESS_URL_PATH}`,
                         replace: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`,
                     },
                 ],
-                requestConcurrency: 10,
                 includedRoutes: [
                     "**/categories",
                     "**/posts",
