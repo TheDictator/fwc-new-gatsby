@@ -67,7 +67,7 @@
         "jsx-boolean-value": false,
         "jsx-self-close": false,
         "jsx-no-lambda": false,
-        "indent": [true, "tabs", 4],
+        "indent": [true, "spaces", 4],
         "no-consecutive-blank-lines": [
             false
         ]

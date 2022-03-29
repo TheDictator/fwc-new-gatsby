@@ -1,7 +1,7 @@
 import React, { FC, useRef, useState } from "react"
 import Slider from "react-slick"
-import { Link,  } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { ExternalLinkIcon } from '@heroicons/react/solid';
@@ -60,7 +60,7 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
            
         ],
     }
-
+    
     return (
         <>
             <div className="bg-gradient-to-r from-blue-800 to-blue-700">
@@ -97,17 +97,17 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
                             >
                                 {Projects?.projects
                                     .map(function(item, i){
-                                        const Image = item.image;
+                                        const Image = getImage(item.image);
+
                                         return (
                                             <div className="slide-card" key={i}>
                                                 <div className="card projectCard flex flex-col rounded-lg shadow-lg">
-                                                    {item.image && 
+                                                    {Image && 
                                                         <div className="flex-shrink-0">
-                                                            <StaticImage
+                                                            <GatsbyImage
                                                                 className="w-full h-full object-cover"
-                                                                src={item.image}
+                                                                image={Image}
                                                                 alt="Cross-sell Items in Netsuite"
-                                                                placeholder="blurred"
                                                             />
                                                         </div>
                                                     }
@@ -189,5 +189,4 @@ const ProjectSlider: FC<SliderProps> = ({ headline, description }) => {
         </>
     )
 }
-
 export default ProjectSlider
