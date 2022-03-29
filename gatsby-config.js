@@ -129,14 +129,6 @@ module.exports = {
                         replace: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`,
                     },
                 ],
-                includedRoutes: [
-                    "**/categories",
-                    "**/posts",
-                    "**/media",
-                    "**/tags",
-                    "**/taxonomies",
-                    "**/users",
-                ],
 				html: {
 					useGatsbyImage: true,
 				},
