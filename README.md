@@ -246,3 +246,4 @@ This project is licensed under the [MIT License](https://github.com/sagar7993/ga
 - Lead-in service page description
 -- Blog posts
 - Add to cart animation / replacing dropdown with select boxes for OMA blog posts
+- Newsletter signup form -> Netsuite blog post notification, post into wordpress.
