@@ -238,3 +238,11 @@ This project is licensed under the [MIT License](https://github.com/sagar7993/ga
 - [Subscribe Form in Sidebar](https://tympanus.net/Development/ButtonComponentMorph/index4.html)
 - [Featured Section, cards with categories/date](https://www.wpelevation.com/)
 - [Incorporate shape-outside text wrap](https://www.youtube.com/watch?v=sifXs4XVK7g)
+
+- Add dynamic blog post sections to services pages to pull in posts by category
+- Write 1-2 blog posts to be ready to deploy
+
+- FAQ
+- Lead-in service page description
+-- Blog posts
+- Add to cart animation / replacing dropdown with select boxes for OMA blog posts
