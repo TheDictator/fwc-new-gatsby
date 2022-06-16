@@ -1,7 +1,10 @@
-import React from "react";
-import Layout from "../../components/Layout";
-import SEO from "../../components/SEO";
+import React from "react"
+import Layout from "../../components/Layout"
+import SEO from "../../components/SEO"
 import Cta from "../../components/Ui/Cta"
+import { StaticQuery, graphql } from "gatsby"
+import PostCards from "../../components/Posts/cards"
+
 export interface Props {
     location: Location
 }
@@ -23,6 +26,78 @@ export const ThirdPartyPage = (props: Props) => {
                         other systems. Stop hacking together spreadsheets and
                         bring it all together!
                     </p>
+                </div>
+            </div>
+            <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+                <div className="absolute inset-0">
+                    <div className="bg-white h-1/3 sm:h-2/3" />
+                </div>
+                <div className="relative max-w-7xl mx-auto">
+                    <div className="text-center">
+                        <h2 className="text-3xl tracking-tight font-extrabold sm:text-4xl">
+                            Third-Party Solutions From Our Blog
+                        </h2>
+
+                    </div>
+                    <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+                        <StaticQuery
+                            query={graphql`
+                            query ThirdPartyCategoryPostsQuery {
+                                allWpPost(filter: {tags: {nodes: {elemMatch: {slug: {eq: "third-party"}}}}}) {
+                                edges {
+                                    node {
+                                    author {
+                                        node {
+                                        uri
+                                        avatar {
+                                            url
+                                        }
+                                        }
+                                    }
+                                    id
+                                    title
+                                    excerpt
+                                    date(formatString: "MMMM DD, YYYY")
+                                    modified(formatString: "MMMM DD, YYYY")
+                                    link
+                                    title
+                                    content
+                                    featuredImage {
+                                        node {
+                                        localFile {
+                                            childImageSharp {
+                                            gatsbyImageData (
+                                                width: 800
+                                                placeholder: BLURRED
+                                                formats: [AUTO, WEBP, AVIF]
+                                            )
+                                            }
+                                        }
+                                        }
+                                    }
+                                    categories {
+                                        nodes {
+                                        id
+                                        count
+                                        description
+                                        name
+                                        slug
+                                        }
+                                    }
+                                    }
+                                }
+                                }
+                            }
+                            `}
+                            render={data => {
+                                return (
+                                    <>
+                                        <PostCards posts={data.allWpPost.edges} />
+                                    </>
+                                )
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
             <Cta
