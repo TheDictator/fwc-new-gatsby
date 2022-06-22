@@ -247,3 +247,11 @@ This project is licensed under the [MIT License](https://github.com/sagar7993/ga
 -- Blog posts
 - Add to cart animation / replacing dropdown with select boxes for OMA blog posts
 - Newsletter signup form -> Netsuite blog post notification, post into wordpress.
+
+
+`
+3:05:56 PM: warning Gatsby's redux store is required in the "addRemoteFilePolyfillInterface" and "polyfillImageServiceDevRoutes" API's for image CDN. No store was found when requesting url "https://www.fourthwc.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-02-at-3.23.30-PM.png". This will fail your build in Gatsby V5. Upgrade your source plugins and Gatsby packages to the latest versions to resolve this. If you are a source plugin author visit https://gatsby.dev/source-plugins-image-cdn to learn how to make this warning go away.
+3:06:01 PM: error UNHANDLED REJECTION Unable to fetch:
+3:06:01 PM: https://www.fourthwc.com/wp-content/plugins/wordpress-23-related-posts-plugin/static/thumbs/7-scaled.jpg
+3:06:01 PM: ---
+`
