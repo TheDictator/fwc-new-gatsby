@@ -39,7 +39,7 @@ export const SuiteCommercePage = (props: Props) => {
 						 <StaticQuery
 								query={graphql`
 								query SuiteCommerceCategoryPostsQuery {
-										allWpPost(filter: {tags: {nodes: {elemMatch: {slug: {eq: "suitecommerce"}}}}}) {
+										allWpPost(filter: {tags: {nodes: {elemMatch: {slug: {eq: "SuiteCommerce"}}}}}) {
 										edges {
 												node {
 												author {
