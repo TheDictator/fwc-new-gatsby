@@ -2,7 +2,6 @@ const moment = require("moment")
 const path = require("path")
 
 const createPaginatedPages = require("gatsby-paginate")
-const paginate = require("gatsby-awesome-pagination")
 
 require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,

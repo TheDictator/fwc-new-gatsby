@@ -132,6 +132,7 @@ module.exports = {
                 },
                 debug: {
                     graphql: {
+                        showQueryOnError: true,
                       onlyReportCriticalErrors: true,
                     },
                 },

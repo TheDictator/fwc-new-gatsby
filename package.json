@@ -34,7 +34,7 @@
     "lint": "tslint -c tslint.json -p tsconfig.json ./src/**/*.{ts,tsx}",
     "purgeAll": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && rm -rf .cache && rm -rf public && npm install",
     "purgeCache": "rm -rf .cache && rm -rf public",
-    "purgeDependencies": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && npm install"
+    "purgeDependencies": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
@@ -43,8 +43,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.4",
     "axios": "^0.26.1",
-    "gatsby": "^4.17.0",
-    "gatsby-awesome-pagination": "^0.3.8",
+    "gatsby": "^4.0.0",
     "gatsby-image": "^3.11.0",
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
@@ -52,7 +51,7 @@
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-disqus": "^1.2.3",
     "gatsby-plugin-google-analytics": "^4.10.0",
-    "gatsby-plugin-image": "^2.10.1",
+    "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-import": "^2.1.7",
     "gatsby-plugin-manifest": "^4.10.2",
     "gatsby-plugin-offline": "^5.10.2",
@@ -64,8 +63,7 @@
     "gatsby-plugin-typescript": "^4.10.1",
     "gatsby-rehype-prismjs": "^2.0.0",
     "gatsby-source-filesystem": "^4.10.1",
-    "gatsby-source-instagram": "^0.9.0",
-    "gatsby-source-wordpress": "^6.17.0",
+    "gatsby-source-wordpress": "^6.0.0",
     "gatsby-transformer-json": "^4.10.0",
     "gatsby-transformer-rehype": "^2.0.1",
     "gatsby-transformer-sharp": "^4.10.0",
