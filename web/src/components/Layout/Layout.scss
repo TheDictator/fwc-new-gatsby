@@ -1,0 +1,27 @@
+@import '../../styles/colors.scss';
+.gatsby-image-wrapper.gatsby-image-wrapper-constrained{
+    margin-bottom: 0;
+}
+.layout-container {
+    background: $whiteColor;
+    position: relative;
+    padding: 0;
+
+    .layout {
+        // margin: 0px auto 72px auto;
+        // max-width: 1080px;
+        padding: 0;
+        width: 100%;
+
+        // .sidebar {
+        //     position: sticky;
+        //     top: 0;
+        //     bottom: 0;
+        //     height: 100vh;
+        //     overflow-y: scroll;
+        //     svg {
+        //         margin: 0 auto;
+        //     }
+        // }
+    }
+}

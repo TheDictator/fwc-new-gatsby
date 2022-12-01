@@ -1,0 +1,48 @@
+@import './colors.scss';
+@import './common.scss';
+@import './sections.scss';
+
+html,
+body,
+*:before,
+*:after {
+    font-family: $fontFamily;
+    color: $blackColor;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+    color: $primaryAccentColor;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    div {
+        color: $primaryAccentColor;
+    }
+}
+img {
+    max-width: 100%;
+}
+.post-content {
+    div {
+        max-width: 100%;
+    }
+}
+section {
+    padding: 3.5em 0;
+    &.gray-bg {
+        background-color: $grayBg;
+    }
+}
+.slick-initialized {
+    overflow: hidden;
+}
